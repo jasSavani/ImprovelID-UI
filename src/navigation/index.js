@@ -39,7 +39,7 @@ const Route = (props) => {
         
         Platform.OS === 'android' && StatusBar.setTranslucent(true);
         Platform.OS === 'android' && StatusBar.setBackgroundColor('transparent')
-        StatusBar.setBarStyle(isDark ? 'light-content' : 'dark-content');
+        StatusBar.setBarStyle('dark-content');
         return () => {
           StatusBar.setBarStyle('default');
         };

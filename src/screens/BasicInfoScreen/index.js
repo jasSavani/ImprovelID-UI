@@ -128,6 +128,7 @@ const BasicInfoScreen = (props) => {
 
     return (
         <Block>
+            <StatusBar barStyle={'light-content'} />
             <Header
                 leftIcon={icons.backArrow}
                 onleftClick={() => { props.navigation.goBack() }}
