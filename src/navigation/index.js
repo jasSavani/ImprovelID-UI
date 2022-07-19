@@ -61,7 +61,7 @@ const Route = (props) => {
             {/* <AuthContext.Provider value={authContext}> */}
                 <NavigationContainer>
                   <Stack.Navigator
-                        screenOptions={{ headerShown: false }} initialRouteName={'Drawer'}>
+                        screenOptions={{ headerShown: false }} initialRouteName={'Splash'}>
                         <Stack.Screen name="Splash" component={Splash} />
                         <Stack.Screen name="QRScan" component={QrCodeScan} />
                         <Stack.Screen name="IdentityVerification" component={IdentityVerification} />
