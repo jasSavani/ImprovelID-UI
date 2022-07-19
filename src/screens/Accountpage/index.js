@@ -13,12 +13,12 @@ import DocCard from '../../components/DocCard';
 import SelectDropdown from 'react-native-select-dropdown'
 
 
-const countries = [{ type: "en", name: "English" }]
+const countries = [{ type: "en", name: "English" },{ type: "fr", name: "Franse" }]
 
 const Accountpage = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
-    const { isDark, theme, setTheme, setActivescreen, setnotificationCount, setIsDark } = useData();
+    const { isDark, theme, setTheme, setActivescreen, setnotificationCount, setIsDark,handleIsDark } = useData();
     const { t, translate, locale, setLocale } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
@@ -26,7 +26,7 @@ const Accountpage = (props) => {
 
 
     const toggleSwitch = (value) => {
-        setIsDark(value)
+        handleIsDark(value)
     };
     useEffect(() => {
         const unsubscribe = props.navigation.addListener('focus', (e) => {

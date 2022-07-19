@@ -8,16 +8,16 @@ export const COLORS = {
   verifiedText:"#05BE7B",
   lightTextColor:"#676767",
   identitytabtext:"#2E3358",
-  identityselectedtabtext:"#AF3CF6",
+  identityselectedtabtext:"#21D4FD",
 
-  primary:"#AD37F6",
-  primaryText:"#B03EF7",
-  primaryradio:"#9D18F0",
-  primaryscannerline:"#D573F7",
-  primaryqrmask:"#B364FF",
+  primary:"#21D4FD",
+  primaryText:"#2152FF",
+  primaryradio:"#2152FF",
+  primaryscannerline:"#2152FF",
+  primaryqrmask:"#2152FF",
   lightborderColor:"#EDE7E7",
   closeiconcolor:"#827C7C",
-  dropdownText:"#9B31DD",
+  dropdownText:"#21D4FD",
 
   textColor:"#474747",
   borderColor:"#D3D3D3",
@@ -33,9 +33,9 @@ export const COLORS = {
   // Drawer colors
   emailText:"#E0D1FF",
   activeicon:"#FFFFFF",
-  inactiveicon:"#BC51FF",
-  inactivetext:"#E5BFFD",
-  activeimage:"#8D4CFA",
+  inactiveicon:"#2152FF",
+  inactivetext:"#21D4FD",
+  activeimage:"#2152FF",
 
   // non-colors
   black: '#252F40',
@@ -51,11 +51,10 @@ export const COLORS = {
 };
 
 export const GRADIENTS = {
-  primary: ['#B94FFA', '#9D18F0'],
-  secondary: ['#A8B8D8', '#627594'],
-  activedrawer:["#BC52FD", "#B43DFF"],
+  primary: ['#21D4FD', '#2152FF'],
+  activedrawer:["#21D4FD", "#2152FF"],
 
-  buttongradient:["#C544F1","#E031C1"],
+  buttongradient:['#21D4FD', '#2152FF'],
   buttongradientoff: [String(COLORS.identitytabtext), String(COLORS.identitytabtext)],
 
 

@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
         const { colors } = props
         return {
             marginHorizontal: deviceBasedDynamicDimension(17, true, 1),
-            backgroundColor: colors.card,
+            backgroundColor: colors.white,
             shadowColor: colors.cardShadow,
             shadowOffset: {
                 height: deviceBasedDynamicDimension(4, false, 1),

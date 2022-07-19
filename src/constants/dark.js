@@ -52,7 +52,6 @@ export const COLORS = {
 
 export const GRADIENTS = {
   primary: ['#B94FFA', '#9D18F0'],
-  secondary: ['#A8B8D8', '#627594'],
   activedrawer:["#BC52FD", "#B43DFF"],
 
   buttongradient:["#C544F1","#E031C1"],
