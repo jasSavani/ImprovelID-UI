@@ -3,8 +3,8 @@ import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-nat
 import {Dimensions,Platform,PixelRatio} from 'react-native';
 
 
-let screenWidth = Dimensions.get('window').width;
-let screenHeight = Dimensions.get('window').height;
+export const screenWidth = Dimensions.get('window').width;
+export const screenHeight = Dimensions.get('window').height;
 
 //Artboard Dimension 
 // let artBoardHeightOrg = 375;

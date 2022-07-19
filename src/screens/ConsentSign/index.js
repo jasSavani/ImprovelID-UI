@@ -17,11 +17,15 @@ const ConsentSign = (props) => {
     const { isDark, theme, setTheme } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
-    const [check, setCheck] = useState(1)
+    const [check, setCheck] = useState([])
     const _signatureRef = useRef()
 
     const onradioClick = (number) => {
-        setCheck(number)
+        if(check.includes(number)){
+            setCheck([...check.filter((i)=> i!= number)])
+        }else{
+            setCheck([...check,number])
+        }
     }
 
 
@@ -38,13 +42,13 @@ const ConsentSign = (props) => {
 
                         <View style={styles.radioView}>
                             <View style={styles.radioBtn}>
-                                <Octicons onPress={() => onradioClick(1)} name={check == 1 ? "check-circle-fill":"circle"} size={deviceBasedDynamicDimension(21, true, 1)} color={colors.primaryradio} />
+                                <Octicons onPress={() => onradioClick(1)} name={check?.includes(1)  ? "check-circle-fill":"circle"} size={deviceBasedDynamicDimension(21, true, 1)} color={colors.primaryradio} />
                             </View>
                             <View style={{ flex: 1 }}><Text style={styles.instructionText(theme)}>{t("consentsign.instruction1")}</Text></View>
                         </View>
                         <View style={styles.radioView}>
                             <View style={styles.radioBtn}>
-                                <Octicons onPress={() => onradioClick(2)} name={check == 2 ? "check-circle-fill":"circle"} size={deviceBasedDynamicDimension(21, true, 1)} color={colors.primaryradio} />
+                                <Octicons onPress={() => onradioClick(2)} name={check?.includes(2) ? "check-circle-fill":"circle"} size={deviceBasedDynamicDimension(21, true, 1)} color={colors.primaryradio} />
                             </View>
                             <View style={{ flex: 1 }}><Text style={styles.instructionText(theme)}>{t("consentsign.instruction2")}</Text></View>
                         </View>

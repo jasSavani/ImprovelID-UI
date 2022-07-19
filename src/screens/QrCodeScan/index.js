@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView } from 'react-native';
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
@@ -6,6 +6,7 @@ import * as Styles from './styles';
 import { RNCamera, FaceDetector } from 'react-native-camera';
 import QrCodeMask from 'react-native-qrcode-mask';
 import { deviceBasedDynamicDimension } from '../../utils';
+import { AuthContext } from '../../navigation/AuthContext';
 const QrCodeScan = (props) => {
 
     const { assets, colors, gradients } = useTheme();
@@ -13,6 +14,7 @@ const QrCodeScan = (props) => {
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const _cameraRef = useRef(null)
+    // const { signIn } = useContext(AuthContext);
 
 
     const ontermsClick = () => {
@@ -38,7 +40,7 @@ const QrCodeScan = (props) => {
                     </View>
                     <View style={styles.qrView}>
                         <QrCodeMask
-                            lineColor={colors.primary}
+                            lineColor={colors.primaryscannerline}
                             lineDirection='vertical'
                             height={deviceBasedDynamicDimension(205, false, 1)}
                             width={deviceBasedDynamicDimension(205, false, 1)}
@@ -46,7 +48,7 @@ const QrCodeScan = (props) => {
                             edgeWidth={deviceBasedDynamicDimension(30, true, 1)}
                             lineSize={'99%'}
                             lineThick={deviceBasedDynamicDimension(4, false, 1)}
-                            edgeColor={colors.primary}
+                            edgeColor={colors.primaryqrmask}
                             renderFrame={() => {
                                 return (
                                     <View style={styles.roundView}>

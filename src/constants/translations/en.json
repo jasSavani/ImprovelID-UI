@@ -1,58 +1,25 @@
 {
   "common": {
-    "appDetails": "App Details",
-    "appName": "App name",
-    "appVersion": "App version",
-    "buildVersion": "Build version",
-    "expoVersion": "Expo version",
-    "about": "About",
-    "visit": "Visit",
-    "posted": "Posted on {{date}}",
-    "recommended": "Recommended for you",
-    "viewall": "View All",
-    "more": "More",
-    "follow": "Follow",
-    "followed": "Followed",
-    "search": "Search",
-    "night": "night",
-    "day": "day",
-    "booknow": "Book Now",
-    "selectDate": "Select date",
-    "checkInOut": "Check-In & Check-Out",
-    "adults": "Adults",
-    "roomType": "Room Type",
-    "luxury": "Luxury",
-    "message": "Enter your message",
-    "album": "Album",
-    "or": "or",
-    "name": "Name",
-    "namePlaceholder": "Enter your full name",
-    "email": "Email",
-    "emailPlaceholder": "Enter your email address",
-    "password": "Password",
-    "passwordPlaceholder": "Enter a password",
-    "agree": "I agree with the ",
-    "terms": "Terms and Conditions",
-    "signup": "Sign Up",
-    "signin": "Sign In",
-    "goBack": "Go back",
-    "inStock": "In stock",
-    "outStock": "Out of stock",
-    "addToCart": "Add to cart",
-    "checkout": "Proceed to checkout",
-    "readArticle": "Read Article",
-    "send": "Send",
-    "guests": {
-      "one": "1 guest",
-      "other": "{{count}} guests",
-      "zero": "0 Guests"
-    }
+    "active":"Active",
+    "verified":"Verified",
+    "view":"View"
+   
   },
   "app": {
-    "name": "Soft UI",
-    "fullname": "Soft UI Kit",
-    "native": "React Native",
-    "link": "creative-tim.com"
+    "name": "",
+    "fullname": ""
+  },
+  "screens":{
+    "home":"Home",
+    "application":"Applications",
+    "identities":"Identities",
+    "manageidentity":"Manage Identity",
+    "profile":"Profile",
+    "account":"Account",
+    "feedback":"Feedback",
+    "myidentities":"My Identities",
+    "managedevice":"Manage Devices"
+
   },
   "darkMode": "Dark Mode",
   "qrscreen":{
@@ -109,7 +76,8 @@
     "subtitle":"We'll compare the photo in your passport with your selfie",
     "instruction1":"Please, keep a straight face",
     "instruction2":"Wearing glasses? Make sure we can clearly see your eyes",
-    "getstarted":"Get Started"
+    "getstarted":"Get Started",
+    "camerasubtitle":"Hold your phone at eye level so that yourself is similar to a passport photo"
   },
   "consentsign":{
     "title":"Consent and Sign",
@@ -139,6 +107,47 @@
     "ok":"Ok",
     "yes":"Yes",
     "no":"No"
+  },
+  "applicationscreen":{
+    "searchtext":"Search your app",
+    "office":"Office 365",
+    "box":"Box",
+    "google":"Google"
+  },
+  "myidentities":{
+    "suspend":"Suspend",
+    "revoke":"Revoke"
+  },
+  "feedbackscreen":{
+    "submit":"Submit Feedback"
+  },
+  "detailsscreen":{
+    "screenname":"ImproveID",
+    "status":"Status",
+    "consent":"Consent"
+  },
+  "basicinfoscreen":{
+    "screenname":"Basic Information",
+    "snedverificationcode":"Send Verification Code",
+    "liveText":"Whare do you live?",
+    "numberText":"Mobile number",
+    "rateText":"Message and data rates may apply.",
+    "nameText":"Legal name",
+    "firstname":"First name",
+    "lastname":"Last name"
+  },
+  "moreinfoscreen":{
+    "screenname":"More Information",
+    "address": "Address",
+    "apartment":"+Apartment, building, floor",
+    "city":"City",
+    "state":"State",
+    "zipcode":"ZIP code",
+    "dob": "Date of Birth",
+    "month":"Month",
+    "day":"Day",
+    "year":"Year",
+    "contiue":"Continue"
   }
 
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 
-import {light} from '../constants/';
+import {light,dark} from '../constants/';
 
 export const ThemeContext = React.createContext({
-  theme: light,
+  theme: dark,
   setTheme: () => {},
 });
 
 export const ThemeProvider = ({
   children,
-  theme = light,
+  theme = dark,
   setTheme = () => {},
 }) => {
   return (

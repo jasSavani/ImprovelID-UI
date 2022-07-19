@@ -4,9 +4,12 @@ import { light, dark } from '../constants';
 
 export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
-    const [isDark, setIsDark] = useState(false);
-    const [theme, setTheme] = useState(light);
+    const [isDark, setIsDark] = useState(true);
+    const [theme, setTheme] = useState(dark);
     const [cardData, setCardData] = useState({});
+    const [notificationCount, setnotificationCount] = useState("");
+    const [activescreen, setActivescreen] = useState("Home");
+
 
     const cleanContext = () => {
     };
@@ -50,7 +53,11 @@ export const DataProvider = ({ children }) => {
         theme,
         setTheme,
         cardData,
-        setCardData
+        setCardData,
+        notificationCount,
+        setnotificationCount,
+        activescreen,
+        setActivescreen
     };
 
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>;

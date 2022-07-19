@@ -56,7 +56,6 @@ export const styles = StyleSheet.create({
         height: deviceBasedDynamicDimension(126, false, 1),
         width: deviceBasedDynamicDimension(126, false, 1),
         marginTop: deviceBasedDynamicDimension(2, false, 1),
-        resizeMode: 'contain',
         alignSelf:'center'
     },
     crossView: {

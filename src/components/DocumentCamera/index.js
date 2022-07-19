@@ -17,7 +17,7 @@ const DocumentCamera = (props) => {
     const { styles } = Styles
     const _cameraRef = useRef(null)
     return (
-        <Modal visible={props.isVisible} transparent style={styles.containerView}>
+        <Modal visible={props?.isVisible} transparent style={styles.containerView}>
             <RNCamera
                 style={styles.containerView}
                 ref={_cameraRef}
@@ -45,9 +45,9 @@ const DocumentCamera = (props) => {
                         return (
                             <View style={styles.headerView}>
                                 <View style={{flex:1,justifyContent:'center',alignItems:'flex-end'}}>
-                                <Text style={styles.titleText(theme)}>{t(props.texts.title)}</Text>
+                                <Text style={styles.titleText(theme)}>{t(props?.texts?.title)}</Text>
                                 </View>
-                                <TouchableOpacity  onPress={()=>{props.onCancel()}} style={styles.crossView}>
+                                <TouchableOpacity  onPress={()=>{props?.onCancel()}} style={styles.crossView}>
                                     <Icon name='close-a' size={deviceBasedDynamicDimension(18,false,1)} style={styles.cossImage} color={colors.whiteText} />
                                 </TouchableOpacity>
                             </View>
@@ -57,13 +57,13 @@ const DocumentCamera = (props) => {
                         return (
                             <View style={{flex:1,justifyContent:'flex-end',alignItems:'center'}}>
                                 <View style={{flex:1,paddingTop:deviceBasedDynamicDimension(47,false,1)}}>
-                                <Text style={styles.titleText(theme)}>{t(props.texts.instruction)}</Text>
-                                <Text style={styles.subtitleText(theme)}>{t(props.texts.subinstruction)}</Text>
+                                <Text style={styles.titleText(theme)}>{t(props?.texts?.instruction)}</Text>
+                                <Text style={styles.subtitleText(theme)}>{t(props?.texts?.subinstruction)}</Text>
                                 </View>
                                 <TouchableOpacity onPress={async()=>{
                                     const options = { quality: 1, base64: false };
                                     const data = await _cameraRef.current.takePictureAsync(options);
-                                    props.onPictureTaken(data)
+                                    props?.onPictureTaken(data)
                                 }} style={styles.btnView}>
                                     <Image style={styles.btnImage} source={icons.camerabtnIcon} />
                                 </TouchableOpacity>

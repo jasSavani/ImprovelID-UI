@@ -16,10 +16,10 @@ const Chekagain = (props) => {
     const [screndata, setScreenData] = useState({ title: "", subtitle: "", })
     const [ismodal, setIsmodal] = useState(false)
     const { styles } = Styles
-    const {type,readScreen} = cardData
+    const { type, readScreen } = cardData
 
     useEffect(() => {
-       setScreenData(readScreen)
+        setScreenData(readScreen)
     }, [])
 
     const onClickConfirm = () => {
@@ -57,7 +57,7 @@ const Chekagain = (props) => {
                     <Button isgradient={true} onClick={() => { onClickConfirm() }} gradient={gradients.primary} name={t("readscreen.confirm")} />
                 </View>
             </View>
-            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.waiting")} message={t("popupmessage.waitingmsg")} primaryBtnname={t("popupmessage.yes")} secondaryBtnname={t("popupmessage.no")} secondaryBtn={() => { }} primaryBtn={() => { }} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.waitingpop} />}
+            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.waiting")} message={t("popupmessage.waitingmsg")} primaryBtnname={t("popupmessage.ok")} primaryBtn={() => { }} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.waitingpop} />}
 
         </View>
     )

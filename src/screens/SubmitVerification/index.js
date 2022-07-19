@@ -38,7 +38,7 @@ const SubmitVerification = (props) => {
                     <Button isgradient={true} onClick={() => {setIsmodal(!ismodal) }} gradient={gradients.primary}  name={t("submitverification.sumitbtn")} />
                 </View>
             </View>
-            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.success")} message={t("popupmessage.successmessage")} primaryBtnname={t("popupmessage.ok")}   primaryBtn={() => { }} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.succespop} />}
+            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.success")} message={t("popupmessage.successmessage")} primaryBtnname={t("popupmessage.ok")}   primaryBtn={() => { setIsmodal(!ismodal),props.navigation.navigate("BasicInfo")}} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.succespop} />}
 
         </View>
     )

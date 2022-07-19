@@ -23,7 +23,7 @@ const PopupMessage = (props) => {
                 blurAmount={10}
                 reducedTransparencyFallbackColor="white"
             />
-            <View style={{ flex: 1, justifyContent: 'center' }}>
+            <View style={{ flex: 1, justifyContent: 'center',width:'100%' }}>
                 <View style={styles.boxView(theme)}>
                     <TouchableOpacity onPress={props.onCancel} style={styles.crossView}>
                     <Icon name='close-a' size={deviceBasedDynamicDimension(16,false,1)} color={colors.closeiconcolor} />

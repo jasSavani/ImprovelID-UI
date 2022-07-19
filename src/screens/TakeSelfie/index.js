@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView } from 'react-native';
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
@@ -6,13 +6,16 @@ import * as Styles from './styles';
 import { RNCamera, FaceDetector } from 'react-native-camera';
 import Button from '../../components/Button';
 import BackArrow from '../../components/backArrow';
+import SelfieCamera from '../../components/SelfieCamera';
 
 const TakeSelfie = (props) => {
 
     const { assets, colors, gradients,icons } = useTheme();
-    const { isDark, theme, setTheme } = useData();
+    const { isDark, theme, setTheme,cardData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
+    const [cameraOn,setCameraon] = useState(false)
+    const {type,selfiecamerainstruction} = cardData
 
 
 
@@ -39,9 +42,10 @@ const TakeSelfie = (props) => {
                     </View>
                 </View>
                 <View style={styles.bottomView}>
-                    <Button isgradient={true} onClick={() => {props.navigation.navigate("ConsentSign") }} gradient={gradients.primary}  name={t("selfiescreen.getstarted")} />
+                    <Button isgradient={true} onClick={() => {setCameraon(true)}} gradient={gradients.primary}  name={t("selfiescreen.getstarted")} />
                 </View>
             </View>
+            {cameraOn && <SelfieCamera isVisible={cameraOn} texts={selfiecamerainstruction}  onCancel={() => { setCameraon(!cameraOn) }} onPictureTaken={(image) => { setCameraon(!cameraOn), props.navigation.navigate("ConsentSign") }} />}
 
         </View>
     )

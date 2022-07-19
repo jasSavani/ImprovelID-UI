@@ -1,52 +1,6 @@
 {
   "common": {
-    "appDetails": "App Détails",
-    "appName": "Nom de l'application",
-    "appVersion": "Version de l'application",
-    "buildVersion": "Version de construction",
-    "expoVersion": "Version Expo",
-    "about": "Quelque",
-    "visit": "Visite",
-    "posted": "Posté sur {{date}}",
-    "recommended": "Recommandé pour vous",
-    "viewall": "Voir tout",
-    "more": "Plus",
-    "follow": "Suivre",
-    "followed": "Suivie",
-    "search": "Rechercher",
-    "night": "nuit",
-    "day": "jour",
-    "booknow": "Reserve maintenant",
-    "selectDate": "Sélectionnez la date",
-    "checkInOut": "Enregistrement & Départ",
-    "adults": "Adultes",
-    "roomType": "Type de chambre",
-    "luxury": "Luxe",
-    "message": "Entrez votre message",
-    "album": "Album",
-    "or": "ou",
-    "name": "Nom",
-    "namePlaceholder": "Entrez votre nom complet",
-    "email": "E-mail",
-    "emailPlaceholder": "Entrez votre adresse e-mail",
-    "password": "Mot de passe",
-    "passwordPlaceholder": "Entrer un mot de passe",
-    "agree": "Je suis d'accord avec le ",
-    "terms": "Termes et Conditions",
-    "signup": "Inscrivez-vous",
-    "signin": "S'identifier",
-    "goBack": "Retourner",
-    "inStock": "En stock",
-    "outStock": "Rupture de stock",
-    "addToCart": "Ajouter au panier",
-    "checkout": "Passer à la caisse",
-    "readArticle": "Lire l'article",
-    "send": "Expédier",
-    "guests": {
-      "one": "1 invitée",
-      "other": "{{count}} invités",
-      "zero": "0 invités"
-    }
+    
   },
   "dates": {
     "monthNames": [
@@ -90,10 +44,8 @@
     "today": "Aujourd'hui"
   },
   "app": {
-    "name": "Soft UI",
-    "fullname": "Soft UI Kit",
-    "native": "React Native",
-    "link": "creative-tim.com"
+    "name": "",
+    "fullname": ""
   },
   "darkMode": "Dark Mode",
   "qrscreen":{
