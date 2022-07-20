@@ -60,7 +60,7 @@ const Detailspage = (props) => {
                         {Object.entries(USERDETAILS).map(([key, value], index) => {
                             return (
                                 <View style={style.singlebox}>
-                                    <Text style={style.keyText}>{key}</Text>
+                                    <Text style={style.keyText}>{t(key)}</Text>
                                     <Text style={style.valueText}>{value}</Text>
                                 </View>
                             )

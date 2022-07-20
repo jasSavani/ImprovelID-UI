@@ -116,15 +116,31 @@
   },
   "myidentities":{
     "suspend":"Suspend",
-    "revoke":"Revoke"
+    "revoke":"Revoke",
+    "personal":"Personal",
+    "employement":"Employment",
+    "financial":"Financial",
+    "certification":"Certifications"
   },
   "feedbackscreen":{
-    "submit":"Submit Feedback"
+    "submit":"Submit Feedback",
+    "givefeedback":"Give your Feedback",
+    "question":"How do you feel about the support you received from us?",
+    "suggestion":"Please add any comments and suggestions on anything that how can be improved?",
+    "placeholder":"Your Feedback (optional)"
   },
   "detailsscreen":{
     "screenname":"ImproveID",
     "status":"Status",
-    "consent":"Consent"
+    "consent":"Consent",
+    "dateofbith":"Date Of Birth:",
+    "email":"Email",
+    "gneder":"Gender",
+    "idnumber":"ID Number",
+    "dateofexpiry":"Date Of Expiry",
+    "dateofinsurance":"Date Of Issuance",
+    "agencycard":"Agency Card Sn",
+    "issuerin":"Issuer IN"
   },
   "basicinfoscreen":{
     "screenname":"Basic Information",
@@ -148,6 +164,24 @@
     "day":"Day",
     "year":"Year",
     "contiue":"Continue"
+  },
+  "accountpage":{
+    "recommendsetting":"Recommended Settings",
+    "recomanddescription":"These are the most important settings",
+    "darkmode":"Dark Mode",
+    "language":"Language",
+    "feedback":"Feedback",
+    "notification":"Notifications",
+    "reports":"Reports",
+    "consentsetting":"Consent Settings",
+    "paymentsetting":"Payment Settings",
+    "paymentdescription":"These are also important settings",
+    "managepayment":"Manage Payment Options",
+    "privacysetting":"Privacy Settings",
+    "privacydescription":"Third most important settings",
+    "useraggrement":"User Agreement",
+    "privacy":"Privacy",
+    "about":"About"
   }
 
 }

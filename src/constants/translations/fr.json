@@ -119,7 +119,11 @@
     "revoke":"Revoke"
   },
   "feedbackscreen":{
-    "submit":"Submit Feedback"
+    "submit":"Submit Feedback",
+    "givefeedback":"Give your Feedback",
+    "question":"How do you feel about the support you received from us?",
+    "suggestion":"Please add any comments and suggestions on anything that how can be improved?",
+    "placeholder":"Your Feedback (optional)"
   },
   "detailsscreen":{
     "screenname":"ImproveID",

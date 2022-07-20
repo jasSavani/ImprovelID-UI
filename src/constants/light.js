@@ -52,7 +52,7 @@ export const COLORS = {
 
 export const GRADIENTS = {
   primary: ['#21D4FD', '#2152FF'],
-  activedrawer:["#21D4FD", "#2152FF"],
+  activedrawer:["#2152FF","#21D4FD"],
 
   buttongradient:['#21D4FD', '#2152FF'],
   buttongradientoff: [String(COLORS.identitytabtext), String(COLORS.identitytabtext)],

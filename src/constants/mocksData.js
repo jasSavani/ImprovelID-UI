@@ -174,20 +174,20 @@ export const IDENTITYDATA = [
   }
 ];
 export const USERDETAILS = {
-  "Date Of Birth:": "05/20/1981",
-  "Email": "robertjohnson123@gmail.com",
-  "Gender": "Male",
-  "ID Number": "00000000020",
-  "Date Of Expiry": "01/26/2024",
-  "Date Of Issuance": "02/10/2022",
-  "Agency Card Sn": "MTS14775029",
-  "Issuer IN": "9999"
+  "detailsscreen.dateofbith": "05/20/1981",
+  "detailsscreen.email": "robertjohnson123@gmail.com",
+  "detailsscreen.gneder": "Male",
+  "detailsscreen.idnumber": "00000000020",
+  "detailsscreen.dateofexpiry": "01/26/2024",
+  "detailsscreen.dateofinsurance": "02/10/2022",
+  "detailsscreen.agencycard": "MTS14775029",
+  "detailsscreen.issuerin": "9999"
 };
 export const CARDDATA = [
   {
     id: 1,
     icon: "dashPersonalIcon",
-    name: 'Personal',
+    name: 'myidentities.personal',
     documentData: [
       {
         title:'Data1',
@@ -258,7 +258,7 @@ export const CARDDATA = [
   },
   {
     id: 2,
-    name: 'Employment',
+    name: 'myidentities.employement',
     icon: "dashemployementIcon",
     documentData: [
       {
@@ -294,7 +294,7 @@ export const CARDDATA = [
   },
   {
     id: 3,
-    name: 'Financial',
+    name: 'myidentities.financial',
     icon: "dashfinancialIcon",
     documentData: [
       {
@@ -330,7 +330,7 @@ export const CARDDATA = [
   },
   {
     id: 4,
-    name: 'Certifications',
+    name: 'myidentities.certification',
     icon: "dashcertificateIcon",
     documentData: [
       {
@@ -369,75 +369,75 @@ export const CARDDATA = [
 export const ACCOUNTDATA = [
   {
     id:1,
-    name:"Recommended Settings ",
-    description:"These are the most important settings",
+    name:"accountpage.recommendsetting",
+    description:"accountpage.recomanddescription",
     icon:"normalSettingIcon",
     subData:[
       {
         id:1,
         type:1,
-        name:"Dark Mode"
+        name:"accountpage.darkmode"
       },
       {
         id:2,
         type:2,
-        name:"Language"
+        name:"accountpage.language"
       },
       {
         id:3,
         type:3,
-        name:"Feedback"
+        name:"accountpage.feedback"
       },
       {
         id:4,
         type:3,
-        name:"Notifications"
+        name:"accountpage.notification"
       },
       {
         id:5,
         type:3,
-        name:"Reports"
+        name:"accountpage.reports"
       },
       {
         id:6,
         type:3,
-        name:"Consent Settings"
+        name:"accountpage.consentsetting"
       },
     ]
   },
   {
     id:2,
-    name:"Payment Settings ",
-    description:"These are also important settings",
+    name:"accountpage.paymentsetting",
+    description:"accountpage.paymentdescription",
     icon:"paymentsettingIcon",
     subData:[
       {
         id:1,
         type:3,
-        name:"Manage Payment Options"
+        name:"accountpage.managepayment"
       },
     ]
   },
   {
     id:3,
-    name:"Privacy Settings ",
-    description:"Third most important settings",
+    name:"accountpage.privacysetting",
+    description:"accountpage.privacydescription",
     icon:"privacysettingIcon",
     subData:[
       {
         id:1,
         type:3,
-        name:"User Agreement"
+        name:"accountpage.useraggrement"
       },
       {
         id:2,
         type:3,
-        name:"Privacy"
+        name:"accountpage.privacy"
       },
       {
         id:3,
         type:3,
-        name:"About"
+        name:"accountpage.about"
       },
     ]
   }

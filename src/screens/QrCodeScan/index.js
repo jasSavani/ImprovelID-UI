@@ -7,6 +7,7 @@ import { RNCamera, FaceDetector } from 'react-native-camera';
 import QrCodeMask from 'react-native-qrcode-mask';
 import { deviceBasedDynamicDimension } from '../../utils';
 import { AuthContext } from '../../navigation/AuthContext';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 const QrCodeScan = (props) => {
 
     const { assets, colors, gradients } = useTheme();
@@ -28,7 +29,7 @@ const QrCodeScan = (props) => {
 
     return (
         <View style={styles.container}>
-            <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
+            <KeyboardAwareScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
                 <View style={styles.titleView}>
                     <Text style={styles.titleText({ textColor: theme.colors.darkTextColor })}>{t("qrscreen.qrcodescan")}</Text>
                     <Text style={styles.subTitletext({ textColor: theme.colors.darkTextColor })}>{t("qrscreen.qrscantext")}</Text>
@@ -95,7 +96,7 @@ const QrCodeScan = (props) => {
                     <Text style={styles.normalText(theme)}>{t("qrscreen.continuetext")}</Text>
                     <Text style={styles.normalText(theme)}><Text onPress={ontermsClick} style={styles.highLightText(theme)}>{t("qrscreen.termofuse")}</Text> {t("qrscreen.andhave")} <Text onPress={onPrivacypolicyClick} style={styles.highLightText(theme)}>{t("qrscreen.privacypolicy")}.</Text></Text>
                 </View>
-            </ScrollView>
+            </KeyboardAwareScrollView>
 
         </View>
 

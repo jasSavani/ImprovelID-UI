@@ -43,7 +43,7 @@ const Route = (props) => {
         return () => {
           StatusBar.setBarStyle('default');
         };
-      }, [isDark]);
+      }, []);
     //   const authContext = useMemo(() => {
     //     return {
     //       signIn: accesstoken => {
@@ -78,9 +78,7 @@ const Route = (props) => {
                         <Stack.Screen name="Moreinfo" component={MoreInfoScreen} />
                         <Stack.Screen name="ViewIDcard" component={ViewIDcard} />
 
-
-
-
+                        
                     </Stack.Navigator>
                 </NavigationContainer>
                 {/* </AuthContext.Provider> */}

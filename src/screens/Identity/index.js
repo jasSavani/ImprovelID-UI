@@ -37,7 +37,7 @@ const Identity = (props) => {
                         <Image source={icons[icon]} style={style.iconView} />
                     </LinearGradient>
                 </TouchableOpacity>
-                <Text style={[style.titleText, { color: selected ? colors.identityselectedtabtext : colors.identitytabtext }]}>{name}</Text>
+                <Text numberOfLines={1} adjustsFontSizeToFit style={[style.titleText, { color: selected ? colors.identityselectedtabtext : colors.identitytabtext }]}>{t(name)}</Text>
             </View>
         )
     }

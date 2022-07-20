@@ -61,7 +61,7 @@ const Accountpage = (props) => {
         return (
             <View style={style.subSecondView}>
                 <View style={{ flex: 1 }}>
-                    <Text style={style.darkText}>{name}</Text>
+                    <Text style={style.darkText}>{t(name)}</Text>
                 </View>
                 <Switch
                     style={style.switchView}
@@ -80,7 +80,7 @@ const Accountpage = (props) => {
         return (
             <View style={style.subSecondView}>
                 <View style={{ flex: 1 }}>
-                    <Text style={style.darkText}>{name}</Text>
+                    <Text style={style.darkText}>{t(name)}</Text>
                 </View>
                 <SelectDropdown
                     data={countries}
@@ -126,7 +126,7 @@ const Accountpage = (props) => {
         return (
             <View style={style.subSecondView}>
                 <View style={{ flex: 1 }}>
-                    <Text style={style.darkText}>{name}</Text>
+                    <Text style={style.darkText}>{t(name)}</Text>
                 </View>
                 <TouchableOpacity style={style.righarrowView}>
                     <Image style={{ height: '100%', width: '100%', resizeMode: 'contain' }} source={icons.rightArrow} />
@@ -139,12 +139,12 @@ const Accountpage = (props) => {
         return (
             <View style={style.secondboxView}>
                 <View style={style.subfirstView}>
-                    <View style={style.subImageView}>
+                    <LinearGradient colors={gradients.primary} style={style.subImageView}>
                         <Image style={{ height: '50%', width: '50%', resizeMode: 'contain' }} source={icons[icon]} />
-                    </View>
+                    </LinearGradient>
                     <View style={style.subTextView}>
-                        <Text numberOfLines={1} style={style.subText}>{name}</Text>
-                        <Text numberOfLines={1} style={style.subLightText}>{description}</Text>
+                        <Text numberOfLines={1} style={style.subText}>{t(name)}</Text>
+                        <Text numberOfLines={1} style={style.subLightText}>{t(description)}</Text>
                     </View>
                 </View>
                 {subData?.map((subdata, subindex) => {

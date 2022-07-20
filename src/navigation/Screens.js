@@ -9,17 +9,8 @@ import Feedback from '../screens/Feedback';
 import Detailspage from '../screens/Detailspage';
 import Accountpage from '../screens/Accountpage';
 
-// import { } from '../screens';
-
-
 const Stack = createNativeStackNavigator();
-function DetailsScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Details Screen</Text>
-        </View>
-    );
-}
+
 const Screens = (props) => {
     return (
         <Stack.Navigator

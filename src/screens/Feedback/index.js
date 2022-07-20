@@ -14,14 +14,12 @@ const Feedback = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
     const { isDark, theme, setTheme, setActivescreen, setnotificationCount } = useData();
-    const { t, translate } = useTranslation();
+    const { t, translate,locale } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
-    const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+    // const [isKeyboardVisible, setKeyboardVisible] = useState(false);
     const [feedback, setFeedback] = useState("");
     const [rating, setRating] = useState(1);
-
-
     const ratings = ['1', '2', '3', '4', '5']
     useEffect(() => {
         const unsubscribe = props.navigation.addListener('focus', (e) => {
@@ -31,32 +29,32 @@ const Feedback = (props) => {
         return unsubscribe;
     }, [])
 
-    useEffect(() => {
-        const keyboardDidShowListener = Keyboard.addListener(
-            'keyboardDidShow',
-            () => {
-                setKeyboardVisible(true); // or some other action
-            }
-        );
-        const keyboardDidHideListener = Keyboard.addListener(
-            'keyboardDidHide',
-            () => {
-                setKeyboardVisible(false); // or some other action
-            }
-        );
+    // useEffect(() => {
+    //     const keyboardDidShowListener = Keyboard.addListener(
+    //         'keyboardDidShow',
+    //         () => {
+    //             setKeyboardVisible(true); // or some other action
+    //         }
+    //     );
+    //     const keyboardDidHideListener = Keyboard.addListener(
+    //         'keyboardDidHide',
+    //         () => {
+    //             setKeyboardVisible(false); // or some other action
+    //         }
+    //     );
 
-        return () => {
-            keyboardDidHideListener.remove();
-            keyboardDidShowListener.remove();
-        };
-    }, []);
+    //     return () => {
+    //         keyboardDidHideListener.remove();
+    //         keyboardDidShowListener.remove();
+    //     };
+    // }, []);
 
     const _renderfeedbackBox = () => {
         return (
             <View style={style.inputView}>
                 <View style={style.feedbackBox}>
                 <TextInput
-                    placeholder='Your Feedback (optional)'
+                    placeholder={t("feedbackscreen.placeholder")}
                     value={feedback}
                     onChangeText={setFeedback}
                     multiline
@@ -81,8 +79,8 @@ const Feedback = (props) => {
             <KeyboardAwareScrollView  style={style.container} enableOnAndroid extraScrollHeight={Platform.OS == 'ios' ? 20:0} >
                 {/* <ScrollView style={style.container} contentContainerStyle={{ flexGrow: 1 }} > */}
                 <View style={{ flex: 1, }}>
-                    <Text style={style.text1}>Give your Feedback</Text>
-                    <Text style={style.text2}>How do you feel about the support you received from us?</Text>
+                    <Text style={style.text1}>{t("feedbackscreen.givefeedback")}</Text>
+                    <Text style={style.text2}>{t("feedbackscreen.question")}</Text>
                     <View style={style.ratingView}>
                         {ratings.map((i) => {
                             let _rating = rating >= i
@@ -91,7 +89,7 @@ const Feedback = (props) => {
                             )
                         })}
                     </View>
-                    <Text style={style.text3}>Please add any comments and suggestions on anything that how can be improved?</Text>
+                    <Text style={style.text3}>{t("feedbackscreen.suggestion")}</Text>
                     {_renderfeedbackBox()}
                 </View>
                 {/* </ScrollView> */}

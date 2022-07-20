@@ -19,7 +19,7 @@ const GridBox = (props) => {
                 <Icon name='options-vertical' size={deviceBasedDynamicDimension(11, false, 1)} color={colors.placeholderTextColor} />
             </TouchableOpacity>
             <View style={styles.imageView}>
-                <Image style={{ height: '80%', width: '80%', resizeMode: 'center' }} source={icons[props?.data?.image]} />
+                <Image style={{ height: '80%', width: '80%', resizeMode: 'contain' }} source={icons[props?.data?.image]} />
             </View>
             <Text numberOfLines={1} style={styles.nameText}>{t(props?.data?.name)}</Text>
         </TouchableOpacity>

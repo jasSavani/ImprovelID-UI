@@ -83,7 +83,6 @@ const DrawerContent = (
 
   const handleNavigation = useCallback(
     (to) => {
-      console.log('backBehavior');
       setActivescreen(to)
       navigation.navigate(to);
     },
@@ -149,6 +148,7 @@ const DrawerContent = (
   );
 };
 const Sidemenu = (props) => {
+ 
   return (
     <Block {...props}>
       <Drawer.Navigator

@@ -36,7 +36,7 @@ export const styles = ({ colors } = props) => StyleSheet.create({
     profileImage:{
         height:deviceBasedDynamicDimension(65,false,1),
         width:deviceBasedDynamicDimension(65,false,1),
-        resizeMode:'contain',
+        resizeMode:'center',
         borderRadius:deviceBasedDynamicDimension(14,false,1),
         marginRight:deviceBasedDynamicDimension(8,true,1)
     },
