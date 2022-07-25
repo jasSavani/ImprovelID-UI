@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView, FlatList } from 'react-native';
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView, FlatList, Keyboard } from 'react-native';
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
 import * as Styles from './styles';
@@ -26,13 +26,21 @@ const Application = (props) => {
         return unsubscribe;
     }, [])
 
+    const filterItems = useMemo(
+        () =>
+            APPLICATIONDATA.filter((items) => {
+                return items.searchname.toLowerCase().includes(searchText.toLowerCase());
+            }),
+        [searchText]
+    );
+
 
     return (
         <Block>
             <Header
                 leftIcon={icons.menuIcon}
                 rightIcon={icons.bellIcon}
-                onleftClick={() => { props.navigation.openDrawer() }}
+                onleftClick={() => { Keyboard.dismiss(), props.navigation.openDrawer() }}
                 onRightClick={() => { }}
                 screenName={t("screens.application")} />
 
@@ -40,16 +48,16 @@ const Application = (props) => {
                 <View style={{ paddingVertical: 17, paddingHorizontal: 19 }}>
                     <SearchBar placeholder={'Search your app'} value={searchText} onChangeText={(text) => { setSearchtext(text) }} />
                 </View>
-                <FlatList 
-                data={APPLICATIONDATA}
-                keyExtractor={(item,index)=> index.toString()}
-                contentContainerStyle={{alignSelf:'center',paddingHorizontal:deviceBasedDynamicDimension(10,true,1)}}
-                numColumns={3}
-                renderItem={({item,index})=>{
-                    return(
-                       <GridBox data={item} onMenuClick={(index)=>{console.log(index);}} onBoxClick={()=>{}} />
-                    )
-                }}
+                <FlatList
+                    data={filterItems}
+                    keyExtractor={(item, index) => index.toString()}
+                    contentContainerStyle={{ paddingHorizontal: deviceBasedDynamicDimension(10, true, 1) }}
+                    numColumns={3}
+                    renderItem={({ item, index }) => {
+                        return (
+                            <GridBox data={item} onMenuClick={(index) => { console.log(index); }} onBoxClick={() => { }} />
+                        )
+                    }}
                 />
             </View>
 

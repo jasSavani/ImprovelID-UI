@@ -64,22 +64,22 @@ const ManageIdentities = (props) => {
         let selected = open.includes(number)
         let icon = open.includes(number) ? icons.upIcon : icons.downIcon
         return (
-            <View style={styles.cardOuteview}>
-                <TouchableOpacity activeOpacity={0.8} style={styles.rowView} >
+            <TouchableOpacity activeOpacity={0.8} style={styles.cardOuteview} onPress={() => { _select(number) }}>
+                <View  style={styles.rowView} >
                     <Image style={styles.deviceimageView} resizeMode={'stretch'} source={icons.dltestIcon} />
                     <View style={styles.centerView}>
                         <Text numberOfLines={1} style={styles.nameText(theme)}>{name}</Text>
                         <Text numberOfLines={1} style={styles.subnametext(theme)}>{number}</Text>
                     </View>
-                    <TouchableOpacity style={{ alignSelf: 'center' }} onPress={() => { _select(number) }}>
+                    <View style={{ alignSelf: 'center' }} >
                         <Image style={styles.rightArrow} resizeMode={'contain'} source={icon} />
-                    </TouchableOpacity>
-                </TouchableOpacity>
+                    </View>
+                </View>
                 {selected && <View style={styles.extraView}>
                     {_renderSuspendbtn(item)}
                     {_renderRevokebtn(item)}
                 </View>}
-            </View>
+            </TouchableOpacity>
         )
     }
 

@@ -168,6 +168,49 @@ export const styles = ({ colors } = props) => StyleSheet.create({
     },
     dobView:{
         marginTop:deviceBasedDynamicDimension(12,false,1)
+    },
+    dropdownImage:{
+        width:deviceBasedDynamicDimension(14,false,1),
+        height:deviceBasedDynamicDimension(8,true,1),
+        justifyContent:'center',
+        alignItems:'center',
+        marginRight:deviceBasedDynamicDimension(-5,true,1),
+        tintColor:colors.darkTextColor
+    },
+    dropDownbtn:{
+        backgroundColor: 'transparent', 
+        borderWidth:deviceBasedDynamicDimension(1,false,1),
+        borderColor:"#B7B7B7",
+        borderRadius:deviceBasedDynamicDimension(8,false,1),
+        alignItems:'center',
+        paddingVertical:deviceBasedDynamicDimension(14,false,1),
+        paddingHorizontal:deviceBasedDynamicDimension(15,true,1),
+        marginTop:deviceBasedDynamicDimension(11,false,1),
+        flex:1,
+        marginLeft: deviceBasedDynamicDimension(4,true,1)
+
+    },
+    dropdowntextView:{
+        justifyContent:'center',
+        paddingRight:deviceBasedDynamicDimension(5,true,1),
+        flex:1
+    },
+    selectText:{
+        fontFamily: "OpenSans-SemiBold",
+        lineHeight: deviceBasedDynamicDimension(20, false, 1),
+        fontSize: deviceBasedDynamicDimension(15, false, 1),
+        opacity: 1,
+        color: colors.dropdownText,
+    },
+    normalText:{
+        fontFamily: "OpenSans-SemiBold",
+        lineHeight: deviceBasedDynamicDimension(20, false, 1),
+        fontSize: deviceBasedDynamicDimension(15, false, 1),
+        opacity: 1,
+        color: colors.textColor,
+    },
+    rowStyle:{
+        maxHeight:deviceBasedDynamicDimension(50,false,1)
     }
 })
 const Styles = {

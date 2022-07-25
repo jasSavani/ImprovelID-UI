@@ -11,6 +11,8 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import Button from '../../components/Button';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
+import SelectDropdown from 'react-native-select-dropdown';
+const states = ["State 1", "State 2", "State 3",]
 
 const MoreInfoScreen = (props) => {
 
@@ -22,10 +24,6 @@ const MoreInfoScreen = (props) => {
     const [show, setShow] = useState(false);
     const [screenData, setScreendata] = useState({ address: "", city: "", state: "", zipcode: "", dob: "" })
     const textinput1 = useRef(null)
-    const textinput2 = useRef(null)
-
-
-
 
 
     const onchangetext = (value, key) => {
@@ -60,7 +58,7 @@ const MoreInfoScreen = (props) => {
                         style={style.inputText}
                         value={city}
                         returnKeyType={'next'}
-                        onSubmitEditing={()=>{
+                        onSubmitEditing={() => {
                             textinput1.current.focus()
                         }}
                         blurOnSubmit={false}
@@ -69,27 +67,46 @@ const MoreInfoScreen = (props) => {
 
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <View style={[style.boxView, { flex: 1, marginRight: 4 }]}>
-                        <TextInput
-                            placeholder={t("moreinfoscreen.state")}
-                            placeholderTextColor={colors.placeholderTextColor}
-                            style={style.inputText}
-                            value={state}
-                            returnKeyType={'next'}
-                            returnKeyLabel={"Next"}
-                            ref={textinput1}
-                            onSubmitEditing={()=>{
-                                textinput2.current.focus()
-                            }}
-                            blurOnSubmit={false}
-                            onChangeText={(text) => { onchangetext(text, "state") }}
-                        />
-                        <Image style={style.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
-                    </View>
+                    <SelectDropdown
+                        data={states}
+                        buttonTextStyle={style.inputText}
+                        defaultValue={state}
+                        selectedRowStyle={style.rowStyle}
+                        selectedRowTextStyle={style.inputText}
+                        rowTextStyle={style.normalText}
+                        rowStyle={style.rowStyle}
+                        statusBarTranslucent
+                        renderDropdownIcon={() => {
+                            return (
+                                <Image style={style.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
+                            )
+                        }}
+                        onSelect={(selectedItem, index) => {
+                            onchangetext(selectedItem, "state")
+                        }}
+                        buttonStyle={style.dropDownbtn}
+                        renderCustomizedButtonChild={(text) => {
+                            return (
+                                <View style={style.dropdowntextView}>
+                                    {text ? <Text numberOfLines={1} adjustsFontSizeToFit style={style.inputText}>{text}</Text> : <Text numberOfLines={1} adjustsFontSizeToFit style={[style.inputText, { color: colors.placeholderTextColor }]}>{t("moreinfoscreen.state")}</Text>}
+                                </View>
+                            )
+                        }}
+                        buttonTextAfterSelection={(selectedItem, index) => {
+                            // text represented after item is selected
+                            // if data array is an array of objects then return selectedItem.property to render after item is selected
+                            return selectedItem
+                        }}
+                        rowTextForSelection={(item, index) => {
+                            // text represented for each item in dropdown
+                            // if data array is an array of objects then return item.property to represent item in dropdown
+                            return item
+                        }}
+                    />
                     <View style={[style.boxView, { flex: 1, marginLeft: 4 }]}>
                         <TextInput
                             placeholder={t("moreinfoscreen.zipcode")}
-                            ref={textinput2}
+                            ref={textinput1}
                             placeholderTextColor={colors.placeholderTextColor}
                             style={style.inputText}
                             value={zipcode}
@@ -106,7 +123,7 @@ const MoreInfoScreen = (props) => {
             <>
                 <View style={style.dobView}>
                     <Text style={style.blackTxt}>{t("moreinfoscreen.dob")}</Text>
-                    <View style={{ flexDirection: 'row', justifyContent:'space-between' }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <TouchableOpacity onPress={() => { setShow(true) }} style={style.monthBox}>
                             <TextInput
                                 placeholder={t("moreinfoscreen.month")}
@@ -166,7 +183,7 @@ const MoreInfoScreen = (props) => {
                 screenName={t("moreinfoscreen.screenname")} />
             <View style={style.container}>
                 <View style={style.mainView}>
-                    <KeyboardAwareScrollView enableOnAndroid  style={style.scrollView} contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }} >
+                    <KeyboardAwareScrollView enableOnAndroid style={style.scrollView} contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }} >
                         {Addressbox()}
                         {<Dobbox />}
                         {show && (

@@ -27,7 +27,15 @@ const Chekagain = (props) => {
             setIsmodal(!ismodal)
         }
     }
-
+    const onsubmitClick=()=>{
+        setIsmodal(!ismodal),
+        setTimeout(() => {     
+            props.navigation.reset({
+                index: 0,
+                routes: [{ name: 'Drawer' }]
+            })
+        }, 100);
+    }
 
 
     return (
@@ -48,7 +56,7 @@ const Chekagain = (props) => {
                         :
                         <View style={styles.outerView}>
                             <View style={styles.imageView}>
-                                <Image source={{ uri: props.route?.params?.image?.uri }} style={{ height: '100%', width: '100%' }} resizeMode={'contain'} />
+                                <Image source={{ uri: props.route?.params?.image?.uri }} style={{ height: '100%', width: '100%' }} resizeMode={'cover'} />
                             </View>
                         </View>}
                 </View>
@@ -57,7 +65,7 @@ const Chekagain = (props) => {
                     <Button isgradient={true} onClick={() => { onClickConfirm() }} gradient={gradients.primary} name={t("readscreen.confirm")} />
                 </View>
             </View>
-            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.waiting")} message={t("popupmessage.waitingmsg")} primaryBtnname={t("popupmessage.ok")} primaryBtn={() => { }} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.waitingpop} />}
+            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.waiting")} message={t("popupmessage.waitingmsg")} primaryBtnname={t("popupmessage.ok")} primaryBtn={() => {onsubmitClick() }} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.waitingpop} />}
 
         </View>
     )

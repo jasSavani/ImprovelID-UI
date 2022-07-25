@@ -124,14 +124,14 @@ const Accountpage = (props) => {
     const BtnView = (subdata) => {
         const { type, name } = subdata
         return (
-            <View style={style.subSecondView}>
+            <TouchableOpacity onPress={()=>onclick(subdata?.navigate)} style={style.subSecondView}>
                 <View style={{ flex: 1 }}>
                     <Text style={style.darkText}>{t(name)}</Text>
                 </View>
-                <TouchableOpacity style={style.righarrowView}>
+                <View style={style.righarrowView}>
                     <Image style={{ height: '100%', width: '100%', resizeMode: 'contain' }} source={icons.rightArrow} />
-                </TouchableOpacity>
-            </View>
+                </View>
+            </TouchableOpacity>
         )
     }
     const secondBox = (accountdata, index) => {
@@ -159,6 +159,10 @@ const Accountpage = (props) => {
                 })}
             </View>
         )
+    }
+
+    const onclick =(screenname)=>{
+        screenname && props.navigation.navigate(screenname)
     }
 
     return (

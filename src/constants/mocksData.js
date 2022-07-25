@@ -86,16 +86,19 @@ export const APPLICATIONDATA = [
   {
     id: 1,
     name: "applicationscreen.office",
+    searchname:"office",
     image: "officeIcon"
   },
   {
     id: 2,
     name: "applicationscreen.box",
+    searchname:"box",
     image: "boxIcon"
   },
   {
     id: 3,
     name: "applicationscreen.google",
+    searchname:"google",
     image: "googleIcon"
   }
 ];
@@ -386,22 +389,26 @@ export const ACCOUNTDATA = [
       {
         id:3,
         type:3,
-        name:"accountpage.feedback"
+        name:"accountpage.feedback",
+        navigate:"Feedback"
       },
       {
         id:4,
         type:3,
-        name:"accountpage.notification"
+        name:"accountpage.notification",
+        navigate:""
       },
       {
         id:5,
         type:3,
-        name:"accountpage.reports"
+        name:"accountpage.reports",
+        navigate:""
       },
       {
         id:6,
         type:3,
-        name:"accountpage.consentsetting"
+        name:"accountpage.consentsetting",
+        navigate:""
       },
     ]
   },
@@ -414,7 +421,8 @@ export const ACCOUNTDATA = [
       {
         id:1,
         type:3,
-        name:"accountpage.managepayment"
+        name:"accountpage.managepayment",
+        navigate:""
       },
     ]
   },
@@ -427,17 +435,20 @@ export const ACCOUNTDATA = [
       {
         id:1,
         type:3,
-        name:"accountpage.useraggrement"
+        name:"accountpage.useraggrement",
+        navigate:""
       },
       {
         id:2,
         type:3,
-        name:"accountpage.privacy"
+        name:"accountpage.privacy",
+        navigate:""
       },
       {
         id:3,
         type:3,
-        name:"accountpage.about"
+        name:"accountpage.about",
+        navigate:""
       },
     ]
   }

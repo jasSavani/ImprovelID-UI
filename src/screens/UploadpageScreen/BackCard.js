@@ -42,7 +42,23 @@ const BackCard = (props) => {
         setScreenData(uploadbackscreen)
         setCameraInstruction(camerabackinstruction)
     }, [])
+    const openCroper = (imagedata) => {
+        setIscamera(!isCamera),
+            ImagePicker.openCropper({
+                path: imagedata.uri,
+                width: deviceBasedDynamicDimension(320, true, 1),
+                height: deviceBasedDynamicDimension(230, true, 1),
+                freeStyleCropEnabled: true,
+            }).then(image => {
+                let image_data = {
+                    type: image.mime,
+                    uri: image.path,
+                    name: image.path?.substring(image.path?.lastIndexOf('/') + 1)
+                }
+                props.navigation.navigate("Chekagain", { image: image_data })
 
+            });
+    }
 
     return (
         <View style={styles.container}>
@@ -73,7 +89,7 @@ const BackCard = (props) => {
             {/* )
                 }}
             /> */}
-            {isCamera && <DocumentCamera isVisible={isCamera} texts={cameraInstruction} onCancel={() => { setIscamera(!isCamera) }} onPictureTaken={(image) => { setIscamera(!isCamera), props.navigation.navigate("Chekagain", { image: image }) }} />}
+            {isCamera && <DocumentCamera isVisible={isCamera} texts={cameraInstruction} onCancel={() => { setIscamera(!isCamera) }} onPictureTaken={(image) => { openCroper(image) }}  />}
 
         </View>
 

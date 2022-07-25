@@ -7,7 +7,7 @@ export const DataProvider = ({ children }) => {
     const [isDark, setIsDark] = useState(true);
     const [theme, setTheme] = useState(dark);
     const [cardData, setCardData] = useState({});
-    const [notificationCount, setnotificationCount] = useState("");
+    const [notificationCount, setnotificationCount] = useState("3");
     const [activescreen, setActivescreen] = useState("Home");
 
 
