@@ -61,7 +61,7 @@ const DocumentCamera = (props) => {
                                 <Text style={styles.subtitleText(theme)}>{t(props?.texts?.subinstruction)}</Text>
                                 </View>
                                 <TouchableOpacity onPress={async()=>{
-                                    const options = { quality: 1, base64: false };
+                                    const options = { quality: 1, base64: false, };
                                     const data = await _cameraRef.current.takePictureAsync(options);
                                     props?.onPictureTaken(data)
                                 }} style={styles.btnView}>

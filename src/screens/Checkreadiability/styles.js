@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
         marginHorizontal:deviceBasedDynamicDimension(14,true,1),
         paddingVertical:deviceBasedDynamicDimension(25,false,1),
         borderRadius:deviceBasedDynamicDimension(9,false,1),
-        shadowColor:"rgba(0, 0, 0, 0.07)",
+        shadowColor:"rgba(0, 0, 0, 0.6)",
         shadowOffset:{
             height:4,
             width:0,
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
     }},
     bottomView: {
         marginBottom: deviceBasedDynamicDimension(37, false, 1),
-        marginTop:'auto'
+        marginTop:'auto',
     },
     boxView: (props) => {
         const { colors } = props

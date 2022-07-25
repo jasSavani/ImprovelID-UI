@@ -32,7 +32,7 @@ const Checkreadiability = (props) => {
         }
     }
 
-
+console.log(props.route?.params?.image?.uri);
 
     return (
         <View style={styles.container}>
@@ -52,7 +52,7 @@ const Checkreadiability = (props) => {
                     :
                     <View style={styles.outerView}>
                     <View style={ styles.imageView}>
-                        <Image source={{uri:props.route?.params?.image?.uri}} style={{ height: '100%', width: '100%' }} resizeMode={'contain'} />
+                        <Image source={{uri:props.route?.params?.image?.uri}} style={{ height: '100%', width: '100%' }} resizeMode={'cover'} />
                     </View>
                     </View>}
                 </View>

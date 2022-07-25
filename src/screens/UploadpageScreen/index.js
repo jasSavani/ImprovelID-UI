@@ -12,13 +12,13 @@ import DocumentCamera from '../../components/DocumentCamera';
 const UploadpageScreen = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
-    const { isDark, theme, setTheme,cardData } = useData();
+    const { isDark, theme, setTheme, cardData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const [isCamera, setIscamera] = useState(false)
     const [screndata, setScreenData] = useState({ title: "", subtitle: "", icon: "" })
     const [cameraInstruction, setCameraInstruction] = useState({ title: "", instruction: "", subinstruction: "" })
-    const {type,uploadscreen,camerainstruction} = cardData
+    const { type, uploadscreen, camerainstruction } = cardData
 
 
     const openCamera = () => {
@@ -30,6 +30,7 @@ const UploadpageScreen = (props) => {
         //     console.log(image);
         //   });
         setIscamera(true)
+
 
     }
     const openFilemanager = () => {
@@ -50,6 +51,24 @@ const UploadpageScreen = (props) => {
         setScreenData(uploadscreen)
         setCameraInstruction(camerainstruction)
     }, [])
+
+    const openCroper = (imagedata) => {
+        setIscamera(!isCamera),
+            ImagePicker.openCropper({
+                path: imagedata.uri,
+                width: deviceBasedDynamicDimension(333, true, 1),
+                height: deviceBasedDynamicDimension(236, true, 1),
+                freeStyleCropEnabled: true,
+            }).then(image => {
+                let image_data = {
+                    type: image.mime,
+                    uri: image.path,
+                    name: image.path?.substring(image.path?.lastIndexOf('/') + 1)
+                }
+                props.navigation.navigate("Checkreadiability", { image: image_data })
+
+            });
+    }
 
 
     return (
@@ -81,7 +100,7 @@ const UploadpageScreen = (props) => {
             {/* )
                 }}
             /> */}
-            {isCamera && <DocumentCamera isVisible={isCamera} texts={cameraInstruction} onCancel={() => { setIscamera(!isCamera) }} onPictureTaken={(image) => { setIscamera(!isCamera), props.navigation.navigate("Checkreadiability", { image: image }) }} />}
+            {isCamera && <DocumentCamera isVisible={isCamera} texts={cameraInstruction} onCancel={() => { setIscamera(!isCamera) }} onPictureTaken={(image) => { openCroper(image) }} />}
 
         </View>
 

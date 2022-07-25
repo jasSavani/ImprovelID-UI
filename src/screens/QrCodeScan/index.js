@@ -24,7 +24,8 @@ const QrCodeScan = (props) => {
     const onPrivacypolicyClick = () => {
     }
     const onValidate = (code) => {
-        props.navigation.navigate("IdentityVerification")
+        console.log(code,'CODE');
+        props.navigation.navigate("BasicInfo")
     }
 
     return (
@@ -70,12 +71,15 @@ const QrCodeScan = (props) => {
                                                 buttonPositive: 'Ok',
                                                 buttonNegative: 'Cancel',
                                             }}
+                                            googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.QR_CODE}
                                             onBarCodeRead={(barcodes)=>{
                                                 // YOU WILL RECEIVE QRCODE 
-                                                onValidate()
+                                                onValidate(barcodes)
                                             }}
                                         // onGoogleVisionBarcodesDetected={({ barcodes }) => {
-                                        //     console.log(barcodes);
+                                        //     // console.log(barcodes);
+                                        //     // onValidate(barcodes)
+
                                         // }}
                                         />
                                     </View>

@@ -17,6 +17,16 @@ const SubmitVerification = (props) => {
     const { styles } = Styles
     const [ismodal, setIsmodal] = useState(false)
 
+    const onsubmitClick=()=>{
+        setIsmodal(!ismodal),
+        setTimeout(() => {     
+            props.navigation.reset({
+                index: 0,
+                routes: [{ name: 'Drawer' }]
+            })
+        }, 100);
+    }
+
 
 
     return (
@@ -38,7 +48,7 @@ const SubmitVerification = (props) => {
                     <Button isgradient={true} onClick={() => {setIsmodal(!ismodal) }} gradient={gradients.primary}  name={t("submitverification.sumitbtn")} />
                 </View>
             </View>
-            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.success")} message={t("popupmessage.successmessage")} primaryBtnname={t("popupmessage.ok")}   primaryBtn={() => { setIsmodal(!ismodal),props.navigation.navigate("BasicInfo")}} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.succespop} />}
+            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.success")} message={t("popupmessage.successmessage")} primaryBtnname={t("popupmessage.ok")}   primaryBtn={onsubmitClick} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.succespop} />}
 
         </View>
     )

@@ -35,7 +35,8 @@ export const styles = ({ colors } = props) => StyleSheet.create({
     },
     scrollView:{
         paddingHorizontal: deviceBasedDynamicDimension(20, true, 1),
-        paddingVertical: deviceBasedDynamicDimension(12, false, 1)
+        paddingVertical: deviceBasedDynamicDimension(12, false, 1),
+        flex:1
     },
     bottomView: {
         marginBottom: deviceBasedDynamicDimension(27, false, 1),
@@ -116,7 +117,7 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         color: colors.darkTextColor,
         padding:0,
         flex:1,
-        maxHeight:deviceBasedDynamicDimension(24,false,1)
+        maxHeight:deviceBasedDynamicDimension(24,false,1),
     },
     addressText:{
         fontFamily: "OpenSans-SemiBold",
@@ -138,7 +139,21 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         paddingVertical:deviceBasedDynamicDimension(14,false,1),
         paddingHorizontal:deviceBasedDynamicDimension(15,true,1),
         marginTop:deviceBasedDynamicDimension(11,false,1),
-        width:deviceBasedDynamicDimension(110,true,1),
+        // minWidth:deviceBasedDynamicDimension(120,true,1),
+        flex:1,
+        marginRight:deviceBasedDynamicDimension(5,true,1)
+    },
+    dateBox:{
+        borderWidth:deviceBasedDynamicDimension(1,false,1),
+        borderColor:"#B7B7B7",
+        borderRadius:deviceBasedDynamicDimension(8,false,1),
+        flexDirection:'row',
+        alignItems:'center',
+        paddingVertical:deviceBasedDynamicDimension(14,false,1),
+        paddingHorizontal:deviceBasedDynamicDimension(15,true,1),
+        marginTop:deviceBasedDynamicDimension(11,false,1),
+        width:deviceBasedDynamicDimension(77,true,1),
+        marginRight:deviceBasedDynamicDimension(5,true,1)
     },
     yearBox:{
         borderWidth:deviceBasedDynamicDimension(1,false,1),
@@ -149,7 +164,7 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         paddingVertical:deviceBasedDynamicDimension(14,false,1),
         paddingHorizontal:deviceBasedDynamicDimension(15,true,1),
         marginTop:deviceBasedDynamicDimension(11,false,1),
-        width:deviceBasedDynamicDimension(87,true,1),
+        width:deviceBasedDynamicDimension(77,true,1),
     },
     dobView:{
         marginTop:deviceBasedDynamicDimension(12,false,1)

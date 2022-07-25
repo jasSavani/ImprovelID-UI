@@ -21,6 +21,10 @@ const MoreInfoScreen = (props) => {
     const style = useMemo(() => styles(theme), [theme]);
     const [show, setShow] = useState(false);
     const [screenData, setScreendata] = useState({ address: "", city: "", state: "", zipcode: "", dob: "" })
+    const textinput1 = useRef(null)
+    const textinput2 = useRef(null)
+
+
 
 
 
@@ -55,6 +59,11 @@ const MoreInfoScreen = (props) => {
                         placeholderTextColor={colors.placeholderTextColor}
                         style={style.inputText}
                         value={city}
+                        returnKeyType={'next'}
+                        onSubmitEditing={()=>{
+                            textinput1.current.focus()
+                        }}
+                        blurOnSubmit={false}
                         onChangeText={(text) => { onchangetext(text, "city") }}
                     />
 
@@ -66,19 +75,26 @@ const MoreInfoScreen = (props) => {
                             placeholderTextColor={colors.placeholderTextColor}
                             style={style.inputText}
                             value={state}
+                            returnKeyType={'next'}
+                            returnKeyLabel={"Next"}
+                            ref={textinput1}
+                            onSubmitEditing={()=>{
+                                textinput2.current.focus()
+                            }}
+                            blurOnSubmit={false}
                             onChangeText={(text) => { onchangetext(text, "state") }}
                         />
-
+                        <Image style={style.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
                     </View>
                     <View style={[style.boxView, { flex: 1, marginLeft: 4 }]}>
                         <TextInput
                             placeholder={t("moreinfoscreen.zipcode")}
+                            ref={textinput2}
                             placeholderTextColor={colors.placeholderTextColor}
                             style={style.inputText}
                             value={zipcode}
                             onChangeText={(text) => { onchangetext(text, "zipcode") }}
                         />
-                        <Image style={style.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
                     </View>
                 </View>
             </>
@@ -90,7 +106,7 @@ const MoreInfoScreen = (props) => {
             <>
                 <View style={style.dobView}>
                     <Text style={style.blackTxt}>{t("moreinfoscreen.dob")}</Text>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <View style={{ flexDirection: 'row', justifyContent:'space-between' }}>
                         <TouchableOpacity onPress={() => { setShow(true) }} style={style.monthBox}>
                             <TextInput
                                 placeholder={t("moreinfoscreen.month")}
@@ -101,7 +117,7 @@ const MoreInfoScreen = (props) => {
                             />
                             <Image style={style.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
                         </TouchableOpacity>
-                        <View style={style.yearBox}>
+                        <View style={style.dateBox}>
                             <TextInput
                                 placeholder={t("moreinfoscreen.day")}
                                 placeholderTextColor={colors.placeholderTextColor}
@@ -150,7 +166,7 @@ const MoreInfoScreen = (props) => {
                 screenName={t("moreinfoscreen.screenname")} />
             <View style={style.container}>
                 <View style={style.mainView}>
-                    <KeyboardAwareScrollView style={style.scrollView} contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }} >
+                    <KeyboardAwareScrollView enableOnAndroid  style={style.scrollView} contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }} >
                         {Addressbox()}
                         {<Dobbox />}
                         {show && (
@@ -167,10 +183,7 @@ const MoreInfoScreen = (props) => {
                     </KeyboardAwareScrollView>
                     <View style={style.bottomView}>
                         <Button style={{}} isgradient={true} onClick={() => {
-                            props.navigation.reset({
-                                index: 0,
-                                routes: [{ name: 'Drawer' }]
-                            })
+                            props.navigation.navigate("IdentityVerification")
                         }} gradient={gradients.primary} name={t("moreinfoscreen.contiue")} />
                     </View>
                 </View>

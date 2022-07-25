@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
     },
     bottomView:{
         marginTop:deviceBasedDynamicDimension(26,false,1),
-        marginBottom:'auto'
+        marginBottom:deviceBasedDynamicDimension(26,false,1),
     },
     bigImage:{
         position:'absolute',

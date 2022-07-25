@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView, TextInput, KeyboardAvoidingView, Keyboard, Touchable, TouchableOpacity } from 'react-native';
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
@@ -90,8 +90,8 @@ const BasicInfoScreen = (props) => {
             </>
         )
     }
+
     const nameView = () => {
-        console.log('NAME');
         return (
             <>
                 <Text style={style.blackTxt}>{t('basicinfoscreen.nameText')}</Text>
@@ -135,7 +135,7 @@ const BasicInfoScreen = (props) => {
                 screenName={t("basicinfoscreen.screenname")} />
             <View style={style.container}>
                 <View style={style.mainView}>
-                    <KeyboardAwareScrollView style={style.scrollView} contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }} >
+                    <KeyboardAwareScrollView style={style.scrollView} enableOnAndroid contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }} >
                         <BoxView />
                         {numberView()}
                         {nameView()}

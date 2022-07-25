@@ -79,7 +79,7 @@ export const VERIFCATIONCARD = [
       title: "readscreen.title",
       subtitle: "readscreen.subtitlecertificate"
     }
-  }
+  },
 ];
 
 export const APPLICATIONDATA = [

@@ -76,9 +76,7 @@ const Route = (props) => {
                         <Stack.Screen name="Details" component={Detailspage} />
                         <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />
                         <Stack.Screen name="Moreinfo" component={MoreInfoScreen} />
-                        <Stack.Screen name="ViewIDcard" component={ViewIDcard} />
-
-                        
+                        <Stack.Screen name="ViewIDcard" component={ViewIDcard} />                        
                     </Stack.Navigator>
                 </NavigationContainer>
                 {/* </AuthContext.Provider> */}

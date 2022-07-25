@@ -23,42 +23,47 @@ const IdentityVerification = (props) => {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle={'dark-content'} />
             <BackArrow {...props} />
-            <FlatList
+            <View style={{ flex: 1 }}>
+                    <Image style={styles.bigImage} source={icons.identityCardIcon} />
+                    <View style={styles.firstView}>
+                        <Text style={styles.identityText(theme)}>{t("validationscreen.identityText")}</Text>
+                        <Text style={styles.selectionText(theme)}>{t("validationscreen.selectionText")}</Text>
+                    </View>
+                    <FlatList
+                        data={VERIFCATIONCARD}
+                        style={{ flex: 1 }}
+                        contentContainerStyle={{flexGrow:1}}
+                        keyExtractor={(item, index) => index.toString()}
+                        renderItem={({ item, index }) => {
+                            const { name, asset, color, type } = item
+                            return (
+                                <CardBlock
+                                    icon={<Image source={icons[asset]}
+                                        style={type == 1 ? styles.passportimage : type == 2 ? styles.docImage : styles.certificateimage} />}
+                                    docName={t(name)}
+                                    gradient={gradients[color]}
+                                    onClick={() => onButtonClick(item)} />
+                            )
+                        }}
+                    />
+                    <View style={styles.bottomView}>
+                        <Text style={styles.selectionText(theme)}>{t("validationscreen.makesureText")}</Text>
+                    </View>
+            </View>
+            {/* <FlatList
                 data={[1]}
+                scrollEnabled={false}
                 keyExtractor={(item, index) => index.toString()}
                 style={{ flex: 1 }}
                 contentContainerStyle={{ flexGrow: 1 }}
                 renderItem={({ item, index }) => {
                     return (
-                        <View>
-                            <Image style={styles.bigImage} source={icons.identityCardIcon} />
-                            <View style={styles.firstView}>
-                                <Text style={styles.identityText(theme)}>{t("validationscreen.identityText")}</Text>
-                                <Text style={styles.selectionText(theme)}>{t("validationscreen.selectionText")}</Text>
-                            </View>
-                            <FlatList
-                                data={VERIFCATIONCARD}
-                                keyExtractor={(item, index) => index.toString()}
-                                renderItem={({ item, index }) => {
-                                    const { name, asset, color, type } = item
-                                    return (
-                                        <CardBlock
-                                            icon={<Image source={icons[asset]}
-                                                style={type == 1 ? styles.passportimage : type == 2 ? styles.docImage : styles.certificateimage} />}
-                                            docName={t(name)}
-                                            gradient={gradients[color]}
-                                            onClick={() => onButtonClick(item)} />
-                                    )
-                                }}
-                            />
-                            <View style={styles.bottomView}>
-                                <Text style={styles.selectionText(theme)}>{t("validationscreen.makesureText")}</Text>
-                            </View>
-                        </View>
+                        
                     )
                 }}
-            />
+            /> */}
         </View>
 
     )

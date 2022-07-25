@@ -46,8 +46,8 @@ export const COLORS = {
   gray: '#A7A8AE',
 
    /** shadow color */
-   cardShadow:"rgba(0, 0, 0, 0.3)",
-   lightShadow:"rgba(0, 0, 0, 0.1)"
+   cardShadow:"rgba(0, 0, 0, 0.6)",
+   lightShadow:"rgba(0, 0, 0, 0.6)"
 };
 
 export const GRADIENTS = {
