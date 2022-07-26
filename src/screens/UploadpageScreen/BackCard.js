@@ -26,8 +26,10 @@ const BackCard = (props) => {
     }
     const openFilemanager = () => {
         ImagePicker.openPicker({
-            width: deviceBasedDynamicDimension(320, true, 1),
-            height: deviceBasedDynamicDimension(230, true, 1),
+            compressImageQuality: 1,
+            freeStyleCropEnabled: true,
+            width: deviceBasedDynamicDimension(1536, true, 1),
+            height: deviceBasedDynamicDimension(1024, true, 1),
             cropping: true,
         }).then(image => {
             let image_data = {
@@ -46,9 +48,10 @@ const BackCard = (props) => {
         setIscamera(!isCamera),
             ImagePicker.openCropper({
                 path: imagedata.uri,
-                width: deviceBasedDynamicDimension(320, true, 1),
-                height: deviceBasedDynamicDimension(230, true, 1),
+                compressImageQuality: 1,
                 freeStyleCropEnabled: true,
+                width: deviceBasedDynamicDimension(1536, true, 1),
+                height: deviceBasedDynamicDimension(1024, true, 1),
             }).then(image => {
                 let image_data = {
                     type: image.mime,

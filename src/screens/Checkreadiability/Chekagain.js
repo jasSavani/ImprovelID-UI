@@ -56,7 +56,7 @@ const Chekagain = (props) => {
                         :
                         <View style={styles.outerView}>
                             <View style={styles.imageView}>
-                                <Image source={{ uri: props.route?.params?.image?.uri }} style={{ height: '100%', width: '100%' }} resizeMode={'cover'} />
+                                <Image source={{ uri: props.route?.params?.image?.uri }} style={{ height: '100%', width: '100%' }} resizeMode={'contain'} />
                             </View>
                         </View>}
                 </View>
