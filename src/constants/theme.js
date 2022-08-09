@@ -50,6 +50,38 @@ export const ICONS = {
   normalSettingIcon: require('../assets/icons/settingnormal.png'),
   paymentsettingIcon: require('../assets/icons/paymentsetting.png'),
   privacysettingIcon: require('../assets/icons/privacy.png'),
+  notificationMessage: require('../assets/icons/notimessage.png'),
+  notificationAlert: require('../assets/icons/notialert.png'),
+  notificationdocId: require('../assets/icons/notiIdcard.png'),
+
+  timeIcon: require('../assets/icons/timeIcon.png'),
+  applicationIcon: require('../assets/icons/application.png'),
+  userIcon: require('../assets/icons/user.png'),
+  actionIcon: require('../assets/icons/action.png'),
+  navIcon: require('../assets/icons/navigation.png'),
+
+  plusIcon: require('../assets/icons/plusIcon.png'),
+  paypalIcon: require('../assets/icons/paypal.png'),
+  appleIcon: require('../assets/icons/appleIcon.png'),
+  visaCardIcon: require('../assets/icons/visaCard.png'),
+  masterCardIcon: require('../assets/icons/masterCard.png'),
+  menudotIcon: require('../assets/icons/menuIcon.png'),
+
+  otpLogoIcon: require('../assets/icons/otpscreenlogo.png'),
+  otpVerifyLogo: require('../assets/icons/otpverifiedLogo.png'),
+
+
+
+
+
+
+
+
+
+
+
+  
+
 
 
 

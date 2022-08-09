@@ -1,187 +1,277 @@
 {
   "common": {
-    "active":"Active",
-    "verified":"Verified",
-    "view":"View"
-   
+    "active": "Active",
+    "verified": "Verified",
+    "view": "View"
   },
   "app": {
     "name": "",
     "fullname": ""
   },
-  "screens":{
-    "home":"Home",
-    "application":"Applications",
-    "identities":"Identities",
-    "manageidentity":"Manage Identity",
-    "profile":"Profile",
-    "account":"Account",
-    "feedback":"Feedback",
-    "myidentities":"My Identities",
-    "managedevice":"Manage Devices"
-
+  "screens": {
+    "home": "Home",
+    "application": "Applications",
+    "identities": "Identities",
+    "manageidentity": "Manage Identity",
+    "profile": "Profile",
+    "account": "Account",
+    "feedback": "Feedback",
+    "myidentities": "My Identities",
+    "managedevice": "Manage Devices",
+    "screenname": "Notifications"
   },
   "darkMode": "Dark Mode",
-  "qrscreen":{
-    "qrcodescan":"QR Code Scan",
-    "qrscantext":"Scan QR Code to register your mobile phone and start your verification with ImproveID to get your modern passwordless identity credentials.",
-    "alignText":"Align the QR code within the frame to scan.",
-    "orText":"Or enter your code below.",
-    "entercode":"Enter Code",
-    "validate":"Validate",
-    "termofuse":"Terms of Use",
-    "privacypolicy":"Privacy Policy",
-    "continuetext":"By continuing, you are agreeing to our",
-    "andhave":"and have read our"
+  "qrscreen": {
+    "qrcodescan": "QR Code Scan",
+    "qrscantext": "Scan QR Code to register your mobile phone and start your verification with ImproveID to get your modern passwordless identity credentials.",
+    "alignText": "Align the QR code within the frame to scan.",
+    "orText": "Or enter your code below.",
+    "entercode": "Enter Code",
+    "validate": "Validate",
+    "termofuse": "Terms of Use",
+    "privacypolicy": "Privacy Policy",
+    "continuetext": "By continuing, you are agreeing to our",
+    "andhave": "and have read our"
   },
-  "validationscreen":{
-    "identityText":"Identity Verification",
-    "selectionText":"Select the type of document you would like to use to verify you",
-    "makesureText":"Make sure document text is legible and images are glare-free",
-    "passport":"Passport",
-    "identitycard":"Identity Card",
-    "certificate":"Certificate + Support Document"
+  "validationscreen": {
+    "identityText": "Identity Verification",
+    "selectionText": "Select the type of document you would like to use to verify you",
+    "makesureText": "Make sure document text is legible and images are glare-free",
+    "passport": "Passport",
+    "identitycard": "Identity Card",
+    "certificate": "Certificate + Support Document"
   },
-  "uploadscreen":{
-    "passportupload":"Passport Photo Page",
-    "frontpage":"Front of the Identity Card",
-    "backpage":"Back of the Identity Card",
-    "birthcertificate":"Birth Certificate",
-    "upload":"Upload file",
-    "takephoto":"Take photo",
-    "subtitle":"Take a photo of the page with your headshot picture",
-    "subtitledoc":"Take a photo of the front of your identity card",
-    "subtitleback":"Take a photo of the back of your identity card",
-    "subtitlecertificate":"Take a photo of the front of your birth certificate",
-    "camratitle":"Identity Verification",
-    "camerainstruction":"Place your passport page",
-    "camerasubinstruction":"Place part of your passport page in the frame.",
-    "camerainstruction1":"Front of driver's license",
-    "camerasubinstruction1":"Position the front of your license in the frame",
-    "camerainstruction2":"Back of driver's license",
-    "camerasubinstruction2":"Position the back of your license in the frame",
-    "camerainstruction3":"Front of Certificate",
-    "camerasubinstruction3":"Position the front of your certificate in the frame"
+  "uploadscreen": {
+    "passportupload": "Passport Photo Page",
+    "frontpage": "Front of the Identity Card",
+    "backpage": "Back of the Identity Card",
+    "birthcertificate": "Birth Certificate",
+    "upload": "Upload file",
+    "takephoto": "Take photo",
+    "subtitle": "Take a photo of the page with your headshot picture",
+    "subtitledoc": "Take a photo of the front of your identity card",
+    "subtitleback": "Take a photo of the back of your identity card",
+    "subtitlecertificate": "Take a photo of the front of your birth certificate",
+    "camratitle": "Identity Verification",
+    "camerainstruction": "Place your passport page",
+    "camerasubinstruction": "Place part of your passport page in the frame.",
+    "camerainstruction1": "Front of driver's license",
+    "camerasubinstruction1": "Position the front of your license in the frame",
+    "camerainstruction2": "Back of driver's license",
+    "camerasubinstruction2": "Position the back of your license in the frame",
+    "camerainstruction3": "Front of Certificate",
+    "camerasubinstruction3": "Position the front of your certificate in the frame"
   },
-  "readscreen":{
-    "title":"Check Readablity",
-    "subtitle":"Make sure document text is legible and images are glare-free",
-    "subtitledoc":"Make sure your license details are clear to read, with no blur or glare",
-    "subtitlecertificate":"Make sure your certificate details are clear to read, with no blur or glare",
-    "redo":"Redo",
-    "confirm":"Confirm"
+  "readscreen": {
+    "title": "Check Readablity",
+    "subtitle": "Make sure document text is legible and images are glare-free",
+    "subtitledoc": "Make sure your license details are clear to read, with no blur or glare",
+    "subtitlecertificate": "Make sure your certificate details are clear to read, with no blur or glare",
+    "redo": "Redo",
+    "confirm": "Confirm"
   },
-  "selfiescreen":{
-    "title":"Take a Selfie",
-    "subtitle":"We'll compare the photo in your passport with your selfie",
-    "instruction1":"Please, keep a straight face",
-    "instruction2":"Wearing glasses? Make sure we can clearly see your eyes",
-    "getstarted":"Get Started",
-    "camerasubtitle":"Hold your phone at eye level so that yourself is similar to a passport photo"
+  "selfiescreen": {
+    "title": "Take a Selfie",
+    "subtitle": "We'll compare the photo in your passport with your selfie",
+    "instruction1": "Please, keep a straight face",
+    "instruction2": "Wearing glasses? Make sure we can clearly see your eyes",
+    "getstarted": "Get Started",
+    "camerasubtitle": "Hold your phone at eye level so that yourself is similar to a passport photo"
   },
-  "consentsign":{
-    "title":"Consent and Sign",
-    "subtitle":"To complete your verification we require you to accept our terms & conditions and agree to our process of your information.",
-    "instruction1":"By clicking Next, I accept the Terms and Conditions",
-    "instruction2":"I agree to the processing of my personal data, as described in the Consent to Personal Data Processing",
-    "pleasesign":"Please sign below",
-    "signature":"Signature",
-    "clear":"Clear",
-    "next":"Next"
+  "consentsign": {
+    "title": "Consent and Sign",
+    "subtitle": "To complete your verification we require you to accept our terms & conditions and agree to our process of your information.",
+    "instruction1": "By clicking Next, I accept the Terms and Conditions",
+    "instruction2": "I agree to the processing of my personal data, as described in the Consent to Personal Data Processing",
+    "pleasesign": "Please sign below",
+    "signature": "Signature",
+    "clear": "Clear",
+    "next": "Next"
   },
-  "submitverification":{
-    "title":"Great, that's everything we need",
-    "subtitle":"We're now ready to verify your identity",
-    "doc":"Documents Uploaded",
-    "selfie":"Selfie Uploaded",
-    "signature":"Signature Uploaded",
-    "sumitbtn":"Submit Verification"
+  "submitverification": {
+    "title": "Great, that's everything we need",
+    "subtitle": "We're now ready to verify your identity",
+    "doc": "Documents Uploaded",
+    "selfie": "Selfie Uploaded",
+    "signature": "Signature Uploaded",
+    "sumitbtn": "Submit Verification"
   },
-  "popupmessage":{
-    "success":"Successful!",
-    "successmessage":"Congratulations, you have successfully completed device registration and credential issuance. Please provide your feedback and rating to help us serve you better. Thanks!",
-    "waitingmsg":"Thanks for submitting your information. Your application requires approval. Once it is approved you will be notified with email and sms. If your application is not approved you will also be notified with a rejection reason.",
-    "deletemsg":"Are you sure you want to Suspend your identity? You cannot use your identity after Suspending them. However, if permitted, you can reissue them.",
-    "suspend":"Suspend Identity ",
-    "waiting":"Waiting for Approval",
-    "ok":"Ok",
-    "yes":"Yes",
-    "no":"No"
+  "popupmessage": {
+    "success": "Successful!",
+    "successmessage": "Congratulations, you have successfully completed device registration and credential issuance. Please provide your feedback and rating to help us serve you better. Thanks!",
+    "waitingmsg": "Thanks for submitting your information. Your application requires approval. Once it is approved you will be notified with email and sms. If your application is not approved you will also be notified with a rejection reason.",
+    "deletemsg": "Are you sure you want to Suspend your identity? You cannot use your identity after Suspending them. However, if permitted, you can reissue them.",
+    "suspend": "Suspend Identity ",
+    "waiting": "Waiting for Approval",
+    "ok": "Ok",
+    "yes": "Yes",
+    "no": "No"
   },
-  "applicationscreen":{
-    "searchtext":"Search your app",
-    "office":"Office 365",
-    "box":"Box",
-    "google":"Google"
+  "applicationscreen": {
+    "searchtext": "Search your app",
+    "office": "Office 365",
+    "box": "Box",
+    "google": "Google"
   },
-  "myidentities":{
-    "suspend":"Suspend",
-    "revoke":"Revoke",
-    "personal":"Personal",
-    "employement":"Employment",
-    "financial":"Financial",
-    "certification":"Certifications"
+  "myidentities": {
+    "suspend": "Suspend",
+    "revoke": "Revoke",
+    "personal": "Personal",
+    "employement": "Employment",
+    "financial": "Financial",
+    "certification": "Certifications"
   },
-  "feedbackscreen":{
-    "submit":"Submit Feedback",
-    "givefeedback":"Give your Feedback",
-    "question":"How do you feel about the support you received from us?",
-    "suggestion":"Please add any comments and suggestions on anything that how can be improved?",
-    "placeholder":"Your Feedback (optional)"
+  "feedbackscreen": {
+    "submit": "Submit Feedback",
+    "givefeedback": "Give your Feedback",
+    "question": "How do you feel about the support you received from us?",
+    "suggestion": "Please add any comments and suggestions on anything that how can be improved?",
+    "placeholder": "Your Feedback (optional)"
   },
-  "detailsscreen":{
-    "screenname":"ImproveID",
-    "status":"Status",
-    "consent":"Consent",
-    "dateofbith":"Date Of Birth:",
-    "email":"Email",
-    "gneder":"Gender",
-    "idnumber":"ID Number",
-    "dateofexpiry":"Date Of Expiry",
-    "dateofinsurance":"Date Of Issuance",
-    "agencycard":"Agency Card Sn",
-    "issuerin":"Issuer IN"
+  "detailsscreen": {
+    "screenname": "ImproveID",
+    "status": "Status",
+    "consent": "Consent",
+    "dateofbith": "Date Of Birth:",
+    "email": "Email",
+    "gneder": "Gender",
+    "idnumber": "ID Number",
+    "dateofexpiry": "Date Of Expiry",
+    "dateofinsurance": "Date Of Issuance",
+    "agencycard": "Agency Card Sn",
+    "issuerin": "Issuer IN"
   },
-  "basicinfoscreen":{
-    "screenname":"Basic Information",
-    "snedverificationcode":"Send Verification Code",
-    "liveText":"Whare do you live?",
-    "numberText":"Mobile number",
-    "rateText":"Message and data rates may apply.",
-    "nameText":"Legal name",
-    "firstname":"First name",
-    "lastname":"Last name"
+  "basicinfoscreen": {
+    "screenname": "Basic Information",
+    "snedverificationcode": "Send Verification Code",
+    "liveText": "Whare do you live?",
+    "numberText": "Mobile number",
+    "rateText": "Message and data rates may apply.",
+    "nameText": "Legal name",
+    "firstname": "First name",
+    "lastname": "Last name"
   },
-  "moreinfoscreen":{
-    "screenname":"More Information",
+  "moreinfoscreen": {
+    "screenname": "More Information",
     "address": "Address",
-    "apartment":"+Apartment, building, floor",
-    "city":"City",
-    "state":"State",
-    "zipcode":"ZIP code",
+    "apartment": "+Apartment, building, floor",
+    "city": "City",
+    "state": "State",
+    "zipcode": "ZIP code",
     "dob": "Date of Birth",
-    "month":"Month",
-    "day":"Day",
-    "year":"Year",
-    "contiue":"Continue"
+    "month": "Month",
+    "day": "Day",
+    "year": "Year",
+    "contiue": "Continue"
   },
-  "accountpage":{
-    "recommendsetting":"Recommended Settings",
-    "recomanddescription":"These are the most important settings",
-    "darkmode":"Dark Mode",
-    "language":"Language",
-    "feedback":"Feedback",
-    "notification":"Notifications",
-    "reports":"Reports",
-    "consentsetting":"Consent Settings",
-    "paymentsetting":"Payment Settings",
-    "paymentdescription":"These are also important settings",
-    "managepayment":"Manage Payment Options",
-    "privacysetting":"Privacy Settings",
-    "privacydescription":"Third most important settings",
-    "useraggrement":"User Agreement",
-    "privacy":"Privacy",
-    "about":"About"
+  "accountpage": {
+    "recommendsetting": "Recommended Settings",
+    "recomanddescription": "These are the most important settings",
+    "darkmode": "Dark Mode",
+    "language": "Language",
+    "feedback": "Feedback",
+    "notification": "Notifications",
+    "reports": "Reports",
+    "consentsetting": "Consent Settings",
+    "paymentsetting": "Payment Settings",
+    "paymentdescription": "These are also important settings",
+    "managepayment": "Manage Payment Options",
+    "privacysetting": "Privacy Settings",
+    "privacydescription": "Third most important settings",
+    "useraggrement": "User Agreement",
+    "privacy": "Privacy",
+    "about": "About"
+  },
+  "notificationscreen": {
+    "screenname": "Notifications",
+    "lastmessages": "Last Messages",
+    "newmessages": "New Messages",
+    "newalert": "New Alert",
+    "checkprofile": "Check your profile",
+    "renewid": "Renew ID",
+    "read": "Read",
+    "unread": "Unread"
+  },
+  "fido2screen": {
+    "screenname": "FIDO2 Registration",
+    "register": "Register",
+    "authcredential":"Authentication Credentials",
+    "user":"User",
+    "application":"Application",
+    "action":"Action",
+    "expirttime":"Expiry Time"
+  },
+  "loginrequest":{
+    "screenname":"Login Request",
+    "title":"Your approval is requested for the following authentication.",
+    "approve":"Approve",
+    "application":"Application",
+    "ipaddress":"IP Address",
+    "requestby":"Requested By",
+    "time":"Time"
+  },
+  "paymentmethodscreen":{
+    "screenname":"Payment Method",
+    "selectetype":"Select payment method",
+    "otherway":"Other way to pay",
+    "btnText":"Add New Card",
+    "applepay":"Apple Pay",
+    "paypal":"Paypal"
+  },
+  "addcardscreen":{
+    "screenname":"Add New Card",
+    "expirydate":"Expiry Date",
+    "cardholdername":"Card Holder Name",
+    "cardnumbrer":"Card Number",
+    "cvv":"CVV",
+    "btnText":"Add Card"
+  },
+  "otpverificationscreen":{
+    "screenname":"OTP Verification",
+    "btnText":"Validate",
+    "checkmobile":"Check your mobile",
+    "instruction1":"Please enter the One-Time Password to verify your account",
+    "instruction2":"A-One-Time Password has been send to",
+    "haventreceive":"Haven't received it?",
+    "resend":"Resend a new code.",
+    "wrongnumber":"Entered a wrong number? ",
+    "note1":"Keep this window open while using your mobile",
+    "note2":"Your mobile link will expire in one hour",
+    "note":"Note"
+  },
+  "startverification":{
+    "screenname":"Start Verifications",
+    "title":"Continue identity verification on your mobile",
+    "subtitle":"Follow the simple steps you are\nprompted for.",
+    "step1":"We will SMS a secure magic link  to your mobile (no app download is required)",
+    "step2":"Open the link and complete the task",
+    "step3":"Check back here to finish the verification submission",
+    "btnText":"Start Verifications"
+  },
+  "aboutus":{
+    "screenname":"About Us",
+    "info1":"We are ImproveID!",
+    "info1sub":"We believe in building a safer future for the connected world with multifaceted identity and verification solutions to prevent security threats.",
+    "info2":"Our Vision",
+    "info2sub":"To build a fafer future for the connected world.",
+    "info3":"Our Mission",
+    "info3sub":"Create innovative security technologies to provide a frictionless user experience making identity and access management effortless and safer in the future.",
+    "info4":"Our Offices",
+    "info4sub":"ImproveID has teams in three offices: 13th St, New york, NY 10011"
+  },
+  "useraggrement":{
+    "screenname":"Use Agreement",
+    "title":"ImproveID, Inc.",
+    "introduction":"Introduction",
+    "instruction1":"Welcome to ImproveID, Inc. ImproveID, Inc. (“us”, “we”, or “our”) operates\n www.improveid.com (hereinafter referred to as “Service”).\n\nOur Privacy Policy governs your visit to www.improveid.com, and explains how we collect, safeguard, and disclose information that results from your use of our Service.\n\nWe use your data to provide and improve Service. By using Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions. Our Terms and Conditions (“Terms”) govern all use of our Service and together with the Privacy Policy constitutes your agreement with us (“agreement”).",
+    "defination":"Definitions",
+    "defination0":"SERVICE means the www.improveid.com website operated by ImproveID, Inc.",
+    "defination1":"PERSONAL DATA means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).",
+    "defination2":"USAGE DATA is data collected automatically either generated by the use of Service or from Service infrastructure itself (for example, the duration of a page visit).",
+    "defination3":"COOKIES are small files stored on your device (computer or mobile device).",
+    "defination4":"DATA CONTROLLER means a natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal data are, or are to be, processed. For the purpose of this Privacy Policy, we are a Data Controller of your data.",
+    "defination5":"DATA PROCESSORS (OR SERVICE PROVIDERS) means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.",
+    "defination6":"DATA SUBJECT is any living individual who is the subject of Personal Data.",
+    "defination7":"THE USER is the individual using our Service. The User corresponds to the Data Subject, who is the subject of Personal Data."
   }
-
 }

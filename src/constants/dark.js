@@ -18,6 +18,7 @@ export const COLORS = {
   lightborderColor:"#EDE7E7",
   closeiconcolor:"#827C7C",
   dropdownText:"#9B31DD",
+  cardKeyText:"#E3B7FF",
 
   textColor:"#474747",
   borderColor:"#D3D3D3",
@@ -25,6 +26,10 @@ export const COLORS = {
   lightText:"#7C7C7C",
   whiteText:"#FFFFFF",
   lightborderColor:"#C5C5C5",
+  seperatorLineColor:"#ECECEC",
+  fido2valueText:"#1E1E1E",
+  cardborderColor:"#EBEBEB",
+  selectedCardView:"#1BC54A",
 
   // Drawer header colors
   notificationbg:"#A426F3",
@@ -56,6 +61,7 @@ export const GRADIENTS = {
 
   buttongradient:["#C544F1","#E031C1"],
   buttongradientoff: [String(COLORS.identitytabtext), String(COLORS.identitytabtext)],
+  readgradient:["#585858","#656565",],
 
 
   white: [String(COLORS.white), '#EBEFF4'],
@@ -70,7 +76,9 @@ export const GRADIENTS = {
   viewbtn:["#2CB6F1","#3479FF"],
 
   revokegbtn:["#FF9533","#F1AE00"],
-  suspendbtn:["#777777","#787076"]
+  suspendbtn:["#777777","#787076"],
+
+  notegradient:["#FFF9FF","#FFF9FF00"]
 
 
 };

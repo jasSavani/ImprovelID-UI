@@ -5,7 +5,7 @@ import { useData, useTheme, useTranslation } from '../../context';
 import * as Styles from './styles';
 import PropTypes from 'prop-types';
 
-const Button = (props) => {
+const SmallButton = (props) => {
 
     const [code, setCode] = useState("")
     const { assets, colors, gradients, icons } = useTheme();
@@ -17,12 +17,12 @@ const Button = (props) => {
         <View style={props.style ?? styles.outerView}>
             {props.isgradient ?
                 <TouchableOpacity onPress={props.onClick} >
-                    <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }} colors={props.gradient} style={[styles.gradientBox,props.custumStyle]}>
+                    <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }} colors={props.gradient} style={[styles.gradientBox]}>
                         {props.icon && <Image style={styles.iconImage(colors.white)} source={props.icon} />}
                         <Text style={[styles.nameText(colors.white)]}>{props.name}</Text>
                     </LinearGradient>
                 </TouchableOpacity> :
-                <TouchableOpacity onPress={props.onClick} style={[styles.borderBox(props.gradient),props.custumStyle]} >
+                <TouchableOpacity onPress={props.onClick} style={[styles.borderBox(props.gradient)]} >
                     {props.icon && <Image style={styles.iconImage(props.gradient)} source={props.icon} />}
                     <Text style={[styles.nameText(props.gradient)]}>{props.name}</Text>
                 </TouchableOpacity>
@@ -31,12 +31,11 @@ const Button = (props) => {
 
     )
 }
-Button.propTypes = {
+SmallButton.propTypes = {
     isgradient : PropTypes.bool,
     style: PropTypes.any,
     icon: PropTypes.any,
     name:PropTypes.string.isRequired,
     gradient:PropTypes.any,
-    custumStyle:PropTypes.any
 }
-export default Button
+export default SmallButton

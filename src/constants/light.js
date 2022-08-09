@@ -25,6 +25,7 @@ export const COLORS = {
   lightText:"#7C7C7C",
   whiteText:"#FFFFFF",
   lightborderColor:"#C5C5C5",
+  seperatorLineColor:"#ECECEC",
 
   // Drawer header colors
   notificationbg:"#A426F3",
@@ -56,6 +57,7 @@ export const GRADIENTS = {
 
   buttongradient:['#21D4FD', '#2152FF'],
   buttongradientoff: [String(COLORS.identitytabtext), String(COLORS.identitytabtext)],
+  readgradient:["#585858","#656565",],
 
 
   white: [String(COLORS.white), '#EBEFF4'],

@@ -1,6 +1,6 @@
 import React from 'react';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
-import {Dimensions,Platform,PixelRatio} from 'react-native';
+import { Dimensions, Platform, PixelRatio } from 'react-native';
 
 
 export const screenWidth = Dimensions.get('window').width;
@@ -40,3 +40,14 @@ export function deviceBasedDynamicDimension(originalDimen, compareWithWidth, res
 }
 export const calcWidth = x => PixelRatio.roundToNearestPixel((screenWidth * x) / 100)
 export const calcHeight = x => PixelRatio.roundToNearestPixel((screenHeight * x) / 100)
+
+export const cardNumberChange = (number) => {
+    if (number && number != "" & number.trim().length != 0) {
+        // return number.replace(/\d{4}(?=\d{4})/g, "**** ")
+        let arr = Object.values(number);
+        let newValue = arr.splice(0, 12).fill('*').join('') + arr.splice(-4).join('')
+        let formatText=newValue.match(/.{1,4}/g);
+        return formatText.join(' ');
+    }
+    return number
+}

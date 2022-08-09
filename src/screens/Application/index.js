@@ -41,7 +41,7 @@ const Application = (props) => {
                 leftIcon={icons.menuIcon}
                 rightIcon={icons.bellIcon}
                 onleftClick={() => { Keyboard.dismiss(), props.navigation.openDrawer() }}
-                onRightClick={() => { }}
+                onRightClick={() => { props.navigation.navigate("Notification")}}
                 screenName={t("screens.application")} />
 
             <View style={{ flex: 1, backgroundColor: '#F8F9FA' }}>

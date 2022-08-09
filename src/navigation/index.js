@@ -20,6 +20,9 @@ import Detailspage from "../screens/Detailspage";
 import BasicInfoScreen from "../screens/BasicInfoScreen";
 import MoreInfoScreen from "../screens/MoreInfoScreen";
 import ViewIDcard from "../screens/ViewIDcard";
+import Notification from "../screens/Notification";
+import FIDO2Regestration from "../screens/FIDO2Regestration";
+import LoginRequest from "../screens/LoginRequest";
 
 const Stack = createNativeStackNavigator()
 const Drawer = createDrawerNavigator();
@@ -76,7 +79,12 @@ const Route = (props) => {
                         <Stack.Screen name="Details" component={Detailspage} />
                         <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />
                         <Stack.Screen name="Moreinfo" component={MoreInfoScreen} />
-                        <Stack.Screen name="ViewIDcard" component={ViewIDcard} />                        
+                        <Stack.Screen name="ViewIDcard" component={ViewIDcard} />
+                        <Stack.Screen name="Notification" component={Notification} />
+                        <Stack.Screen name="FIDO2Regestration" component={FIDO2Regestration} />   
+                        <Stack.Screen name="LoginRequest" component={LoginRequest} />  
+
+                                             
                     </Stack.Navigator>
                 </NavigationContainer>
                 {/* </AuthContext.Provider> */}

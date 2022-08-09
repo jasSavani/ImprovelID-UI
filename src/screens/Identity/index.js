@@ -58,7 +58,7 @@ const Identity = (props) => {
                 leftIcon={icons.menuIcon}
                 rightIcon={icons.bellIcon}
                 onleftClick={() => { props.navigation.openDrawer() }}
-                onRightClick={() => { }}
+                onRightClick={() => { props.navigation.navigate("Notification")}}
                 screenName={t("screens.myidentities")} />
             <View style={style.container}>
                 <View style={style.topView}>

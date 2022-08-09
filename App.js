@@ -16,6 +16,7 @@ import { LogBox } from 'react-native'
 import {DataProvider} from './src/context'
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+LogBox.ignoreLogs([ 'Non-serializable values were found in the navigation state', ]);
 LogBox.ignoreAllLogs();//Ignore all log notifications
 console.error = (error) => error.apply;
 
