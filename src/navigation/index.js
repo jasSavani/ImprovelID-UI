@@ -23,6 +23,14 @@ import ViewIDcard from "../screens/ViewIDcard";
 import Notification from "../screens/Notification";
 import FIDO2Regestration from "../screens/FIDO2Regestration";
 import LoginRequest from "../screens/LoginRequest";
+import PaymentMethod from "../screens/PaymentMethod";
+import AddCardScreen from "../screens/AddCardScreen";
+import OtpVerification from "../screens/OtpVerification";
+import StartVerification from "../screens/StartVerification";
+import AboutUs from "../screens/AboutUs";
+import Useraggrement from "../screens/Useraggrement";
+import Reports from "../screens/Reports";
+import ProfileScreen from "../screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator()
 const Drawer = createDrawerNavigator();
@@ -83,6 +91,16 @@ const Route = (props) => {
                         <Stack.Screen name="Notification" component={Notification} />
                         <Stack.Screen name="FIDO2Regestration" component={FIDO2Regestration} />   
                         <Stack.Screen name="LoginRequest" component={LoginRequest} />  
+                        <Stack.Screen name="PaymentMethod" component={PaymentMethod} />   
+                        <Stack.Screen name="AddCardScreen" component={AddCardScreen} />  
+                        <Stack.Screen name="OtpVerification" component={OtpVerification} />   
+                        <Stack.Screen name="StartVerification" component={StartVerification} />   
+                        <Stack.Screen name="AboutUs" component={AboutUs} />   
+                        <Stack.Screen name="Useraggrement" component={Useraggrement} />   
+                        <Stack.Screen name="Reports" component={Reports} />   
+
+
+
 
                                              
                     </Stack.Navigator>

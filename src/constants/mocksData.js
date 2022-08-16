@@ -140,41 +140,26 @@ export const DEVICEDATA = [
   }
 ];
 export const IDENTITYDATA = [
+
   {
-    title: "Identities",
-    data: [
-      {
-        id: 1,
-        name: "Driver License",
-        number: "0256859520",
-        isOpen: false,
-      },
-      {
-        id: 2,
-        name: "Student ID",
-        number: "02365895620",
-        isOpen: false,
-      },
-      {
-        id: 3,
-        name: "Health Card",
-        number: "0256985698520",
-        isOpen: false,
-      }
-    ]
+    id: 1,
+    name: "Driver License",
+    number: "0256859520",
+    isOpen: false,
   },
   {
-    title: "",
-    data: []
+    id: 2,
+    name: "Student ID",
+    number: "02365895620",
+    isOpen: false,
   },
   {
-    title: "",
-    data: []
-  },
-  {
-    title: "",
-    data: []
+    id: 3,
+    name: "Health Card",
+    number: "0256985698520",
+    isOpen: false,
   }
+
 ];
 export const USERDETAILS = {
   "detailsscreen.dateofbith": "05/20/1981",
@@ -199,33 +184,39 @@ export const CARDDATA = [
             id: 1,
             isactive: true,
             isverified: true,
-            image: "dlimage",
-            data: [{
-              id: 1,
-              name: "PKI Certificate ",
-              number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
-              icon: "pkicertificateIcon"
-            },
-            {
-              id: 2,
-              name: "FIDO2",
-              number: "ac7d9de2-feef-4085-99d 2-04f0211a7ade",
-              icon: "fdi2Icon",
-            },
-            {
-              id: 3,
-              name: "Consent",
-              number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
-              icon: "consentIcon"
-            },
-            {
-              id: 4,
-              name: "OTP",
-              icon: "otpIcon"
-            },
-            ]
+            image: "dlVertical",
+            frontimage: "dlVertical",
+            backimage: "backHorizontal",
+            qrimage: "qrimageBig",
+            data: [
+              {
+                id: 4,
+                name: "OTP",
+                icon: "otpIcon"
+              },
+              {
+                id: 1,
+                name: "PKI Certificate ",
+                number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
+                icon: "pkicertificateIcon"
+              },
+              {
+                id: 2,
+                name: "FIDO2",
+                number: "ac7d9de2-feef-4085-99d 2-04f0211a7ade",
+                icon: "fdi2Icon",
+              },
+              {
+                id: 3,
+                name: "Consent",
+                number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
+                icon: "consentIcon"
+              },
+            ],
+            activestatus: 3,
+            verifystatus: 2
           }
-        ]
+        ],
       },
       {
         title: 'Data2',
@@ -235,7 +226,10 @@ export const CARDDATA = [
             isactive: true,
             isverified: true,
             image: "dlimage",
-            authdata: [{
+            frontimage: "dlimage",
+            backimage: "backHorizontal",
+            qrimage: "qrimageBig",
+            data: [{
               id: 1,
               name: "PKI Certificate ",
               number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
@@ -253,9 +247,81 @@ export const CARDDATA = [
               number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
               icon: "consentIcon"
             },
-            ]
+            ],
+            activestatus: 1,
+            verifystatus: 1
           }
-        ]
+        ],
+      },
+      {
+        title: 'Data2',
+        data: [
+          {
+            id: 1,
+            isactive: true,
+            isverified: true,
+            image: "dlimage",
+            frontimage: "dlimage",
+            backimage: "backHorizontal",
+            qrimage: "qrimageBig",
+            data: [{
+              id: 1,
+              name: "PKI Certificate ",
+              number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
+              icon: "pkicertificateIcon"
+            },
+            {
+              id: 2,
+              name: "FIDO2",
+              number: "ac7d9de2-feef-4085-99d 2-04f0211a7ade",
+              icon: "fdi2Icon"
+            },
+            {
+              id: 3,
+              name: "Consent",
+              number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
+              icon: "consentIcon"
+            },
+            ],
+            activestatus: 1,
+            verifystatus: 1
+          }
+        ],
+      },
+      {
+        title: 'Data2',
+        data: [
+          {
+            id: 1,
+            isactive: true,
+            isverified: true,
+            image: "dlimage",
+            frontimage: "dlimage",
+            backimage: "backHorizontal",
+            qrimage: "qrimageBig",
+            data: [{
+              id: 1,
+              name: "PKI Certificate ",
+              number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
+              icon: "pkicertificateIcon"
+            },
+            {
+              id: 2,
+              name: "FIDO2",
+              number: "ac7d9de2-feef-4085-99d 2-04f0211a7ade",
+              icon: "fdi2Icon"
+            },
+            {
+              id: 3,
+              name: "Consent",
+              number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
+              icon: "consentIcon"
+            },
+            ],
+            activestatus: 1,
+            verifystatus: 1
+          }
+        ],
       }
     ],
   },
@@ -271,7 +337,10 @@ export const CARDDATA = [
             isactive: true,
             isverified: true,
             image: "dlimage",
-            authdata: [{
+            frontimage: "dlVertical",
+            backimage: "backHorizontal",
+            qrimage: "qrimageBig",
+            data: [{
               id: 1,
               name: "PKI Certificate ",
               number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
@@ -289,9 +358,11 @@ export const CARDDATA = [
               number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
               icon: "consentIcon"
             },
-            ]
+            ],
+            activestatus: 1,
+            verifystatus: 1
           }
-        ]
+        ],
       }
     ],
   },
@@ -307,7 +378,10 @@ export const CARDDATA = [
             isactive: true,
             isverified: true,
             image: "dlimage",
-            authdata: [{
+            frontimage: "dlVertical",
+            backimage: "backHorizontal",
+            qrimage: "qrimageBig",
+            data: [{
               id: 1,
               name: "PKI Certificate ",
               number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
@@ -325,9 +399,12 @@ export const CARDDATA = [
               number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
               icon: "consentIcon"
             },
-            ]
+            ],
+            activestatus: 1,
+            verifystatus: 1
           }
-        ]
+        ],
+
       }
     ],
   },
@@ -343,7 +420,10 @@ export const CARDDATA = [
             isactive: true,
             isverified: true,
             image: "dlimage",
-            authdata: [{
+            frontimage: "dlVertical",
+            backimage: "backHorizontal",
+            qrimage: "qrimageBig",
+            data: [{
               id: 1,
               name: "PKI Certificate ",
               number: "44b5731f174dd47b8a0s0badc85e08768c71d2d",
@@ -361,9 +441,12 @@ export const CARDDATA = [
               number: "e0b02f3d-5f8b-4101-9f0a-6s1460d1c7aa",
               icon: "consentIcon"
             },
-            ]
+            ],
+            activestatus: 1,
+            verifystatus: 1
           }
-        ]
+        ],
+
       }
     ],
   }
@@ -402,7 +485,7 @@ export const ACCOUNTDATA = [
         id: 5,
         type: 3,
         name: "accountpage.reports",
-        navigate: ""
+        navigate: "Reports"
       },
       {
         id: 6,
@@ -422,7 +505,7 @@ export const ACCOUNTDATA = [
         id: 1,
         type: 3,
         name: "accountpage.managepayment",
-        navigate: ""
+        navigate: "PaymentMethod"
       },
     ]
   },
@@ -436,7 +519,7 @@ export const ACCOUNTDATA = [
         id: 1,
         type: 3,
         name: "accountpage.useraggrement",
-        navigate: ""
+        navigate: "Useraggrement"
       },
       {
         id: 2,
@@ -448,7 +531,7 @@ export const ACCOUNTDATA = [
         id: 3,
         type: 3,
         name: "accountpage.about",
-        navigate: ""
+        navigate: "AboutUs"
       },
     ]
   }
@@ -642,7 +725,112 @@ export const USERAGGREMENT = [
   {
     text1: "useraggrement.defination7",
   },
+];
+
+export const REPORTDATA = [
+  {
+    id: 1,
+    name: "reports.activeuser",
+    value: "1600",
+    icon: "report_useractive",
+    percentage: "+55",
+    action: "",
+    color: "green"
+  },
+  {
+    id: 2,
+    name: "reports.clickevents",
+    value: "375",
+    icon: "report_userclickevents",
+    percentage: "+124",
+    action: "",
+    color: "orange"
+  },
+  {
+    id: 3,
+    name: "reports.purchases",
+    value: "2300",
+    icon: "report_userpurchases",
+    percentage: "+15",
+    action: "",
+    color: "primary"
+  },
+  {
+    id: 4,
+    name: "reports.likes",
+    value: "940",
+    icon: "report_userlikes",
+    percentage: "+90",
+    action: "",
+    color: "lightblue"
+  }
+];
+
+export const REVIEWDATA = [
+  {
+    id: 43431,
+    name: "John Michael",
+    email: "johnmichael123@gmail.com",
+    employed: "23/04/2019",
+    reviewtype: "Positive",
+    role: "Manager",
+    profileimage: "profileimage"
+  },
+  {
+    id: 43431,
+    name: "John Michael",
+    email: "johnmichael123@gmail.com",
+    employed: "23/04/2019",
+    reviewtype: "Neutral",
+    role: "Manager",
+    profileimage: "profileimage"
+  },
+  {
+    id: 43431,
+    name: "John Michael",
+    email: "johnmichael123@gmail.com",
+    employed: "23/04/2019",
+    reviewtype: "Negative",
+    role: "Manager",
+    profileimage: "profileimage"
+  }
 ]
+
+export const RETRYDATA = [
+  "retrymsg.text1",
+  "retrymsg.text2",
+  "retrymsg.text3",
+  "retrymsg.text4"
+]
+export const PAGEDATA = [
+  {
+    id: 1,
+    title: "common.front",
+    icon: "frontPageicon",
+  },
+  {
+    id: 2,
+    title: "common.back",
+    icon: "backpageicon",
+  },
+  {
+    id: 3,
+    title: "common.qrcode",
+    icon: "qrcodepage",
+  },
+  {
+    id: 4,
+    title: "common.biographic",
+    icon: "biographic",
+  }
+]
+
+
+
+
+
+
+
 export default {
   USERS,
   VERIFCATIONCARD,
@@ -661,5 +849,9 @@ export default {
   NOTEDATA,
   STEPDATA,
   ABOUTUSDATA,
-  USERAGGREMENT
+  USERAGGREMENT,
+  REPORTDATA,
+  REVIEWDATA,
+  RETRYDATA,
+  PAGEDATA
 };

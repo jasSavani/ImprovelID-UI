@@ -18,6 +18,8 @@ export const COLORS = {
   lightborderColor:"#EDE7E7",
   closeiconcolor:"#827C7C",
   dropdownText:"#21D4FD",
+  cardKeyText: "#E3B7FF",
+
 
   textColor:"#474747",
   borderColor:"#D3D3D3",
@@ -26,6 +28,13 @@ export const COLORS = {
   whiteText:"#FFFFFF",
   lightborderColor:"#C5C5C5",
   seperatorLineColor:"#ECECEC",
+  fido2valueText: "#1E1E1E",
+  cardborderColor: "#EBEBEB",
+  selectedCardView: "#1BC54A",
+  grayText: "#6D6D6D",
+  orangeText: "#E48F26",
+  redText: "#F04D59",
+
 
   // Drawer header colors
   notificationbg:"#A426F3",
@@ -70,9 +79,17 @@ export const GRADIENTS = {
   green:["#38E4DA","#11C16D"],
   lightblue:["#33CEFF","#097FD4"],
   viewbtn:["#2CB6F1","#3479FF"],
+  red: ["#EC4444", "#FB6DA0"],
+  darkblue: ["#6968A1", "#3F3D85"],
+  lightorange: ["#DEB111", "#E8651B"],
+  reportBtn:["#FA4FE9","#D0109B"],
+  consentBtn:["#33C2FF","#0BB7DD"],
 
   revokegbtn:["#FF9533","#F1AE00"],
-  suspendbtn:["#777777","#787076"]
+  suspendbtn:["#777777","#787076"],
+
+  notegradient: ["#FFF9FF", "#FFF9FF00"]
+
 
 
 };

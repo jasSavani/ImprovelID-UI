@@ -2,7 +2,21 @@
   "common": {
     "active": "Active",
     "verified": "Verified",
-    "view": "View"
+    "revoked":"Revoked",
+    "unverified":"Unverfied",
+    "suspended":"Suspended",
+    "front":"Front",
+    "back":"Back",
+    "qrcode":"QR Code",
+    "biographic":"Biographic",
+    "view": "View",
+    "email":"Email",
+    "phoneeno":"Phone number",
+    "suspend":"Suspend",
+    "revoke":"Revoke",
+    "delete":"Delete",
+    "renew":"Renew",
+    "welcome":"Welcome"
   },
   "app": {
     "name": "",
@@ -105,7 +119,8 @@
     "waiting": "Waiting for Approval",
     "ok": "Ok",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "fido2":"Your Identity is updated with FIDO2 credential."
   },
   "applicationscreen": {
     "searchtext": "Search your app",
@@ -273,5 +288,65 @@
     "defination5":"DATA PROCESSORS (OR SERVICE PROVIDERS) means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.",
     "defination6":"DATA SUBJECT is any living individual who is the subject of Personal Data.",
     "defination7":"THE USER is the individual using our Service. The User corresponds to the Data Subject, who is the subject of Personal Data."
+  },
+  "reports":{
+    "screenname":"Reports",
+    "activeuser":"Users Active",
+    "clickevents":"Click Events",
+    "purchases":"Purchases",
+    "likes":"Likes",
+    "reviews":"Reviews",
+    "positivereview":"Positive Reviews",
+    "neutralreview":"Neutral Reviews",
+    "negativereview":"Negative Reviews",
+    "morethan":"More than ",
+    "centerText":" developers used Creative Tim's products and over ",
+    "reviewText":" projects were created.",
+    "viewallreview":"View All Review",
+    "review":"Review",
+    "email":"Email",
+    "employed":"Employed",
+    "id":"ID"
+  },
+  "profile":{
+    "screenname":"Profile",
+    "btnText":"Update"
+  },
+  "retrymsg":{
+    "text1":"ID not recognized.",
+    "text2":"ID expired or missing information.",
+    "text3":"Image is blurry, cropped, or obscured.",
+    "text4":"Image is too dark or bright.",
+    "scanagain":"Scan Again",
+    "keepmoiving":"Keeping you moving...",
+    "maytaketime":"This may take a few more seconds.",
+    "profilecompleted":"Profile Completed",
+    "tryagain":"Please try again",
+    "sorrytext":"Sorry, we couldn’t verify your ID for one or more of these reasons:",
+    "somethingwentwrong":"Something went wrong",
+    "tryagainlater":"Please try gain later."
+  },
+  "viewIdcardscreen":{
+    "visulaiid":"Visual  ID",
+    "authcredential":"Authentication Credentials"
+  },
+  "homescreen":{
+    "managetext":"Manage your personal information, account security, and privacy",
+    "profilecompletion":"Your profile completion is at",
+    "update":"Update",
+    "overview":"Profile Overview",
+    "viewidentity":"View Identity credentials",
+    "view":"View",
+    "viewsso":"View SSO Dashboard",
+    "defaultauth":"Default Authentication",
+    "signinmethoid":"SIGN-IN METHOD - ",
+    "devicename":"DEVICE NAME - ",
+    "change":"Change",
+    "reports":"Reports",
+    "consentcontrol":"Consent Control",
+    "viewactivityreport":"View activity reports",
+    "consenttext":"Control the personal information you want to share with others.",
+    "notification":"Notifications",
+    "notetext":"Check for new messages and alerts."
   }
 }

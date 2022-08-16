@@ -7,6 +7,10 @@ export const DataProvider = ({ children }) => {
     const [isDark, setIsDark] = useState(true);
     const [theme, setTheme] = useState(dark);
     const [cardData, setCardData] = useState({});
+    const [selecteIdData, setSelectedIddata] = useState({});
+    const [selectedDevice, setSelectedDevice] = useState({});
+
+
     const [notificationCount, setnotificationCount] = useState("3");
     const [activescreen, setActivescreen] = useState("Home");
 
@@ -57,7 +61,11 @@ export const DataProvider = ({ children }) => {
         notificationCount,
         setnotificationCount,
         activescreen,
-        setActivescreen
+        setActivescreen,
+        selecteIdData,
+        setSelectedIddata,
+        selectedDevice,
+        setSelectedDevice
     };
 
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
