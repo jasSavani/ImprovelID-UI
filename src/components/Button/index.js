@@ -38,6 +38,6 @@ Button.propTypes = {
     name:PropTypes.string.isRequired,
     gradient:PropTypes.any,
     custumStyle:PropTypes.any,
-    onClick:PropTypes.func
+    onClick:PropTypes.func,
 }
 export default Button

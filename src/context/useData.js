@@ -9,6 +9,8 @@ export const DataProvider = ({ children }) => {
     const [cardData, setCardData] = useState({});
     const [selecteIdData, setSelectedIddata] = useState({});
     const [selectedDevice, setSelectedDevice] = useState({});
+    const [userData, setUserdata] = useState({});
+
 
 
     const [notificationCount, setnotificationCount] = useState("3");
@@ -65,7 +67,9 @@ export const DataProvider = ({ children }) => {
         selecteIdData,
         setSelectedIddata,
         selectedDevice,
-        setSelectedDevice
+        setSelectedDevice,
+        userData,
+        setUserdata
     };
 
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>;

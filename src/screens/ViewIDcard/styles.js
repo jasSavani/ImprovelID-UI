@@ -168,7 +168,7 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         opacity: 1,
         color: colors.darkTextColor,
         marginTop: deviceBasedDynamicDimension(4, false, 1),
-        marginRight:deviceBasedDynamicDimension(5,true,1)
+        marginRight: deviceBasedDynamicDimension(5, true, 1)
     },
     rightArrow: {
         height: deviceBasedDynamicDimension(13, false, 1),
@@ -212,18 +212,18 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         borderColor: colors.primary,
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop:deviceBasedDynamicDimension(14,false,1),
+        marginTop: deviceBasedDynamicDimension(14, false, 1),
         marginLeft: deviceBasedDynamicDimension(10, true, 1),
     },
-    inputText:{
-        flex:1,
-        textAlign:'center',
+    inputText: {
+        flex: 1,
+        textAlign: 'center',
         fontFamily: "OpenSans-Bold",
         lineHeight: deviceBasedDynamicDimension(27, false, 1),
         fontSize: deviceBasedDynamicDimension(20, false, 1),
         opacity: 1,
         color: colors.darkTextColor,
-        padding:0
+        padding: 0
     },
     copyView: {
         height: deviceBasedDynamicDimension(50, false, 1),
@@ -232,13 +232,67 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         borderTopRightRadius: deviceBasedDynamicDimension(13, false, 1),
         borderBottomRightRadius: deviceBasedDynamicDimension(13, false, 1),
         marginRight: deviceBasedDynamicDimension(-1, false, 1),
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    copyimage:{
+    copyimage: {
         height: deviceBasedDynamicDimension(23, false, 1),
         width: deviceBasedDynamicDimension(20, false, 1),
-        resizeMode:'contain'
+        resizeMode: 'contain'
+    },
+    centerView: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: deviceBasedDynamicDimension(25, true, 1),
+        borderBottomColor: colors.borderColor,
+        borderBottomWidth: 1,
+        paddingBottom:deviceBasedDynamicDimension(10,false,1)
+    },
+    iconContainer: {
+        height: deviceBasedDynamicDimension(49, false, 1),
+        width: deviceBasedDynamicDimension(49, false, 1),
+        borderRadius: deviceBasedDynamicDimension(13, false, 1),
+        backgroundColor: 'red',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal:deviceBasedDynamicDimension(7,true,1)
+
+    },
+    titleText: {
+        fontFamily: "OpenSans-SemiBold",
+        lineHeight: deviceBasedDynamicDimension(17, false, 1),
+        fontSize: deviceBasedDynamicDimension(13, false, 1),
+        opacity: 1,
+        color: colors.identitytabtext,
+        paddingTop: deviceBasedDynamicDimension(6, false, 1),
+        textAlign: 'center'
+    },
+    iconView: {
+        height: deviceBasedDynamicDimension(22, false, 1),
+        width: deviceBasedDynamicDimension(22, false, 1),
+        resizeMode: 'contain'
+    },
+    pageView:{
+        paddingVertical:deviceBasedDynamicDimension(6,false,1),
+        paddingHorizontal:deviceBasedDynamicDimension(12,true,1),
+        borderRadius:deviceBasedDynamicDimension(4,false,1),
+        shadowColor: 'rgba(0, 0, 0, 0.6)',
+        shadowOffset: {
+            height: deviceBasedDynamicDimension(4, false, 1),
+            width: 0
+        },
+        elevation: deviceBasedDynamicDimension(4, false, 1),
+        shadowRadius: deviceBasedDynamicDimension(12, false, 1),
+
+    },
+    pageText:{
+        fontFamily: "OpenSans-SemiBold",
+        lineHeight: deviceBasedDynamicDimension(19, false, 1),
+        fontSize: deviceBasedDynamicDimension(14, false, 1),
+        opacity: 1,
+        color: colors.white,
+        textAlign: 'center'
     }
 
 })

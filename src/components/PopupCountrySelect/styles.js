@@ -43,7 +43,9 @@ export const styles = StyleSheet.create({
     centerView: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        paddingHorizontal: deviceBasedDynamicDimension(15, true, 1),
+        marginTop: deviceBasedDynamicDimension(15, false, 1)
+
     },
     absolute: {
         position: "absolute",
@@ -73,7 +75,20 @@ export const styles = StyleSheet.create({
             opacity: 1,
             fontFamily: "OpenSans-Bold",
             textAlign: 'center',
-            paddingTop:deviceBasedDynamicDimension(10,false,1)
+            paddingTop: deviceBasedDynamicDimension(10, false, 1)
+        }
+    },
+    selectedtitleText: (props) => {
+        const { colors } = props
+        return {
+            fontSize: deviceBasedDynamicDimension(16, false, 1),
+            color: colors.white,
+            opacity: 1,
+            fontFamily: "OpenSans-SemiBold",
+            textAlign: 'center',
+            paddingVertical: deviceBasedDynamicDimension(8, false, 1),
+            paddingHorizontal: deviceBasedDynamicDimension(35, true, 1),
+            lineHeight: deviceBasedDynamicDimension(22, false, 1)
         }
     },
     messageText: (props) => {
@@ -89,12 +104,40 @@ export const styles = StyleSheet.create({
             lineHeight: deviceBasedDynamicDimension(22, false, 1)
         }
     },
-    logoVIew:{
-        height:deviceBasedDynamicDimension(35,false,1),
-        width:deviceBasedDynamicDimension(140,true,1),
-        alignSelf:'center',
-        resizeMode:'contain',
-        marginVertical:deviceBasedDynamicDimension(10,false,1)
+    logoVIew: {
+        height: deviceBasedDynamicDimension(35, false, 1),
+        width: deviceBasedDynamicDimension(140, true, 1),
+        alignSelf: 'center',
+        resizeMode: 'contain',
+        marginVertical: deviceBasedDynamicDimension(10, false, 1)
+    },
+    singleView: (props) => {
+        const { colors } = props
+        return {
+            borderRadius: deviceBasedDynamicDimension(10, false, 1),
+            borderWidth: 1,
+            borderColor: colors.borderColor,
+            marginHorizontal: deviceBasedDynamicDimension(5, true, 1),
+            marginVertical: deviceBasedDynamicDimension(5, false, 1),
+            backgroundColor: colors.white,
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 50
+        }
+    },
+    singleViewSelected: (props) => {
+        const { colors } = props
+        return {
+            borderRadius: deviceBasedDynamicDimension(10, false, 1),
+            borderWidth: 1,
+            borderColor: colors.primary,
+            marginHorizontal: deviceBasedDynamicDimension(5, true, 1),
+            marginVertical: deviceBasedDynamicDimension(5, false, 1),
+            backgroundColor: colors.primary,
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 50
+        }
     }
 
 })

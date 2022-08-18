@@ -18,7 +18,7 @@ const countries = ["Egypt", "Canada", "AustraliaAustralia", "Ireland", "Egypt", 
 const BasicInfoScreen = (props) => {
 
     const { assets, colors, gradients, icons, flags } = useTheme();
-    const { isDark, theme, setTheme, setActivescreen, setnotificationCount } = useData();
+    const { isDark, theme, setTheme, setActivescreen, setnotificationCount, setUserdata,userData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
@@ -39,7 +39,7 @@ const BasicInfoScreen = (props) => {
         }
         getCountry()
     }, [])
-    
+
     const BoxView = () => {
         const { flag, name, callingCode, cca2 } = selectedCountry
         return (
@@ -77,6 +77,7 @@ const BasicInfoScreen = (props) => {
                         <TextInputMask
                             onChangeText={(formatted, extracted) => {
                                 setPhonenumber(formatted)
+                                setunmaskPhonenumber(extracted)
                             }}
                             mask={"([000]) [000] [0000]"}
                             placeholder='(000) 000 0000 '
@@ -123,6 +124,17 @@ const BasicInfoScreen = (props) => {
                 </View>
             </>
         )
+    }
+
+    const navigateNextScreen = () => {
+        let _tempUserdata = {
+            firstName,
+            lastName,
+            callingcode: selectedCountry.callingCode[0],
+            phoneNo: unmaskphoneNumber
+        }
+        setUserdata({...userData,..._tempUserdata})
+        props.navigation.navigate("Moreinfo")
     }
 
 
@@ -179,7 +191,7 @@ const BasicInfoScreen = (props) => {
                         </View> */}
                     </KeyboardAwareScrollView>
                     <View style={style.bottomView}>
-                        <Button style={{}} isgradient={true} onClick={() => { props.navigation.navigate("Moreinfo")}} gradient={gradients.primary} name={t("basicinfoscreen.snedverificationcode")} />
+                        <Button style={{}} isgradient={true} onClick={navigateNextScreen} gradient={gradients.primary} name={t("moreinfoscreen.contiue")} />
                     </View>
                 </View>
             </View>

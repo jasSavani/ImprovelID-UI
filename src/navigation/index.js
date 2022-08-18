@@ -31,6 +31,8 @@ import AboutUs from "../screens/AboutUs";
 import Useraggrement from "../screens/Useraggrement";
 import Reports from "../screens/Reports";
 import ProfileScreen from "../screens/ProfileScreen";
+import Summary from "../screens/Summary";
+import ManageIdentities from "../screens/ManageIdentities";
 
 const Stack = createNativeStackNavigator()
 const Drawer = createDrawerNavigator();
@@ -72,7 +74,7 @@ const Route = (props) => {
             {/* <AuthContext.Provider value={authContext}> */}
                 <NavigationContainer>
                   <Stack.Navigator
-                        screenOptions={{ headerShown: false }} initialRouteName={'Splash'}>
+                        screenOptions={{ headerShown: false,animation:"none" }} initialRouteName={'Splash'}>
                         <Stack.Screen name="Splash" component={Splash} />
                         <Stack.Screen name="QRScan" component={QrCodeScan} />
                         <Stack.Screen name="IdentityVerification" component={IdentityVerification} />
@@ -98,6 +100,10 @@ const Route = (props) => {
                         <Stack.Screen name="AboutUs" component={AboutUs} />   
                         <Stack.Screen name="Useraggrement" component={Useraggrement} />   
                         <Stack.Screen name="Reports" component={Reports} />   
+                        <Stack.Screen name="Summary" component={Summary} />   
+                        <Stack.Screen name="ManageIdentity" component={ManageIdentities} />   
+
+
 
 
 

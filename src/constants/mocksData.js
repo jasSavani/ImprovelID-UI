@@ -824,6 +824,12 @@ export const PAGEDATA = [
     icon: "biographic",
   }
 ]
+export const AuthorityDATA = [
+"Barbia",
+"Colombia",
+"London",
+"India"
+]
 
 
 
@@ -853,5 +859,6 @@ export default {
   REPORTDATA,
   REVIEWDATA,
   RETRYDATA,
-  PAGEDATA
+  PAGEDATA,
+  AuthorityDATA
 };

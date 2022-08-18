@@ -9,6 +9,7 @@ import CreditCardView from '../../components/CreditCardView';
 import TextInputMask from 'react-native-text-input-mask';
 import { cardNumberChange } from '../../utils';
 import MaskInput from 'react-native-mask-input';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
 const AddCardScreen = (props) => {
@@ -169,14 +170,14 @@ const AddCardScreen = (props) => {
                 <View style={style.cardView}>
                     <CreditCardView data={cardData} />
                 </View>
-                <ScrollView style={style.cardDetailsView} contentContainerStyle={style.containerView}>
+                <KeyboardAwareScrollView style={style.cardDetailsView} contentContainerStyle={style.containerView}>
                     {signleView(t("addcardscreen.cardholdername"), "name")}
                     {cardNumber(t("addcardscreen.cardnumbrer"), "number")}
                     {dateandCvvView()}
                     <View style={style.bottomView}>
                         <Button style={{}} isgradient={true} onClick={onAddClick} gradient={gradients.primary} name={t("addcardscreen.btnText")} />
                     </View>
-                </ScrollView>
+                </KeyboardAwareScrollView>
             </View>
         </Block>
     )

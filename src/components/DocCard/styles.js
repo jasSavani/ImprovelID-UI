@@ -29,28 +29,29 @@ export const styles = ({ colors } = props) => StyleSheet.create({
     imageView:{
         marginTop:deviceBasedDynamicDimension(14,false,1),
         width:'95%',
-        height:deviceBasedDynamicDimension(188,false,1),
-        alignSelf:'center'
+        height:'auto',
+        // height:deviceBasedDynamicDimension(188,false,1),
+        alignSelf:'center',
     },
     bottomView:{
         paddingVertical:deviceBasedDynamicDimension(19,false,1),
         paddingHorizontal:deviceBasedDynamicDimension(17,true,1),
         alignItems:'center',
         flexDirection:'row',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
     },
     viewBtn:{
         paddingVertical:deviceBasedDynamicDimension(5,false,1),
         paddingLeft:deviceBasedDynamicDimension(14,true,1),
-        width:deviceBasedDynamicDimension(88,true,1),
-        // height:deviceBasedDynamicDimension(28,false,1),
+        paddingRight:deviceBasedDynamicDimension(14,true,1),
         borderRadius:deviceBasedDynamicDimension(4,false,1),
         flexDirection:'row',
         alignItems:'center'
     },
     activeBtnView:{
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        flex:1
     },
     activeIcon:{
         height:deviceBasedDynamicDimension(20,false,1),
@@ -65,7 +66,7 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         fontSize: deviceBasedDynamicDimension(15,false,1),
         opacity: 1,
         color:colors.identitytabtext,
-        textAlign:'center'
+        // textAlign:'center',
     },
     viewText:{
         fontFamily: "OpenSans-SemiBold",
@@ -81,11 +82,13 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         width:deviceBasedDynamicDimension(16,true,1),
         resizeMode:'contain'
     },
-    dlImage:{
-        height:'100%',
-        width:'100%',
-        resizeMode:'contain'
-    }
+    dlImage: (ratio) =>{
+        return{
+        height:'auto',
+        width:"100%",
+        resizeMode:'contain',
+        aspectRatio:ratio,
+    }}
 })
 const Styles = {
     ButtonContainer,

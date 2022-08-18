@@ -31,6 +31,7 @@
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-linear-gradient": "^2.6.2",
     "react-native-mask-input": "^1.2.0",
+    "react-native-material-menu": "^2.0.0",
     "react-native-qrcode-mask": "^1.0.0",
     "react-native-reanimated": "^2.9.1",
     "react-native-responsive-dimensions": "^3.1.1",
@@ -44,7 +45,6 @@
     "react-native-svg-flagkit": "^0.9.5",
     "react-native-text-input-mask": "^3.1.4",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-view-shot": "^3.3.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

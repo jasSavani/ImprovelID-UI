@@ -110,7 +110,7 @@ const DrawerContent = (
     { name: t('screens.home'), to: 'Home', icon: icons.drawerhome },
     { name: t('screens.application'), to: 'Application', icon: icons.drawerapplication },
     { name: t('screens.identities'), to: 'Identity', icon: icons.draweridentity },
-    { name: t('screens.manageidentity'), to: 'ManageIdentity', icon: icons.drawermanageidentity },
+    { name: t('screens.managedevice'), to: 'ManageDevice', icon: icons.drawermanageidentity },
     { name: t('screens.profile'), to: 'Profile', icon: icons.drawerprofile },
     { name: t('screens.account'), to: 'Account', icon: icons.draweraccount },
     { name: t('screens.feedback'), to: 'Feedback', icon: icons.drawerfeedback },

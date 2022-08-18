@@ -9,30 +9,33 @@ import BackArrow from '../../components/backArrow';
 
 const Checkreadiability = (props) => {
 
-    const { assets, colors, gradients,icons } = useTheme();
-    const { isDark, theme, setTheme,cardData } = useData();
+    const { assets, colors, gradients, icons } = useTheme();
+    const { isDark, theme, setTheme, cardData, setUserdata, userData } = useData();
     const { t, translate } = useTranslation();
     const [screndata, setScreenData] = useState({ title: "", subtitle: "", })
     const { styles } = Styles
-    const {type,uploadscreen,camerainstruction,readScreen} = cardData
+    const { type, uploadscreen, camerainstruction, readScreen } = cardData
 
-    useEffect(()=>{
-       setScreenData(readScreen)
-    },[])
+    useEffect(() => {
+        setScreenData(readScreen)
+    }, [])
 
-    const onClickConfirm=()=>{
-        if(type == 1){
+    const onClickConfirm = () => {
+        if (type == 1) {
+            setUserdata({ ...userData, frontImage: props.route?.params?.image })
             props.navigation.navigate("TakeSelfie")
         }
-        if(type == 2){
+        if (type == 2) {
+            setUserdata({ ...userData, frontImage: props.route?.params?.image })
             props.navigation.navigate("BackCard")
         }
-        if(type == 3){
+        if (type == 3) {
+            setUserdata({ ...userData, frontImage: props.route?.params?.image })
+            props.navigation.navigate("ConsentSign")
             // props.navigation.navigate("TakeSelfie")
         }
     }
 
-console.log(props.route?.params?.image?.uri);
 
     return (
         <View style={styles.container}>
@@ -42,23 +45,23 @@ console.log(props.route?.params?.image?.uri);
                     <Text style={styles.titleText(theme)}>{t(screndata.title)}</Text>
                     <Text style={styles.smallText(theme)}>{t(screndata.subtitle)}</Text>
                 </View>
-                <View style={{ flex: 1, justifyContent: 'center',  }}>
-                    {type == 3 ? 
-                    <View style={styles.outerbigView}>
-                     <View style={ styles.bigImage}>
-                     <Image source={{uri:props.route?.params?.image?.uri}} style={{ height: '100%', width: '100%' }} resizeMode={'cover'} />
-                     </View>
-                     </View>
-                    :
-                    <View style={styles.outerView}>
-                    <View style={ styles.imageView}>
-                        <Image source={{uri:props.route?.params?.image?.uri}} style={{  width: '100%',height: '100%', }} resizeMode={'contain'} />
-                    </View>
-                    </View>}
+                <View style={{ flex: 1, justifyContent: 'center', }}>
+                    {type == 3 ?
+                        <View style={styles.outerbigView}>
+                            <View style={styles.bigImage}>
+                                <Image source={{ uri: props.route?.params?.image?.uri }} style={{ height: '100%', width: '100%' }} resizeMode={'cover'} />
+                            </View>
+                        </View>
+                        :
+                        <View style={styles.outerView}>
+                            <View style={styles.imageView}>
+                                <Image source={{ uri: props.route?.params?.image?.uri }} style={{ width: '100%', height: '100%', }} resizeMode={'contain'} />
+                            </View>
+                        </View>}
                 </View>
                 <View style={styles.bottomView}>
-                    <Button isgradient={false} onClick={() => { props.navigation.goBack()}} gradient={colors.primary}  name={t("readscreen.redo")} />
-                    <Button isgradient={true} onClick={() => { onClickConfirm()}} gradient={gradients.primary}  name={t("readscreen.confirm")} />
+                    <Button isgradient={false} onClick={() => { props.navigation.goBack() }} gradient={colors.primary} name={t("readscreen.redo")} />
+                    <Button isgradient={true} onClick={() => { onClickConfirm() }} gradient={gradients.primary} name={t("readscreen.confirm")} />
                 </View>
             </View>
 

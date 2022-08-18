@@ -16,7 +16,8 @@
     "revoke":"Revoke",
     "delete":"Delete",
     "renew":"Renew",
-    "welcome":"Welcome"
+    "welcome":"Welcome",
+    "chooseauthority":"Choose Authority"
   },
   "app": {
     "name": "",
@@ -252,7 +253,10 @@
     "wrongnumber":"Entered a wrong number? ",
     "note1":"Keep this window open while using your mobile",
     "note2":"Your mobile link will expire in one hour",
-    "note":"Note"
+    "note":"Note",
+    "wehavesend1":"We have sent a secure link to ",
+    "wehavesend2":" It may take a few minutes to arrive."
+
   },
   "startverification":{
     "screenname":"Start Verifications",
@@ -348,5 +352,14 @@
     "consenttext":"Control the personal information you want to share with others.",
     "notification":"Notifications",
     "notetext":"Check for new messages and alerts."
+  },
+  "summary":{
+    "screenname":"Summary",
+    "title":"Review and verify the below information \nbefore saving.",
+    "photograph":"Photograph",
+    "userinformation":"User Information",
+    "idproofdoc":"ID proofing Documents",
+    "type":"Type",
+    "dob":"DOB"
   }
 }

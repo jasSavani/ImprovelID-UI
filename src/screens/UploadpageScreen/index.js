@@ -12,7 +12,7 @@ import DocumentCamera from '../../components/DocumentCamera';
 const UploadpageScreen = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
-    const { isDark, theme, setTheme, cardData } = useData();
+    const { isDark, theme, setTheme, cardData, setUserdata, userData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const [isCamera, setIscamera] = useState(false)
@@ -55,6 +55,7 @@ const UploadpageScreen = (props) => {
     }, [])
 
     const openCroper = (imagedata) => {
+        console.log(imagedata, "imagedata");
         setIscamera(!isCamera),
             ImagePicker.openCropper({
                 path: imagedata.uri,

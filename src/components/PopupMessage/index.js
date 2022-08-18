@@ -15,37 +15,35 @@ const PopupMessage = (props) => {
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const _cameraRef = useRef(null)
+
+
+
     return (
-        <View  style={styles.containerView}>
-            <BlurView
-                style={styles.absolute}
-                blurType="dark"
-                blurAmount={10}
-                reducedTransparencyFallbackColor="white"
-            />
-            <View style={{ flex: 1, justifyContent: 'center',width:'100%' }}>
+        <Modal animationType='slide' transparent={false} visible style={styles.containerView}>
+            <View style={{ flex: 1,height:'100%',width:'100%' }}>
                 <View style={styles.boxView(theme)}>
                     <TouchableOpacity onPress={props.onCancel} style={styles.crossView}>
-                    <Icon name='close-a' size={deviceBasedDynamicDimension(16,false,1)} color={colors.closeiconcolor} />
+                        <Icon name='close-a' size={deviceBasedDynamicDimension(20, false, 1)} color={colors.darkTextColor} />
                     </TouchableOpacity>
-                    <View style={styles.imageView}>
-                        <Image style={{height:'100%',width:'100%'}} resizeMode={'contain'} source={props.icon} />
+                    {props.centerLogo && <Image source={assets.impovedColorLogo} style={styles.logoVIew} />}
+                    <View style={styles.centerView}>
+                        <View style={styles.imageView}>
+                            <Image style={{ height: '100%', width: '100%' }} resizeMode={'center'} source={props.icon} />
+                        </View>
+                        <Text style={styles.titleText(theme)}>{props.title}</Text>
+                        <Text style={styles.messageText(theme)}>{props.message}</Text>
                     </View>
-                    <Text style={styles.titleText(theme)}>{props.title}</Text>
-                    <Text style={styles.messageText(theme)}>{props.message}</Text>
-
-                    {!props.secondaryBtnname ? <View style={{ paddingHorizontal: deviceBasedDynamicDimension(8, true, 1), paddingTop: deviceBasedDynamicDimension(10, false, 1), paddingBottom: deviceBasedDynamicDimension(30, false, 1) }}>
-                        <Button isgradient={true} onClick={() => {props.primaryBtn() }} gradient={gradients.primary} name={props.primaryBtnname} />
-                    </View>:
-                    <View style={{ paddingHorizontal: deviceBasedDynamicDimension(34, true, 1), paddingTop: deviceBasedDynamicDimension(17, false, 1), paddingBottom: deviceBasedDynamicDimension(38, false, 1),flexDirection:'row',alignItems:'center' }}>
-                         <Button style={{flex:1,paddingRight:6}} isgradient={true} onClick={() => {props.primaryBtn() }} gradient={gradients.primary} name={props.primaryBtnname} />
-                         <Button style={{flex:1,paddingLeft:6}} isgradient={false} onClick={() => {props.secondaryBtn() }} gradient={colors.primary} name={props.secondaryBtnname} />
+                    {props.secondaryBtnname && <View style={{ paddingHorizontal: deviceBasedDynamicDimension(8, true, 1), paddingTop: deviceBasedDynamicDimension(10, false, 1), marginHorizontal: deviceBasedDynamicDimension(10, true, 1) }}>
+                        <Button  isgradient={false} onClick={() => { props.secondaryBtn() }} gradient={colors.primary} name={props.secondaryBtnname} />
+                    </View>}
+                    {props.primaryBtnname && <View style={{ paddingHorizontal: deviceBasedDynamicDimension(8, true, 1), paddingTop: deviceBasedDynamicDimension(10, false, 1), paddingBottom: deviceBasedDynamicDimension(30, false, 1), marginHorizontal: deviceBasedDynamicDimension(10, true, 1) }}>
+                        <Button isgradient={true} onClick={() => { props.primaryBtn() }} gradient={gradients.primary} name={props.primaryBtnname} />
                     </View>}
                 </View>
 
             </View>
 
-        </View>
+        </Modal>
 
     )
 }

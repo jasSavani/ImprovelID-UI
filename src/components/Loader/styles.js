@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     centerView: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        // alignItems: 'center'
     },
     absolute: {
         position: "absolute",
@@ -56,7 +56,8 @@ export const styles = StyleSheet.create({
         height: deviceBasedDynamicDimension(87, false, 1),
         width: deviceBasedDynamicDimension(87, false, 1),
         marginTop: deviceBasedDynamicDimension(2, false, 1),
-        alignSelf: 'center'
+        alignSelf: 'center',
+        justifyContent: 'center',
     },
     crossView: {
         height: deviceBasedDynamicDimension(20, false, 1),
@@ -74,6 +75,7 @@ export const styles = StyleSheet.create({
             fontFamily: "OpenSans-Bold",
             textAlign: 'center',
             paddingTop:deviceBasedDynamicDimension(10,false,1)
+
         }
     },
     messageText: (props) => {
@@ -85,17 +87,54 @@ export const styles = StyleSheet.create({
             fontFamily: "OpenSans-SemiBold",
             textAlign: 'center',
             paddingVertical: deviceBasedDynamicDimension(8, false, 1),
-            paddingHorizontal: deviceBasedDynamicDimension(35, true, 1),
+            paddingHorizontal: deviceBasedDynamicDimension(27, true, 1),
             lineHeight: deviceBasedDynamicDimension(22, false, 1)
         }
     },
-    logoVIew:{
-        height:deviceBasedDynamicDimension(35,false,1),
-        width:deviceBasedDynamicDimension(140,true,1),
-        alignSelf:'center',
-        resizeMode:'contain',
-        marginVertical:deviceBasedDynamicDimension(10,false,1)
-    }
+    logoVIew: {
+        height: deviceBasedDynamicDimension(35, false, 1),
+        width: deviceBasedDynamicDimension(140, true, 1),
+        alignSelf: 'center',
+        resizeMode: 'contain',
+        marginVertical: deviceBasedDynamicDimension(10, false, 1)
+    },
+    lightningImage: (props) => {
+        const { colors } = props
+        return {
+            height: deviceBasedDynamicDimension(50, false, 1),
+            width: deviceBasedDynamicDimension(50, false, 1),
+            position: 'absolute',
+            alignSelf: 'center',
+            //    bottom:deviceBasedDynamicDimension(35,false,1)
+        }
+    },
+    listVIew: {
+        marginTop: deviceBasedDynamicDimension(60, false, 1),
+        height: 100,
+        marginHorizontal: deviceBasedDynamicDimension(31, true, 1)
+    },
+    rowView: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    dotView: {
+        height: deviceBasedDynamicDimension(3, false, 1),
+        width: deviceBasedDynamicDimension(3, false, 1),
+        borderRadius: deviceBasedDynamicDimension(3, false, 1),
+        backgroundColor: 'black',
+        marginHorizontal: deviceBasedDynamicDimension(10, true, 1)
+    },
+    bodyText: (props) => {
+        const { colors } = props
+        return {
+            fontSize: deviceBasedDynamicDimension(15, false, 1),
+            color: colors.textColor,
+            opacity: 1,
+            fontFamily: "OpenSans-SemiBold",
+            paddingVertical: deviceBasedDynamicDimension(4, false, 1),
+            lineHeight: deviceBasedDynamicDimension(20, false, 1)
+        }
+    },
 
 })
 const Styles = {

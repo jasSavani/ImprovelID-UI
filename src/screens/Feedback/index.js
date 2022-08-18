@@ -76,7 +76,7 @@ const Feedback = (props) => {
                 leftIcon={icons.backArrow}
                 onleftClick={() => { props.navigation.goBack() }}
                 screenName={t("screens.feedback")} />
-            <KeyboardAwareScrollView  style={style.container} enableOnAndroid extraScrollHeight={Platform.OS == 'ios' ? 20:0} >
+            <KeyboardAwareScrollView  style={style.container} enableOnAndroid extraScrollHeight={Platform.OS == 'ios' ? 40:0} >
                 {/* <ScrollView style={style.container} contentContainerStyle={{ flexGrow: 1 }} > */}
                 <View style={{ flex: 1, }}>
                     <Text style={style.text1}>{t("feedbackscreen.givefeedback")}</Text>

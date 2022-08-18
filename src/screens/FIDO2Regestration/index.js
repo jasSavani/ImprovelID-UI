@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 import Button from '../../components/Button';
 import SmallIcon from '../../components/SmallIcon';
 import { FIDO2DATA } from '../../constants/mocksData';
+import PopupMessage from '../../components/PopupMessage';
 const FIDO2Regestration = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
@@ -14,6 +15,7 @@ const FIDO2Regestration = (props) => {
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
+    const [ismodal, setIsmodal] = useState(false)
 
     const renderItem = useCallback(({ item, index }) => {
         return (
@@ -50,9 +52,11 @@ const FIDO2Regestration = (props) => {
                     renderItem={renderItem}
                 />
                 <View style={style.bottomView}>
-                    <Button isgradient={true} onClick={() => { }} gradient={gradients.primary} name={t("fido2screen.register")} />
+                    <Button isgradient={true} onClick={() => { setIsmodal(!ismodal)}} gradient={gradients.primary} name={t("fido2screen.register")} />
                 </View>
             </View>
+            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.success")} message={t("popupmessage.fido2")} primaryBtnname={t("popupmessage.ok")}    primaryBtn={() => { }}  onCancel={() => { setIsmodal(!ismodal) }} icon={icons.successBig} />}
+
         </Block>
     )
 }

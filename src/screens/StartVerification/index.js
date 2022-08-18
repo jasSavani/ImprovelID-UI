@@ -47,7 +47,7 @@ const StartVerification = (props) => {
                         })}
                     </View>
                     <View style={style.bottomView}>
-                        <Button style={{}} isgradient={true} onClick={() => { }} gradient={gradients.primary} name={t("startverification.btnText")} />
+                        <Button style={{}} isgradient={true} onClick={() => {props.navigation.navigate("IdentityVerification") }} gradient={gradients.primary} name={t("startverification.btnText")} />
                     </View>
                 </ScrollView>
             </View>

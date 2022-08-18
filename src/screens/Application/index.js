@@ -10,6 +10,7 @@ import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
 import GridBox from '../../components/GridBox';
 import { APPLICATIONDATA } from '../../constants/mocksData';
+import Loader from '../../components/Loader';
 const Application = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
