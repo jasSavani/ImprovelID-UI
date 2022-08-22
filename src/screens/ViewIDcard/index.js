@@ -119,11 +119,14 @@ const ViewIDcard = (props) => {
         let selected = id == selctedtype
         let BTNCOLOR = id == 1 ? gradients.blue : id == 2 ? gradients.buttongradient : id == 3 ? gradients.green : gradients.orange
         return (
-            <TouchableOpacity activeOpacity={0.8} onPress={() => { props.navigation.navigate("Details", { selectedId: id }) }}>
-                <LinearGradient start={{ x: 0.5, y: 0.6 }} end={{ x: 0.5, y: 0 }} colors={BTNCOLOR} style={style.pageView}>
-                    <Text style={style.pageText}>{t(title)}</Text>
-                </LinearGradient>
-            </TouchableOpacity>
+            <View>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => { props.navigation.navigate("Details", { selectedId: id }) }}>
+                    <LinearGradient start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 1 }} colors={gradients.buttongradient} style={style.iconContainer}>
+                        <Image source={icons[icon]} style={style.iconView} />
+                    </LinearGradient>
+                </TouchableOpacity>
+                <Text numberOfLines={1} adjustsFontSizeToFit style={[style.titleText, { color: colors.identityselectedtabtext }]}>{t(title)}</Text>
+            </View>
         )
     }
 

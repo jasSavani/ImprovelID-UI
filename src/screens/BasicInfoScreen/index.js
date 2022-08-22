@@ -3,6 +3,8 @@ import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
 import * as Styles from './styles';
+import * as MoreStyles from './stylesmore';
+
 
 import { deviceBasedDynamicDimension } from '../../utils';
 import Block from '../../components/Block';
@@ -13,12 +15,15 @@ import Button from '../../components/Button';
 import CountryPicker, { FlagButton, Country, getAllCountries } from 'react-native-country-picker-modal'
 import TextInputMask from 'react-native-text-input-mask';
 import SelectDropdown from 'react-native-select-dropdown'
-const countries = ["Egypt", "Canada", "AustraliaAustralia", "Ireland", "Egypt", "Canada", "Australia", "Ireland"]
+import DateTimePicker from '@react-native-community/datetimepicker';
+import moment from 'moment';
+const states = ["State 1", "State 2", "State 3",]
+
 
 const BasicInfoScreen = (props) => {
 
     const { assets, colors, gradients, icons, flags } = useTheme();
-    const { isDark, theme, setTheme, setActivescreen, setnotificationCount, setUserdata,userData } = useData();
+    const { isDark, theme, setTheme, setActivescreen, setnotificationCount, setUserdata, userData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
@@ -26,10 +31,18 @@ const BasicInfoScreen = (props) => {
     const [cca2, setCca2] = useState("US")
     const [selectedCountry, setSelectedCountry] = useState({})
     const [firstName, setFirstName] = useState("")
+    const [middleName, setMiddleName] = useState("")
     const [lastName, setLastname] = useState("")
 
     const [phoneNumber, setPhonenumber] = useState("")
     const [unmaskphoneNumber, setunmaskPhonenumber] = useState("")
+    const [screenData, setScreendata] = useState({ address: "", city: "", state: "", zipcode: "", dob: "" })
+    const textinput1 = useRef(null)
+    const [show, setShow] = useState(false);
+    const { stylesm } = MoreStyles
+    const stylesmore = useMemo(() => stylesm(theme), [theme]);
+
+
 
 
     useEffect(() => {
@@ -39,6 +52,156 @@ const BasicInfoScreen = (props) => {
         }
         getCountry()
     }, [])
+
+    const onchangetext = (value, key) => {
+        setScreendata({
+            ...screenData,
+            [key]: value
+        })
+
+    }
+
+    const Addressbox = () => {
+        const { address, city, state, zipcode } = screenData
+        return (
+            <>
+                <Text style={stylesmore.blackTxt}>{t("moreinfoscreen.address")}</Text>
+                <View style={stylesmore.boxView}>
+                    <TextInput
+                        placeholder={t("moreinfoscreen.address")}
+                        multiline
+                        value={address}
+                        placeholderTextColor={colors.placeholderTextColor}
+                        style={stylesmore.addressText}
+                        onChangeText={(text) => { onchangetext(text, "address") }}
+                    />
+
+                </View>
+                <Text style={stylesmore.lightText}>{t("moreinfoscreen.apartment")}</Text>
+                <View style={stylesmore.boxView}>
+                    <TextInput
+                        placeholder={t("moreinfoscreen.city")}
+                        placeholderTextColor={colors.placeholderTextColor}
+                        style={stylesmore.inputText}
+                        value={city}
+                        returnKeyType={'next'}
+                        onSubmitEditing={() => {
+                            textinput1.current.focus()
+                        }}
+                        blurOnSubmit={false}
+                        onChangeText={(text) => { onchangetext(text, "city") }}
+                    />
+
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                    <SelectDropdown
+                        data={states}
+                        buttonTextStyle={stylesmore.inputText}
+                        defaultValue={state}
+                        selectedRowStyle={stylesmore.rowStyle}
+                        selectedRowTextStyle={stylesmore.inputText}
+                        rowTextStyle={stylesmore.normalText}
+                        rowStyle={stylesmore.rowStyle}
+                        statusBarTranslucent
+                        renderDropdownIcon={() => {
+                            return (
+                                <Image style={stylesmore.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
+                            )
+                        }}
+                        onSelect={(selectedItem, index) => {
+                            onchangetext(selectedItem, "state")
+                        }}
+                        buttonStyle={stylesmore.dropDownbtn}
+                        renderCustomizedButtonChild={(text) => {
+                            return (
+                                <View style={stylesmore.dropdowntextView}>
+                                    {text ? <Text numberOfLines={1} style={stylesmore.inputText}>{text}</Text> : <Text numberOfLines={1} style={[stylesmore.inputText, { color: colors.placeholderTextColor }]}>{t("moreinfoscreen.state")}</Text>}
+                                </View>
+                            )
+                        }}
+                        buttonTextAfterSelection={(selectedItem, index) => {
+                            // text represented after item is selected
+                            // if data array is an array of objects then return selectedItem.property to render after item is selected
+                            return selectedItem
+                        }}
+                        rowTextForSelection={(item, index) => {
+                            // text represented for each item in dropdown
+                            // if data array is an array of objects then return item.property to represent item in dropdown
+                            return item
+                        }}
+                    />
+                    <View style={[stylesmore.boxView, { flex: 1, marginLeft: 4 }]}>
+                        <TextInput
+                            placeholder={t("moreinfoscreen.zipcode")}
+                            ref={textinput1}
+                            placeholderTextColor={colors.placeholderTextColor}
+                            style={stylesmore.inputText}
+                            value={zipcode}
+                            keyboardType={'number-pad'}
+                            onChangeText={(text) => { onchangetext(text, "zipcode") }}
+                        />
+                    </View>
+                </View>
+            </>
+        )
+    }
+    const Dobbox = () => {
+        const { dob } = screenData
+        return (
+            <>
+                <View style={stylesmore.dobView}>
+                    <Text style={stylesmore.blackTxt}>{t("moreinfoscreen.dob")}</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <TouchableOpacity onPress={() => { setShow(true) }} style={stylesmore.monthBox}>
+                            <TextInput
+                                placeholder={t("moreinfoscreen.month")}
+                                placeholderTextColor={colors.placeholderTextColor}
+                                style={stylesmore.inputText}
+                                editable={false}
+                                value={dob && moment(dob).format('MMMM')}
+                            />
+                            <Image style={stylesmore.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
+                        </TouchableOpacity>
+                        <View style={stylesmore.dateBox}>
+                            <TextInput
+                                placeholder={t("moreinfoscreen.day")}
+                                placeholderTextColor={colors.placeholderTextColor}
+                                style={[stylesmore.inputText, { textAlign: 'center' }]}
+                                editable={false}
+                                value={dob && moment(dob).format('DD')}
+
+                            />
+                        </View>
+                        <View style={stylesmore.yearBox}>
+                            <TextInput
+                                placeholder={t("moreinfoscreen.year")}
+                                placeholderTextColor={colors.placeholderTextColor}
+                                style={[stylesmore.inputText, { textAlign: 'center' }]}
+                                editable={false}
+                                value={dob && moment(dob).format('YYYY')}
+
+                            />
+                        </View>
+                    </View>
+                </View>
+            </>
+        )
+    }
+
+    const onChange = (event, selectedDate) => {
+        setShow(false)
+        if (event.type == 'dismissed') {
+            return
+        }
+        const currentDate = selectedDate;
+        setScreendata({
+            ...screenData,
+            dob: selectedDate
+        })
+    };
+
+
+
 
     const BoxView = () => {
         const { flag, name, callingCode, cca2 } = selectedCountry
@@ -113,6 +276,19 @@ const BasicInfoScreen = (props) => {
                     <View style={{ flex: 1 }}>
                         <TextInput
                             onChangeText={(text) => {
+                                setMiddleName(text)
+                            }}
+                            placeholder={t('basicinfoscreen.middlename')}
+                            placeholderTextColor={colors.placeholderTextColor}
+                            value={middleName}
+                            style={style.inputText}
+                        />
+                    </View>
+                </View>
+                <View style={style.boxView}>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            onChangeText={(text) => {
                                 setLastname(text)
                             }}
                             placeholder={t('basicinfoscreen.lastname')}
@@ -130,11 +306,12 @@ const BasicInfoScreen = (props) => {
         let _tempUserdata = {
             firstName,
             lastName,
+            middleName,
             callingcode: selectedCountry.callingCode[0],
             phoneNo: unmaskphoneNumber
         }
-        setUserdata({...userData,..._tempUserdata})
-        props.navigation.navigate("Moreinfo")
+        setUserdata({ ...userData, ..._tempUserdata,...screenData })
+        props.navigation.navigate("OtpVerification")
     }
 
 
@@ -151,51 +328,25 @@ const BasicInfoScreen = (props) => {
                         <BoxView />
                         {numberView()}
                         {nameView()}
-                        {/* <View style={style.boxView}>
-                            <View style={{ flex: 1 }}></View>
-
-                            <SelectDropdown
-                                data={countries}
-                                defaultButtonText={'Select City'}
-                                buttonTextStyle={style.blackTxt}
-                                selectedRowTextStyle={style.lightText}
-                                statusBarTranslucent
-                                renderDropdownIcon={() => {
-                                    return (
-                                        <Image style={style.dropdownImage} resizeMode={'contain'} source={icons.downIcon} />
-                                    )
-                                }}
-                                onSelect={(selectedItem, index) => {
-                                    console.log(selectedItem, index)
-                                }}
-                                buttonStyle={{ backgroundColor: 'transparent', height: '100%', minWidth: '40%' }}
-                                renderCustomizedButtonChild={(text) => {
-                                    console.log(text, 'TEXT');
-                                    return (
-                                        <View style={{ backgroundColor: 'pink',alignItems:'flex-end',justifyContent:'center' }}>
-                                            <Text numberOfLines={1} style={style.lightText}>{text}</Text>
-                                        </View>
-                                    )
-                                }}
-                                buttonTextAfterSelection={(selectedItem, index) => {
-                                    // text represented after item is selected
-                                    // if data array is an array of objects then return selectedItem.property to render after item is selected
-                                    return selectedItem
-                                }}
-                                rowTextForSelection={(item, index) => {
-                                    // text represented for each item in dropdown
-                                    // if data array is an array of objects then return item.property to represent item in dropdown
-                                    return item
-                                }}
+                        {Addressbox()}
+                        {<Dobbox />}
+                        {show && (
+                            <DateTimePicker
+                                testID="dateTimePicker"
+                                value={screenData.dob ? new Date(screenData.dob) : new Date()}
+                                mode={"date"}
+                                display={Platform.OS == 'ios' ? "spinner" : 'calendar'}
+                                maximumDate={new Date()}
+                                onChange={onChange}
                             />
-                        </View> */}
+                        )}
                     </KeyboardAwareScrollView>
                     <View style={style.bottomView}>
-                        <Button style={{}} isgradient={true} onClick={navigateNextScreen} gradient={gradients.primary} name={t("moreinfoscreen.contiue")} />
+                        <Button style={{}} isgradient={true} onClick={navigateNextScreen} gradient={gradients.primary} name={t("basicinfoscreen.snedverificationcode")} />
                     </View>
                 </View>
             </View>
-            {countrypicker && <CountryPicker withEmoji={false} withAlphaFilter visible={countrypicker} onClose={() => setCountrypicker(false)} onSelect={(country) => { setSelectedCountry(country); }} />}
+            {countrypicker && <CountryPicker closeButtonStyle={style.closeButton} closeButtonImageStyle={style.closeImage} withEmoji={false} withAlphaFilter visible={countrypicker} onClose={() => setCountrypicker(false)} onSelect={(country) => { setSelectedCountry(country); }} />}
         </Block>
     )
 }

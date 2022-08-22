@@ -323,7 +323,7 @@ const ProfileScreen = (props) => {
                 <Button isgradient gradient={gradients.primary} name={t("profile.btnText")} onClick={() => { alert('btnPress') }} />
 
             </KeyboardAwareScrollView>
-            {countrypicker && <CountryPicker withEmoji={false} withAlphaFilter visible={countrypicker} onClose={() => setCountrypicker(false)} onSelect={(country) => { setSelectedCountry(country), handleTextChange(country.cca2, "country"), handleTextChange(country.callingCode[0], "code"); }} />}
+            {countrypicker && <CountryPicker closeButtonStyle={style.closeButton}  closeButtonImageStyle={style.closeImage} withEmoji={false} withAlphaFilter visible={countrypicker} onClose={() => setCountrypicker(false)} onSelect={(country) => { setSelectedCountry(country), handleTextChange(country.cca2, "country"), handleTextChange(country.callingCode[0], "code"); }} />}
         </Block>
     )
 }

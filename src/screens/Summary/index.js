@@ -9,6 +9,7 @@ import OTPInputView from '@twotalltotems/react-native-otp-input'
 import { mocksData } from '../../constants';
 import LinearGradient from 'react-native-linear-gradient';
 import moment from 'moment';
+import { isEmpty, isEmptyColor } from '../../utils';
 
 
 const Summary = (props) => {
@@ -31,6 +32,7 @@ const Summary = (props) => {
         )
     }
     const UserInfoBox = () => {
+        let address = `${userData?.address && `${userData?.address}, `}${userData?.city && `${userData.city}, `}${userData?.state} ${userData?.zipcode}`
         return (
             <View style={style.cardView}>
                 <View style={style.uTextview}>
@@ -40,21 +42,25 @@ const Summary = (props) => {
                     <View style={style.rowView}>
                         <View style={{ flex: 1 }}>
                             <Text numberOfLines={1} style={style.keyText}>{t("basicinfoscreen.firstname")}</Text>
-                            <Text numberOfLines={1} style={style.valueText}>{userData?.firstName}</Text>
+                            <Text numberOfLines={1} style={[style.valueText,{color:isEmptyColor(userData?.firstName)}]}>{isEmpty(userData?.firstName)}</Text>
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            <Text numberOfLines={1} style={style.keyText}>{t("basicinfoscreen.middlename")}</Text>
+                            <Text numberOfLines={1} style={[style.valueText,{color:isEmptyColor(userData?.middleName)}]}>{isEmpty(userData?.middleName)}</Text>
                         </View>
                         <View style={{ flex: 1, }}>
                             <Text numberOfLines={1} style={style.keyText}>{t("basicinfoscreen.lastname")}</Text>
-                            <Text numberOfLines={1} style={style.valueText}>{userData?.lastName}</Text>
+                            <Text numberOfLines={1} style={[style.valueText,{color:isEmptyColor(userData?.lastName)}]}>{isEmpty(userData?.lastName)}</Text>
                         </View>
                     </View>
                     <View style={style.rowView}>
                         <View style={{ flex: 1 }}>
                             <Text numberOfLines={1} style={style.keyText}>{t("summary.dob")}</Text>
-                            <Text numberOfLines={1} style={style.valueText}>{userData.dob && moment(userData?.dob).format("DD/MM/YYYY")}</Text>
+                            <Text numberOfLines={1} style={style.valueText}>{userData.dob ? moment(userData?.dob).format("DD/MM/YYYY") : t("common.notfilled")}</Text>
                         </View>
                         <View style={{ flex: 1 }}>
                             <Text numberOfLines={1} style={style.keyText}>{t("detailsscreen.gneder")}</Text>
-                            <Text numberOfLines={1} style={style.valueText}></Text>
+                            <Text numberOfLines={1} style={[style.valueText,{color:isEmptyColor(userData?.gender)}]}>{isEmpty(userData?.gender)}</Text>
                         </View>
                     </View>
                     <View style={style.rowView}>
@@ -66,7 +72,7 @@ const Summary = (props) => {
                     <View style={style.rowView}>
                         <View style={{ flex: 1 }}>
                             <Text numberOfLines={1} style={style.keyText}>{t("moreinfoscreen.address")}</Text>
-                            <Text numberOfLines={1} style={style.valueText}>{userData?.address && `${userData?.address},`} {userData?.city && `${userData.city},`} {userData?.state} {userData?.zipcode}</Text>
+                            <Text numberOfLines={1} style={[style.valueText,{color:isEmptyColor(address)}]}>{isEmpty(address)}</Text>
                         </View>
                     </View>
                 </View>
@@ -107,7 +113,7 @@ const Summary = (props) => {
                 <View style={style.uTextview}>
                     <Text style={style.headingtext}>{t("consentsign.signature")}</Text>
                 </View>
-                {userData?.signatureImage?.uri && <Image style={style.signatureImage} source={{uri:userData?.signatureImage?.base64}} />}
+                {userData?.signatureImage?.uri && <Image style={style.signatureImage} source={{ uri: userData?.signatureImage?.base64 }} />}
             </View>
         )
     }

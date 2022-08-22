@@ -18,6 +18,7 @@ const Useraggrement = (props) => {
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
 
+
     const renderItem = useCallback(({ item, index }) => {
         return (
             <View style={style.singleView}>

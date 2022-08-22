@@ -232,6 +232,17 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         height: '50%',
         width: '50%',
         resizeMode: 'center'
+    },
+    closeButton:{
+        alignItems:'flex-start',
+        width:deviceBasedDynamicDimension(20,true,1),
+        marginLeft:deviceBasedDynamicDimension(5,true,1),
+    },
+    closeImage:{
+        resizeMode:'contain',
+        height:deviceBasedDynamicDimension(20,true,1),
+        aspectRatio:1,
+        opacity:0.5
     }
 })
 const Styles = {

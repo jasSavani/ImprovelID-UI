@@ -17,7 +17,8 @@
     "delete":"Delete",
     "renew":"Renew",
     "welcome":"Welcome",
-    "chooseauthority":"Choose Authority"
+    "chooseauthority":"Choose Authority",
+    "notfilled":"Not filled"
   },
   "app": {
     "name": "",
@@ -165,7 +166,8 @@
     "rateText": "Message and data rates may apply.",
     "nameText": "Legal name",
     "firstname": "First name",
-    "lastname": "Last name"
+    "lastname": "Last name",
+    "middlename":"Middle Name"
   },
   "moreinfoscreen": {
     "screenname": "More Information",

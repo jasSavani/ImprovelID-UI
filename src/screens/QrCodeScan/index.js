@@ -13,23 +13,31 @@ import Loader from '../../components/Loader';
 import { mocksData } from '../../constants';
 const QrCodeScan = (props) => {
 
-    const { assets, colors, gradients,icons } = useTheme();
+    const { assets, colors, gradients, icons } = useTheme();
     const { isDark, theme, setTheme } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const _cameraRef = useRef(null)
-    const [qrcodescan,setQRcodescan] = useState(false)
+    const [qrcodescan, setQRcodescan] = useState(false)
     const isFocused = useIsFocused()
     // const { signIn } = useContext(AuthContext);
+    useEffect(() => {
 
+        Platform.OS === 'android' && StatusBar.setTranslucent(true);
+        Platform.OS === 'android' && StatusBar.setBackgroundColor('transparent')
+        StatusBar.setBarStyle('dark-content');
+        return () => {
+            StatusBar.setBarStyle('default');
+        };
+    }, []);
 
     const ontermsClick = () => {
-
+        props.navigation.navigate("Useraggrement")
     }
     const onPrivacypolicyClick = () => {
     }
     const onValidate = (code) => {
-        console.log(code,'CODE');
+        console.log(code, 'CODE');
         props.navigation.navigate("BasicInfo")
     }
 
@@ -77,7 +85,7 @@ const QrCodeScan = (props) => {
                                                 buttonNegative: 'Cancel',
                                             }}
                                             googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.QR_CODE}
-                                            onBarCodeRead={(barcodes)=>{
+                                            onBarCodeRead={(barcodes) => {
                                                 // YOU WILL RECEIVE QRCODE 
                                                 onValidate(barcodes)
                                             }}

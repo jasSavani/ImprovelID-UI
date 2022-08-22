@@ -1,6 +1,7 @@
 import React from 'react';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 import { Dimensions, Platform, PixelRatio, Image } from 'react-native';
+import { useTheme, useTranslation } from '../context';
 
 
 export const screenWidth = Dimensions.get('window').width;
@@ -120,10 +121,10 @@ export const getverifiedStatusIcon = (type) => {
 }
 
 export const getImageRatio = (uri, type) => {
-    if(uri){
+    if (uri) {
         if (type == 'local') {
             const { width, height } = Image.resolveAssetSource(uri);
-            let rationew = deviceBasedDynamicDimension(width,true,1)  / deviceBasedDynamicDimension(height,false,1)
+            let rationew = deviceBasedDynamicDimension(width, true, 1) / deviceBasedDynamicDimension(height, false, 1)
             if (rationew < 0.7) {
                 return 0.7
             } else {
@@ -131,7 +132,7 @@ export const getImageRatio = (uri, type) => {
             }
         } else {
             Image.getSize(uri, (width, height) => {
-                let rationew = deviceBasedDynamicDimension(width,true,1)  / deviceBasedDynamicDimension(height,false,1)
+                let rationew = deviceBasedDynamicDimension(width, true, 1) / deviceBasedDynamicDimension(height, false, 1)
                 if (rationew < 0.7) {
                     return 0.7
                 } else {
@@ -139,17 +140,34 @@ export const getImageRatio = (uri, type) => {
                 }
             })
         }
-    }else{
+    } else {
         return 1.5
     }
 }
 
-export const  formatPhoneNumber = (phoneNumberString) => {
+export const formatPhoneNumber = (phoneNumberString) => {
     var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
     var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
     if (match) {
-      var intlCode = (match[1] ? '+1 ' : '');
-      return [intlCode, match[2],, ' ', match[3], ' ', match[4]].join('');
+        var intlCode = (match[1] ? '+1 ' : '');
+        return [intlCode, match[2], , ' ', match[3], ' ', match[4]].join('');
     }
     return null;
-  }
+}
+
+export const isEmpty = (value) =>{
+    const { t, translate } = useTranslation();
+    if(value && value.trim() != 0){
+        return value
+    }else{
+        return t("common.notfilled")
+    }
+}
+export const isEmptyColor = (value) =>{
+    const { colors} = useTheme();
+    if(value && value.trim() != 0){
+        return colors.darkTextColor
+    }else{
+        return colors.borderColor
+    }
+}
