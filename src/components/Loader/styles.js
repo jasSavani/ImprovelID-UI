@@ -1,0 +1,144 @@
+import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
+import { deviceBasedDynamicDimension } from '../../utils';
+
+export const ButtonContainer = styled.TouchableOpacity`
+  margin-vertical: 63.2px;
+  width: 120px;
+  height: 40px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: ${props => props.bgColor};
+`;
+export const styles = StyleSheet.create({
+    cardView: (props) => {
+        const { colors } = props
+        return {
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginHorizontal: deviceBasedDynamicDimension(25, true, 1),
+            borderRadius: deviceBasedDynamicDimension(13, false, 1),
+            backgroundColor: colors.white,
+            shadowColor: colors.lightShadow,
+            shadowOffset: {
+                height: 4,
+                width: 0
+            },
+            shadowRadius: deviceBasedDynamicDimension(15, false, 1),
+            elevation: deviceBasedDynamicDimension(4, false, 1),
+        }
+    },
+    boxView: (props) => {
+        const { colors } = props
+        return {
+            backgroundColor: colors.white,
+            borderRadius: deviceBasedDynamicDimension(26, false, 1),
+            flex: 1
+        }
+    },
+    containerView: {
+        flex: 1,
+        backgroundColor: "white"
+    },
+    centerView: {
+        flex: 1,
+        justifyContent: 'center',
+        // alignItems: 'center'
+    },
+    absolute: {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0
+    },
+    imageView: {
+        height: deviceBasedDynamicDimension(87, false, 1),
+        width: deviceBasedDynamicDimension(87, false, 1),
+        marginTop: deviceBasedDynamicDimension(2, false, 1),
+        alignSelf: 'center',
+        justifyContent: 'center',
+    },
+    crossView: {
+        height: deviceBasedDynamicDimension(20, false, 1),
+        width: deviceBasedDynamicDimension(20, false, 1),
+        alignSelf: 'flex-end',
+        marginTop: deviceBasedDynamicDimension(32, false, 1),
+        marginHorizontal: deviceBasedDynamicDimension(30, true, 1)
+    },
+    titleText: (props) => {
+        const { colors } = props
+        return {
+            fontSize: deviceBasedDynamicDimension(20, false, 1),
+            color: colors.darkTextColor,
+            opacity: 1,
+            fontFamily: "OpenSans-Bold",
+            textAlign: 'center',
+            paddingTop:deviceBasedDynamicDimension(10,false,1)
+
+        }
+    },
+    messageText: (props) => {
+        const { colors } = props
+        return {
+            fontSize: deviceBasedDynamicDimension(16, false, 1),
+            color: colors.textColor,
+            opacity: 1,
+            fontFamily: "OpenSans-SemiBold",
+            textAlign: 'center',
+            paddingVertical: deviceBasedDynamicDimension(8, false, 1),
+            paddingHorizontal: deviceBasedDynamicDimension(27, true, 1),
+            lineHeight: deviceBasedDynamicDimension(22, false, 1)
+        }
+    },
+    logoVIew: {
+        height: deviceBasedDynamicDimension(35, false, 1),
+        width: deviceBasedDynamicDimension(140, true, 1),
+        alignSelf: 'center',
+        resizeMode: 'contain',
+        marginVertical: deviceBasedDynamicDimension(10, false, 1)
+    },
+    lightningImage: (props) => {
+        const { colors } = props
+        return {
+            height: deviceBasedDynamicDimension(50, false, 1),
+            width: deviceBasedDynamicDimension(50, false, 1),
+            position: 'absolute',
+            alignSelf: 'center',
+            //    bottom:deviceBasedDynamicDimension(35,false,1)
+        }
+    },
+    listVIew: {
+        marginTop: deviceBasedDynamicDimension(60, false, 1),
+        height: 100,
+        marginHorizontal: deviceBasedDynamicDimension(31, true, 1)
+    },
+    rowView: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    dotView: {
+        height: deviceBasedDynamicDimension(3, false, 1),
+        width: deviceBasedDynamicDimension(3, false, 1),
+        borderRadius: deviceBasedDynamicDimension(3, false, 1),
+        backgroundColor: 'black',
+        marginHorizontal: deviceBasedDynamicDimension(10, true, 1)
+    },
+    bodyText: (props) => {
+        const { colors } = props
+        return {
+            fontSize: deviceBasedDynamicDimension(15, false, 1),
+            color: colors.textColor,
+            opacity: 1,
+            fontFamily: "OpenSans-SemiBold",
+            paddingVertical: deviceBasedDynamicDimension(4, false, 1),
+            lineHeight: deviceBasedDynamicDimension(20, false, 1)
+        }
+    },
+
+})
+const Styles = {
+    ButtonContainer,
+    styles
+};
+export default Styles

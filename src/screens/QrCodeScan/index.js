@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView } from 'react-native';
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
@@ -8,23 +8,36 @@ import QrCodeMask from 'react-native-qrcode-mask';
 import { deviceBasedDynamicDimension } from '../../utils';
 import { AuthContext } from '../../navigation/AuthContext';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useIsFocused } from '@react-navigation/native';
+import Loader from '../../components/Loader';
+import { mocksData } from '../../constants';
 const QrCodeScan = (props) => {
 
-    const { assets, colors, gradients } = useTheme();
+    const { assets, colors, gradients, icons } = useTheme();
     const { isDark, theme, setTheme } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const _cameraRef = useRef(null)
+    const [qrcodescan, setQRcodescan] = useState(false)
+    const isFocused = useIsFocused()
     // const { signIn } = useContext(AuthContext);
+    useEffect(() => {
 
+        Platform.OS === 'android' && StatusBar.setTranslucent(true);
+        Platform.OS === 'android' && StatusBar.setBackgroundColor('transparent')
+        StatusBar.setBarStyle('dark-content');
+        return () => {
+            StatusBar.setBarStyle('default');
+        };
+    }, []);
 
     const ontermsClick = () => {
-
+        props.navigation.navigate("Useraggrement")
     }
     const onPrivacypolicyClick = () => {
     }
     const onValidate = (code) => {
-        console.log(code,'CODE');
+        console.log(code, 'CODE');
         props.navigation.navigate("BasicInfo")
     }
 
@@ -54,7 +67,7 @@ const QrCodeScan = (props) => {
                             renderFrame={() => {
                                 return (
                                     <View style={styles.roundView}>
-                                        <RNCamera
+                                        {isFocused && <RNCamera
                                             ref={_cameraRef}
                                             style={styles.roundView}
                                             type={RNCamera.Constants.Type.back}
@@ -72,7 +85,7 @@ const QrCodeScan = (props) => {
                                                 buttonNegative: 'Cancel',
                                             }}
                                             googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.QR_CODE}
-                                            onBarCodeRead={(barcodes)=>{
+                                            onBarCodeRead={(barcodes) => {
                                                 // YOU WILL RECEIVE QRCODE 
                                                 onValidate(barcodes)
                                             }}
@@ -81,7 +94,7 @@ const QrCodeScan = (props) => {
                                         //     // onValidate(barcodes)
 
                                         // }}
-                                        />
+                                        />}
                                     </View>
                                 )
                             }}
@@ -101,7 +114,6 @@ const QrCodeScan = (props) => {
                     <Text style={styles.normalText(theme)}><Text onPress={ontermsClick} style={styles.highLightText(theme)}>{t("qrscreen.termofuse")}</Text> {t("qrscreen.andhave")} <Text onPress={onPrivacypolicyClick} style={styles.highLightText(theme)}>{t("qrscreen.privacypolicy")}.</Text></Text>
                 </View>
             </KeyboardAwareScrollView>
-
         </View>
 
     )

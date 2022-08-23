@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 import { deviceBasedDynamicDimension } from '../../utils';
 
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
         shadowRadius: deviceBasedDynamicDimension(5, false, 1),
         backgroundColor: 'white',
         marginVertical: deviceBasedDynamicDimension(9, false, 1),
-        
+
     },
     rowView: {
         flexDirection: 'row'
@@ -72,9 +72,8 @@ export const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     rightArrow: {
-        width: deviceBasedDynamicDimension(14, false, 1),
-        height: deviceBasedDynamicDimension(7, true, 1),
-        marginRight: deviceBasedDynamicDimension(15, true, 1),
+        width: deviceBasedDynamicDimension(5, true, 1),
+        height: deviceBasedDynamicDimension(18, false, 1),
         alignSelf: 'center',
     },
     nameText: (props) => {
@@ -97,21 +96,21 @@ export const styles = StyleSheet.create({
             color: colors.textColor
         }
     },
-    extraView:{
-        marginHorizontal:deviceBasedDynamicDimension(15,true,1),
-        flexDirection:'row',
-        justifyContent:'flex-end',
-        borderTopColor:'lightgray',
-        borderTopWidth:1
+    extraView: {
+        marginHorizontal: deviceBasedDynamicDimension(15, true, 1),
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        borderTopColor: 'lightgray',
+        borderTopWidth: 1
     },
-    btnView:{
-        height:32,
-        width:96,
-        marginVertical:deviceBasedDynamicDimension(10,false,1),
-        marginHorizontal:deviceBasedDynamicDimension(6,true,1),
-        borderRadius:deviceBasedDynamicDimension(4,false,1),
-        justifyContent:'center',
-        alignItems:'center'
+    btnView: {
+        height: 32,
+        width: 96,
+        marginVertical: deviceBasedDynamicDimension(10, false, 1),
+        marginHorizontal: deviceBasedDynamicDimension(6, true, 1),
+        borderRadius: deviceBasedDynamicDimension(4, false, 1),
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     btnText: (props) => {
         const { colors } = props
@@ -121,7 +120,66 @@ export const styles = StyleSheet.create({
             fontSize: deviceBasedDynamicDimension(15, false, 1),
             opacity: 1,
             color: colors.whiteText
-    }}
+        }
+    },
+    topView: {
+        backgroundColor: 'white',
+        borderRadius: deviceBasedDynamicDimension(10, false, 1),
+        shadowColor: 'rgba(0, 0, 0, 1)',
+        shadowOpacity: 0.1,
+        shadowOffset: {
+            height: deviceBasedDynamicDimension(4, false, 1),
+            width: 0
+        },
+        elevation: deviceBasedDynamicDimension(4, false, 1),
+        shadowRadius: deviceBasedDynamicDimension(4, false, 1),
+        marginHorizontal: deviceBasedDynamicDimension(18, true, 1),
+        marginTop: deviceBasedDynamicDimension(20, false, 1),
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: deviceBasedDynamicDimension(25, false, 1),
+        paddingHorizontal: deviceBasedDynamicDimension(20, true, 1),
+    },
+    topdeviceimageView: {
+        height: deviceBasedDynamicDimension(47, false, 1),
+        width: deviceBasedDynamicDimension(47, false, 1),
+        borderRadius: deviceBasedDynamicDimension(7, false, 1),
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden'
+    },
+    textView: {
+        marginTop: deviceBasedDynamicDimension(15, false, 1),
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    menuView:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'flex-start',
+        height:deviceBasedDynamicDimension(35,false,1),
+        marginLeft:Platform.OS == "android" ? deviceBasedDynamicDimension(-5,true,1): deviceBasedDynamicDimension(10,true,1),
+        marginVertical:deviceBasedDynamicDimension(5,false,1),
+    },
+    dotView:{
+        height:deviceBasedDynamicDimension(10,false,1),
+        width:deviceBasedDynamicDimension(10,false,1),
+        borderRadius:deviceBasedDynamicDimension(10,false,1),
+    },
+    menuText: (props) => {
+        const { colors } = props
+        return {
+            fontFamily: "OpenSans-SemiBold",
+            lineHeight: deviceBasedDynamicDimension(22, false, 1),
+            fontSize: deviceBasedDynamicDimension(16, false, 1),
+            opacity: 1,
+            color: colors.darkTextColor,
+            paddingHorizontal:deviceBasedDynamicDimension(7,true,1)
+        }
+    },
+    menuOuterView:{
+        borderRadius:deviceBasedDynamicDimension(5,false,1)
+    }
 })
 const Styles = {
     ButtonContainer,

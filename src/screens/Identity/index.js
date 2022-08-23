@@ -13,7 +13,7 @@ import DocCard from '../../components/DocCard';
 const Identity = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
-    const { isDark, theme, setTheme, setActivescreen, setnotificationCount } = useData();
+    const { isDark, theme, setTheme, setActivescreen, setnotificationCount,setSelectedIddata } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
@@ -48,7 +48,8 @@ const Identity = (props) => {
         )
     }
 
-    const onCardClick = (id) => {
+    const onCardClick = (data) => {
+        setSelectedIddata([data]),
         props.navigation.navigate("ViewIDcard")
     }
 
@@ -58,7 +59,10 @@ const Identity = (props) => {
                 leftIcon={icons.menuIcon}
                 rightIcon={icons.bellIcon}
                 onleftClick={() => { props.navigation.openDrawer() }}
-                onRightClick={() => { }}
+                onRightClick={() => { props.navigation.navigate("Notification")}}
+                isRefreshbtn
+                onRefreshClick={()=>{}}
+                onPlusClick={()=>{props.navigation.navigate("QRScan")}}
                 screenName={t("screens.myidentities")} />
             <View style={style.container}>
                 <View style={style.topView}>

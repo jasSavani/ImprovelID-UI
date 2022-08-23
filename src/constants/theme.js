@@ -42,6 +42,13 @@ export const ICONS = {
   dashemployementIcon: require('../assets/icons/employement.png'),
   eyeIcon: require('../assets/icons/eye.png'),
   activeIcon: require('../assets/icons/activeIcon.png'),
+  revokedIcon: require('../assets/icons/revokedIcon.png'),
+  suspendedIcon: require('../assets/icons/suspendedIcon.png'),
+  unverificationIcon: require('../assets/icons/unverificationIcon.png'),
+  plusBtn: require('../assets/icons/plusBtn.png'),
+  refreshBtn: require('../assets/icons/refreshBtn.png'),
+
+
   pkicertificateIcon: require('../assets/icons/pkicertificate.png'),
   fdi2Icon: require('../assets/icons/fdi2.png'),
   consentIcon: require('../assets/icons/consent.png'),
@@ -50,6 +57,68 @@ export const ICONS = {
   normalSettingIcon: require('../assets/icons/settingnormal.png'),
   paymentsettingIcon: require('../assets/icons/paymentsetting.png'),
   privacysettingIcon: require('../assets/icons/privacy.png'),
+  notificationMessage: require('../assets/icons/notimessage.png'),
+  notificationAlert: require('../assets/icons/notialert.png'),
+  notificationdocId: require('../assets/icons/notiIdcard.png'),
+
+  timeIcon: require('../assets/icons/timeIcon.png'),
+  applicationIcon: require('../assets/icons/application.png'),
+  userIcon: require('../assets/icons/user.png'),
+  actionIcon: require('../assets/icons/action.png'),
+  navIcon: require('../assets/icons/navigation.png'),
+
+  plusIcon: require('../assets/icons/plusIcon.png'),
+  paypalIcon: require('../assets/icons/paypal.png'),
+  appleIcon: require('../assets/icons/appleIcon.png'),
+  visaCardIcon: require('../assets/icons/visaCard.png'),
+  masterCardIcon: require('../assets/icons/masterCard.png'),
+  menudotIcon: require('../assets/icons/menuIcon.png'),
+
+  otpLogoIcon: require('../assets/icons/otpscreenlogo.png'),
+  otpVerifyLogo: require('../assets/icons/otpverifiedLogo.png'),
+
+  report_useractive: require('../assets/icons/useractive.png'),
+  report_userclickevents: require('../assets/icons/userclicks.png'),
+  report_userpurchases: require('../assets/icons/userpurchases.png'),
+  report_userlikes: require('../assets/icons/userlikes.png'),
+  report_menu: require('../assets/icons/horizontalMenu.png'),
+  profileEdit: require('../assets/icons/profileEdit.png'),
+  loaderimage: require('../assets/icons/loaderImage.png'),
+  lightning: require('../assets/icons/lightning.png'),
+
+  suspendIcon: require('../assets/icons/suspendCard.png'),
+  waitingMsg: require('../assets/icons/waitingMsg.png'),
+  successBig: require('../assets/icons/successBig.png'),
+  errorIcon: require('../assets/icons/error.png'),
+
+  frontPageicon: require('../assets/icons/frontPageicon.png'),
+  backpageicon: require('../assets/icons/backpageicon.png'),
+  qrcodepage: require('../assets/icons/qrcodepage.png'),
+  biographic: require('../assets/icons/biographic.png'),
+  identityHome: require('../assets/icons/identityHome.png'),
+  autenticationIcn: require('../assets/icons/autenticationIcn.png'),
+  consentIcon: require('../assets/icons/consentIcon.png'),
+  reportIconHome: require('../assets/icons/reportIconHome.png'),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
 
 
 
@@ -84,6 +153,13 @@ export const IMAGES = {
   centerrGroup: require("../assets/images/centerGroup.png"),
   profileimage: require('../assets/images/profilkeimage.png'),
   dlimage: require('../assets/images/DLImage.png'),
+  impovedColorLogo: require("../assets/images/improvedColor.png"),
+  dlVertical: require('../assets/images/dlVertical.png'),
+  backHorizontal: require('../assets/images/backHorizontal.png'),
+  qrimageBig: require('../assets/images/qrimageBig.png'),
+
+
+
 
 };
 export const COUNTRYIMAGES = {

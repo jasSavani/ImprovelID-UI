@@ -20,6 +20,19 @@ import Detailspage from "../screens/Detailspage";
 import BasicInfoScreen from "../screens/BasicInfoScreen";
 import MoreInfoScreen from "../screens/MoreInfoScreen";
 import ViewIDcard from "../screens/ViewIDcard";
+import Notification from "../screens/Notification";
+import FIDO2Regestration from "../screens/FIDO2Regestration";
+import LoginRequest from "../screens/LoginRequest";
+import PaymentMethod from "../screens/PaymentMethod";
+import AddCardScreen from "../screens/AddCardScreen";
+import OtpVerification from "../screens/OtpVerification";
+import StartVerification from "../screens/StartVerification";
+import AboutUs from "../screens/AboutUs";
+import Useraggrement from "../screens/Useraggrement";
+import Reports from "../screens/Reports";
+import ProfileScreen from "../screens/ProfileScreen";
+import Summary from "../screens/Summary";
+import ManageIdentities from "../screens/ManageIdentities";
 
 const Stack = createNativeStackNavigator()
 const Drawer = createDrawerNavigator();
@@ -61,7 +74,7 @@ const Route = (props) => {
             {/* <AuthContext.Provider value={authContext}> */}
                 <NavigationContainer>
                   <Stack.Navigator
-                        screenOptions={{ headerShown: false }} initialRouteName={'Splash'}>
+                        screenOptions={{ headerShown: false,animation:"none" }} initialRouteName={'Splash'}>
                         <Stack.Screen name="Splash" component={Splash} />
                         <Stack.Screen name="QRScan" component={QrCodeScan} />
                         <Stack.Screen name="IdentityVerification" component={IdentityVerification} />
@@ -76,7 +89,26 @@ const Route = (props) => {
                         <Stack.Screen name="Details" component={Detailspage} />
                         <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />
                         <Stack.Screen name="Moreinfo" component={MoreInfoScreen} />
-                        <Stack.Screen name="ViewIDcard" component={ViewIDcard} />                        
+                        <Stack.Screen name="ViewIDcard" component={ViewIDcard} />
+                        <Stack.Screen name="Notification" component={Notification} />
+                        <Stack.Screen name="FIDO2Regestration" component={FIDO2Regestration} />   
+                        <Stack.Screen name="LoginRequest" component={LoginRequest} />  
+                        <Stack.Screen name="PaymentMethod" component={PaymentMethod} />   
+                        <Stack.Screen name="AddCardScreen" component={AddCardScreen} />  
+                        <Stack.Screen name="OtpVerification" component={OtpVerification} />   
+                        <Stack.Screen name="StartVerification" component={StartVerification} />   
+                        <Stack.Screen name="AboutUs" component={AboutUs} />   
+                        <Stack.Screen name="Useraggrement" component={Useraggrement} />   
+                        <Stack.Screen name="Reports" component={Reports} />   
+                        <Stack.Screen name="Summary" component={Summary} />   
+                        <Stack.Screen name="ManageIdentity" component={ManageIdentities} />   
+
+
+
+
+
+
+                                             
                     </Stack.Navigator>
                 </NavigationContainer>
                 {/* </AuthContext.Provider> */}

@@ -11,26 +11,27 @@ import PopupMessage from '../../components/PopupMessage';
 
 const SubmitVerification = (props) => {
 
-    const { assets, colors, gradients,icons } = useTheme();
-    const { isDark, theme, setTheme } = useData();
+    const { assets, colors, gradients, icons } = useTheme();
+    const { isDark, theme, setTheme, userData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const [ismodal, setIsmodal] = useState(false)
 
-    const onsubmitClick=()=>{
+    const onsubmitClick = () => {
         setIsmodal(!ismodal),
-        setTimeout(() => {     
-            props.navigation.reset({
-                index: 0,
-                routes: [{ name: 'Drawer' }]
-            })
-        }, 100);
+            setTimeout(() => {
+                props.navigation.reset({
+                    index: 0,
+                    routes: [{ name: 'Drawer' }]
+                })
+            }, 100);
     }
 
 
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle={'dark-content'} />
             <BackArrow {...props} />
             <View style={{ flex: 1 }}>
                 <View style={styles.titleView}>
@@ -38,17 +39,17 @@ const SubmitVerification = (props) => {
                     <Text style={styles.smallText(theme)}>{t("submitverification.subtitle")}</Text>
 
                 </View>
-                <View style={{ flex: 1, justifyContent: 'flex-start',marginTop:deviceBasedDynamicDimension(19,false,1)}}>
-                   <VerificationCard onClick={()=>{}} leftIcon={icons.docuploadicon} docName={t("submitverification.doc")} />
-                   <VerificationCard onClick={()=>{}} leftIcon={icons.selfieuploadIcon} docName={t("submitverification.selfie")} />
-                   <VerificationCard onClick={()=>{}} leftIcon={icons.signatureuploadIcon} docName={t("submitverification.signature")} />
+                <View style={{ flex: 1, justifyContent: 'flex-start', marginTop: deviceBasedDynamicDimension(19, false, 1) }}>
+                    {(userData?.frontImage || userData?.backImage) && <VerificationCard onClick={() => { }} leftIcon={icons.docuploadicon} docName={t("submitverification.doc")} />}
+                    {userData?.profileImage && <VerificationCard onClick={() => { }} leftIcon={icons.selfieuploadIcon} docName={t("submitverification.selfie")} />}
+                    {userData?.signatureImage && userData?.signatureImage?.uri && <VerificationCard onClick={() => { }} leftIcon={icons.signatureuploadIcon} docName={t("submitverification.signature")} />}
 
                 </View>
                 <View style={styles.bottomView}>
-                    <Button isgradient={true} onClick={() => {setIsmodal(!ismodal) }} gradient={gradients.primary}  name={t("submitverification.sumitbtn")} />
+                    <Button isgradient={true} onClick={() => { setIsmodal(!ismodal) }} gradient={gradients.primary} name={t("submitverification.sumitbtn")} />
                 </View>
             </View>
-            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.success")} message={t("popupmessage.successmessage")} primaryBtnname={t("popupmessage.ok")}   primaryBtn={onsubmitClick} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.succespop} />}
+            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.success")} message={t("popupmessage.successmessage")} primaryBtnname={t("popupmessage.ok")} primaryBtn={onsubmitClick} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.successBig} />}
 
         </View>
     )

@@ -10,6 +10,7 @@ import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
 import GridBox from '../../components/GridBox';
 import { APPLICATIONDATA } from '../../constants/mocksData';
+import Loader from '../../components/Loader';
 const Application = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
@@ -41,7 +42,7 @@ const Application = (props) => {
                 leftIcon={icons.menuIcon}
                 rightIcon={icons.bellIcon}
                 onleftClick={() => { Keyboard.dismiss(), props.navigation.openDrawer() }}
-                onRightClick={() => { }}
+                onRightClick={() => { props.navigation.navigate("Notification")}}
                 screenName={t("screens.application")} />
 
             <View style={{ flex: 1, backgroundColor: '#F8F9FA' }}>

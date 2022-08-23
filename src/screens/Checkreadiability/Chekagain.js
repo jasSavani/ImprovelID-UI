@@ -11,7 +11,7 @@ import PopupMessage from '../../components/PopupMessage';
 const Chekagain = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
-    const { isDark, theme, setTheme, cardData } = useData();
+    const { isDark, theme, setTheme, cardData,setUserdata,userData } = useData();
     const { t, translate } = useTranslation();
     const [screndata, setScreenData] = useState({ title: "", subtitle: "", })
     const [ismodal, setIsmodal] = useState(false)
@@ -24,17 +24,19 @@ const Chekagain = (props) => {
 
     const onClickConfirm = () => {
         if (type == 2) {
+            setUserdata({ ...userData, backImage: props.route?.params?.image })
             setIsmodal(!ismodal)
         }
     }
-    const onsubmitClick=()=>{
+    const onsubmitClick = () => {
         setIsmodal(!ismodal),
-        setTimeout(() => {     
-            props.navigation.reset({
-                index: 0,
-                routes: [{ name: 'Drawer' }]
-            })
-        }, 100);
+            setTimeout(() => {
+                // props.navigation.reset({
+                //     index: 0,
+                //     routes: [{ name: 'Drawer' }]
+                // })
+                props.navigation.navigate("ConsentSign")
+            }, 100);
     }
 
 
@@ -65,7 +67,7 @@ const Chekagain = (props) => {
                     <Button isgradient={true} onClick={() => { onClickConfirm() }} gradient={gradients.primary} name={t("readscreen.confirm")} />
                 </View>
             </View>
-            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.waiting")} message={t("popupmessage.waitingmsg")} primaryBtnname={t("popupmessage.ok")} primaryBtn={() => {onsubmitClick() }} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.waitingpop} />}
+            {ismodal && <PopupMessage isVisible={ismodal} title={t("popupmessage.waiting")} message={t("popupmessage.waitingmsg")} primaryBtnname={t("popupmessage.ok")} primaryBtn={() => { onsubmitClick() }} onCancel={() => { setIsmodal(!ismodal) }} icon={icons.waitingMsg} />}
 
         </View>
     )

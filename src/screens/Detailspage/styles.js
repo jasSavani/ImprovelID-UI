@@ -14,10 +14,15 @@ export const ButtonContainer = styled.TouchableOpacity`
 export const styles = ({ colors } = props) => StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#F8F9FA"
+        backgroundColor: "#F8F9FA",
+        paddingBottom:deviceBasedDynamicDimension(10,false,1)
+    },
+    oyerMainview: {
+        flex: 1,
+        justifyContent: 'center'
     },
     mainView: {
-        flex: 1,
+        // flex: 1,
         marginHorizontal: deviceBasedDynamicDimension(19, true, 1),
         marginTop: deviceBasedDynamicDimension(19, false, 1),
         marginBottom: deviceBasedDynamicDimension(23, false, 1),
@@ -33,7 +38,7 @@ export const styles = ({ colors } = props) => StyleSheet.create({
         backgroundColor: colors.white,
         overflow: 'hidden',
         paddingHorizontal: deviceBasedDynamicDimension(20, true, 1),
-        paddingVertical: deviceBasedDynamicDimension(12, false, 1)
+        paddingVertical: deviceBasedDynamicDimension(12, false, 1),
     },
     topview: {
         flexDirection: 'row',
@@ -85,6 +90,69 @@ export const styles = ({ colors } = props) => StyleSheet.create({
     },
     singlebox: {
         marginVertical: deviceBasedDynamicDimension(8, false, 1)
+    },
+    centerView: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: deviceBasedDynamicDimension(25, true, 1),
+        // borderBottomColor: colors.borderColor,
+        // borderBottomWidth: 1,
+        paddingBottom: deviceBasedDynamicDimension(10, false, 1)
+    },
+    iconContainer: {
+        height: deviceBasedDynamicDimension(49, false, 1),
+        width: deviceBasedDynamicDimension(49, false, 1),
+        borderRadius: deviceBasedDynamicDimension(13, false, 1),
+        backgroundColor: 'red',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: deviceBasedDynamicDimension(7, true, 1)
+
+    },
+    titleText: {
+        fontFamily: "OpenSans-SemiBold",
+        lineHeight: deviceBasedDynamicDimension(17, false, 1),
+        fontSize: deviceBasedDynamicDimension(13, false, 1),
+        opacity: 1,
+        color: colors.identitytabtext,
+        paddingTop: deviceBasedDynamicDimension(6, false, 1),
+        textAlign: 'center'
+    },
+    iconView: {
+        height: deviceBasedDynamicDimension(22, false, 1),
+        width: deviceBasedDynamicDimension(22, false, 1),
+        resizeMode: 'contain'
+    },
+    bottomView:{
+        flexDirection:'row',
+        justifyContent:'center',
+        paddingVertical:deviceBasedDynamicDimension(12,false,1),
+        alignItems:'center',
+    },
+    bottomText:{
+        fontFamily: "OpenSans-SemiBold",
+        lineHeight: deviceBasedDynamicDimension(22, false, 1),
+        fontSize: deviceBasedDynamicDimension(16, false, 1),
+        opacity: 1,
+        color: colors.darkTextColor,
+        paddingHorizontal:deviceBasedDynamicDimension(7,true,1)
+    },
+    imgeTopView:(ratio)=>{return{
+        width:'100%',
+        resizeMode:'contain',
+        height:"auto",
+        aspectRatio:ratio,
+        alignSelf:'center'
+    }},
+    visualText:{
+        fontFamily: "OpenSans-Bold",
+        lineHeight: deviceBasedDynamicDimension(20, false, 1),
+        fontSize: deviceBasedDynamicDimension(15, false, 1),
+        opacity: 1,
+        color: colors.darkTextColor,
+        paddingHorizontal:deviceBasedDynamicDimension(25,true,1),
+        paddingTop:deviceBasedDynamicDimension(15,false,1)
     }
 })
 const Styles = {

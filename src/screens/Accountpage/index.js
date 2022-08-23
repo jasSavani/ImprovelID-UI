@@ -171,7 +171,7 @@ const Accountpage = (props) => {
                 leftIcon={icons.menuIcon}
                 rightIcon={icons.bellIcon}
                 onleftClick={() => { props.navigation.openDrawer() }}
-                onRightClick={() => { }}
+                onRightClick={() => { props.navigation.navigate("Notification")}}
                 screenName={t("screens.account")} />
             <ScrollView style={style.container} contentContainerStyle={{ flexGrow: 1, paddingBottom: deviceBasedDynamicDimension(50, false, 1) }}>
                 {firstBox()}

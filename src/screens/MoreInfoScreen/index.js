@@ -17,7 +17,7 @@ const states = ["State 1", "State 2", "State 3",]
 const MoreInfoScreen = (props) => {
 
     const { assets, colors, gradients, icons, flags } = useTheme();
-    const { isDark, theme, setTheme, setActivescreen, setnotificationCount } = useData();
+    const { isDark, theme, setTheme, setActivescreen, setnotificationCount,setUserdata,userData  } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
@@ -88,7 +88,7 @@ const MoreInfoScreen = (props) => {
                         renderCustomizedButtonChild={(text) => {
                             return (
                                 <View style={style.dropdowntextView}>
-                                    {text ? <Text numberOfLines={1} adjustsFontSizeToFit style={style.inputText}>{text}</Text> : <Text numberOfLines={1} adjustsFontSizeToFit style={[style.inputText, { color: colors.placeholderTextColor }]}>{t("moreinfoscreen.state")}</Text>}
+                                    {text ? <Text numberOfLines={1}  style={style.inputText}>{text}</Text> : <Text numberOfLines={1}  style={[style.inputText, { color: colors.placeholderTextColor }]}>{t("moreinfoscreen.state")}</Text>}
                                 </View>
                             )
                         }}
@@ -110,6 +110,7 @@ const MoreInfoScreen = (props) => {
                             placeholderTextColor={colors.placeholderTextColor}
                             style={style.inputText}
                             value={zipcode}
+                            keyboardType={'number-pad'}
                             onChangeText={(text) => { onchangetext(text, "zipcode") }}
                         />
                     </View>
@@ -172,7 +173,10 @@ const MoreInfoScreen = (props) => {
         })
     };
 
-
+    const navigateNextScreen = () => {
+        setUserdata({...userData,...screenData})
+        props.navigation.navigate("OtpVerification")
+    }
 
 
     return (
@@ -199,9 +203,7 @@ const MoreInfoScreen = (props) => {
 
                     </KeyboardAwareScrollView>
                     <View style={style.bottomView}>
-                        <Button style={{}} isgradient={true} onClick={() => {
-                            props.navigation.navigate("IdentityVerification")
-                        }} gradient={gradients.primary} name={t("moreinfoscreen.contiue")} />
+                        <Button style={{}} isgradient={true} onClick={navigateNextScreen} gradient={gradients.primary} name={t("basicinfoscreen.snedverificationcode")} />
                     </View>
                 </View>
             </View>

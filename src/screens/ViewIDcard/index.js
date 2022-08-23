@@ -1,13 +1,13 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView, TextInput, KeyboardAvoidingView, Keyboard, Touchable, TouchableOpacity, SectionList, Platform } from 'react-native';
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
 import * as Styles from './styles';
 
-import { deviceBasedDynamicDimension, screenWidth } from '../../utils';
+import { deviceBasedDynamicDimension, getstatus, getstatusIcon, getverifiedStatus, screenWidth } from '../../utils';
 import Block from '../../components/Block';
 import Header from '../../components/Header';
-import { CARDDATA, USERDETAILS } from '../../constants/mocksData';
+import mocksData, { CARDDATA, USERDETAILS } from '../../constants/mocksData';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel from 'react-native-snap-carousel';
 import DocCard from '../../components/DocCard';
@@ -17,12 +17,13 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 const ViewIDcard = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
-    const { isDark, theme, setTheme, setActivescreen, setnotificationCount } = useData();
+    const { isDark, theme, setTheme, setActivescreen, setnotificationCount, selecteIdData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const style = useMemo(() => styles(theme), [theme]);
     const [seconds, setSeconds] = useState(10);
     const [otp, setOtp] = useState("");
+    const [selctedtype, setSelectedtype] = useState(1)
 
 
     useEffect(() => {
@@ -98,13 +99,13 @@ const ViewIDcard = (props) => {
                 </View>
                 <View style={style.inputdotView}>
                     <TextInput
-                    style={style.inputText}
-                    placeholder={'Enter OTP'}
-                    placeholderTextColor={colors.placeholderTextColor}
-                    keyboardType={'number-pad'}
-                    onChangeText={setOtp}
-                    value={otp}
-                    maxLength={6} />
+                        style={style.inputText}
+                        placeholder={'Enter OTP'}
+                        placeholderTextColor={colors.placeholderTextColor}
+                        keyboardType={'number-pad'}
+                        onChangeText={setOtp}
+                        value={otp}
+                        maxLength={6} />
                     <TouchableOpacity activeOpacity={0.8} style={style.copyView}>
                         <Image source={icons.copyIcon} style={style.copyimage} />
                     </TouchableOpacity>
@@ -113,16 +114,32 @@ const ViewIDcard = (props) => {
         )
     }
 
+    const PageView = ({ item }) => {
+        const { icon, id, title, } = item
+        let selected = id == selctedtype
+        let BTNCOLOR = id == 1 ? gradients.blue : id == 2 ? gradients.buttongradient : id == 3 ? gradients.green : gradients.orange
+        return (
+            <View>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => { props.navigation.navigate("Details", { selectedId: id }) }}>
+                    <LinearGradient start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 1 }} colors={gradients.buttongradient} style={style.iconContainer}>
+                        <Image source={icons[icon]} style={style.iconView} />
+                    </LinearGradient>
+                </TouchableOpacity>
+                <Text numberOfLines={1} adjustsFontSizeToFit style={[style.titleText, { color: colors.identityselectedtabtext }]}>{t(title)}</Text>
+            </View>
+        )
+    }
+
     return (
         <Block>
             <HeaderView />
-                <KeyboardAwareScrollView style={style.container} extraScrollHeight={Platform.OS == 'ios' ? 40:0}>
-            {/* <ScrollView style={style.container}> */}
+            <KeyboardAwareScrollView style={style.container} extraScrollHeight={Platform.OS == 'ios' ? 40 : 0}>
+                {/* <ScrollView style={style.container}> */}
                 <View style={style.topView}>
                     <Text style={style.visualText}>Visual  ID</Text>
                     <View style={style.secondView}>
-                        <Image source={icons.activeIcon} style={style.iconImage} />
-                        <Text style={style.activeText}>Active / Verified</Text>
+                        <Image source={icons[getstatusIcon(selecteIdData[0].activestatus)]} style={style.iconImage} />
+                        <Text style={style.activeText}>{t(getstatus(selecteIdData[0].activestatus))} / {t(getverifiedStatus(selecteIdData[0].verifystatus))}</Text>
                     </View>
                 </View>
                 <View style={style.caraouselView}>
@@ -133,8 +150,13 @@ const ViewIDcard = (props) => {
                         itemWidth={screenWidth - 52}
                     />
                 </View>
+                <View style={style.centerView}>
+                    {mocksData.PAGEDATA.map((item, index) => {
+                        return <PageView item={item} />
+                    })}
+                </View>
                 <SectionList
-                    sections={CARDDATA[0].documentData[0].data}
+                    sections={selecteIdData}
                     style={{ flex: 1 }}
                     keyExtractor={(item, index) => item + index}
                     contentContainerStyle={style.listView}
@@ -142,12 +164,12 @@ const ViewIDcard = (props) => {
                     renderSectionHeader={({ section: { name } }) => {
                         return (
                             <View style={{ marginTop: 12 }}>
-                                <Text style={style.authText}>Authentication Credentials</Text>
+                                <Text style={style.authText}>{t("viewIdcardscreen.authcredential")}</Text>
                             </View>
                         )
                     }}
                 />
-            {/* </ScrollView> */}
+                {/* </ScrollView> */}
             </KeyboardAwareScrollView>
         </Block>
     )

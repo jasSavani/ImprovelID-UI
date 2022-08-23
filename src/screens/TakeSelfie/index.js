@@ -11,7 +11,7 @@ import SelfieCamera from '../../components/SelfieCamera';
 const TakeSelfie = (props) => {
 
     const { assets, colors, gradients,icons } = useTheme();
-    const { isDark, theme, setTheme,cardData } = useData();
+    const { isDark, theme, setTheme,cardData,setUserdata,userData } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     const [cameraOn,setCameraon] = useState(false)
@@ -45,7 +45,7 @@ const TakeSelfie = (props) => {
                     <Button isgradient={true} onClick={() => {setCameraon(true)}} gradient={gradients.primary}  name={t("selfiescreen.getstarted")} />
                 </View>
             </View>
-            {cameraOn && <SelfieCamera isVisible={cameraOn} texts={selfiecamerainstruction}  onCancel={() => { setCameraon(!cameraOn) }} onPictureTaken={(image) => { setCameraon(!cameraOn), props.navigation.navigate("ConsentSign") }} />}
+            {cameraOn && <SelfieCamera isVisible={cameraOn} texts={selfiecamerainstruction}  onCancel={() => { setCameraon(!cameraOn) }} onPictureTaken={(image) => { setCameraon(!cameraOn), setUserdata({ ...userData, profileImage: image }),props.navigation.navigate("ConsentSign") }} />}
 
         </View>
     )

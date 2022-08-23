@@ -14,12 +14,12 @@ import { DEVICEDATA } from '../../constants/mocksData';
 const ManageDevice = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
-    const { isDark, theme, setTheme, setActivescreen, setnotificationCount } = useData();
+    const { isDark, theme, setTheme, setActivescreen, setnotificationCount,setSelectedDevice } = useData();
     const { t, translate } = useTranslation();
     const { styles } = Styles
     useEffect(() => {
         const unsubscribe = props.navigation.addListener('focus', (e) => {
-            setActivescreen("Home")
+            setActivescreen("ManageDevice")
         });
 
         return unsubscribe;
@@ -31,7 +31,7 @@ const ManageDevice = (props) => {
         const icon = (type == 'android') ? icons.androidIcon : (type == 'ios') ? icons.iphoneIcon : icons.laptopIcon
 
         return (
-            <TouchableOpacity activeOpacity={0.8} style={styles.deviceOuterView}>
+            <TouchableOpacity onPress={()=>{setSelectedDevice(item),props.navigation.navigate("ManageIdentity")}} activeOpacity={0.8} style={styles.deviceOuterView}>
                 <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }} colors={colr} style={styles.deviceimageView}>
                     <Image style={{ height: '70%', width: '70%' }} resizeMode={'contain'} source={icon} />
                 </LinearGradient>
@@ -48,7 +48,7 @@ const ManageDevice = (props) => {
         <Block>
             <Header
                 leftIcon={icons.backArrow}
-                onleftClick={() => { props.navigation.openDrawer() }}
+                onleftClick={() => { props.navigation.goBack() }}
                 screenName={t("screens.managedevice")} />
 
             <View style={{ flex: 1, backgroundColor: '#F8F9FA' }}>
