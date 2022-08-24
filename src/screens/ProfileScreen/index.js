@@ -8,7 +8,7 @@ import { mocksData } from '../../constants';
 import CountryPicker, { FlagButton, Country, getAllCountries } from 'react-native-country-picker-modal'
 import TextInputMask from 'react-native-text-input-mask';
 import SelectDropdown from 'react-native-select-dropdown';
-const states = ["State 1", "State 2", "State 3",]
+const states = ["State 1", "State 2", "State 3","United States"]
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
@@ -162,7 +162,29 @@ const ProfileScreen = (props) => {
             <View style={[{ flexDirection: 'row' }, style.oneView]}>
                 <View style={{ flex: 1, marginRight: 9 }}>
                     <Text style={style.blackTxt}>{t('moreinfoscreen.city')}</Text>
-                    {/* <SelectDropdown
+                    <View style={[style.boxView]}>
+                        <TextInput
+                            placeholder={t("moreinfoscreen.city")}
+                            placeholderTextColor={colors.placeholderTextColor}
+                            style={[style.inputText, { flex: 1 }]}
+                            numberOfLines={1}
+                            value={profileData?.city}
+                            onChangeText={(text) => { handleTextChange(text, "city") }}
+                        />
+                    </View>
+                </View>
+                <View style={{ marginLeft: 9, flex: 1 }}>
+                    <Text style={style.blackTxt}>{t('moreinfoscreen.state')}</Text>
+                    {/* <View style={[style.boxView]}>
+                        <TextInput
+                            placeholder={t("moreinfoscreen.state")}
+                            placeholderTextColor={colors.placeholderTextColor}
+                            style={[style.inputText, { flex: 1 }]}
+                            value={profileData?.state}
+                            onChangeText={(text) => { handleTextChange(text, "state") }}
+                        />
+                    </View> */}
+                    <SelectDropdown
                         data={states}
                         buttonTextStyle={[style.inputText]}
                         defaultValue={profileData?.state}
@@ -197,29 +219,7 @@ const ProfileScreen = (props) => {
                             // if data array is an array of objects then return item.property to represent item in dropdown
                             return item
                         }}
-                    /> */}
-                    <View style={[style.boxView]}>
-                        <TextInput
-                            placeholder={t("moreinfoscreen.city")}
-                            placeholderTextColor={colors.placeholderTextColor}
-                            style={[style.inputText, { flex: 1 }]}
-                            numberOfLines={1}
-                            value={profileData?.city}
-                            onChangeText={(text) => { handleTextChange(text, "city") }}
-                        />
-                    </View>
-                </View>
-                <View style={{ marginLeft: 9, flex: 1 }}>
-                    <Text style={style.blackTxt}>{t('moreinfoscreen.state')}</Text>
-                    <View style={[style.boxView]}>
-                        <TextInput
-                            placeholder={t("moreinfoscreen.state")}
-                            placeholderTextColor={colors.placeholderTextColor}
-                            style={[style.inputText, { flex: 1 }]}
-                            value={profileData?.state}
-                            onChangeText={(text) => { handleTextChange(text, "state") }}
-                        />
-                    </View>
+                    />
                 </View>
             </View>
         )
