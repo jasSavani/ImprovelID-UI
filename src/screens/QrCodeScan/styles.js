@@ -32,10 +32,12 @@ export const styles = StyleSheet.create({
             justifyContent: 'center',
         }
     },
-    titleView: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: deviceBasedDynamicDimension(84, false, 1),
+    titleView: (isdrawer) => {
+        return {
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: isdrawer ? deviceBasedDynamicDimension(10, false, 1) : deviceBasedDynamicDimension(84, false, 1),
+        }
     },
     titleText: (props) => {
         return {
@@ -104,38 +106,40 @@ export const styles = StyleSheet.create({
     },
     normalText: (props) => {
         return {
-        fontSize: deviceBasedDynamicDimension(15, true, 1),
-        color: props.colors.textColor,
-        opacity: 1,
-        fontFamily: "OpenSans-SemiBold",
-        textAlign: 'center',
-        textAlignVertical: 'top',
-        fontWeight: '600',
-    }},
+            fontSize: deviceBasedDynamicDimension(15, true, 1),
+            color: props.colors.textColor,
+            opacity: 1,
+            fontFamily: "OpenSans-SemiBold",
+            textAlign: 'center',
+            textAlignVertical: 'top',
+            fontWeight: '600',
+        }
+    },
     highLightText: (props) => {
         return {
-        fontSize: deviceBasedDynamicDimension(15, true, 1),
-        color: props.colors.primary,
-        textDecorationLine:"underline",
-        opacity: 1,
-        fontFamily: "OpenSans-SemiBold",
-        textAlign: 'center',
-        textAlignVertical: 'top',
-        fontWeight: '600',
-    }},
-    qrView:{
-        height:deviceBasedDynamicDimension(205,false,1),
-        width:deviceBasedDynamicDimension(205,false,1),
-        overflow:'hidden',
-        alignSelf:'center',
-        marginTop:deviceBasedDynamicDimension(34,false,1),
-        marginBottom:deviceBasedDynamicDimension(20,false,1)
+            fontSize: deviceBasedDynamicDimension(15, true, 1),
+            color: props.colors.primary,
+            textDecorationLine: "underline",
+            opacity: 1,
+            fontFamily: "OpenSans-SemiBold",
+            textAlign: 'center',
+            textAlignVertical: 'top',
+            fontWeight: '600',
+        }
     },
-    roundView:{
-        height:deviceBasedDynamicDimension(178,false,1),
-        width:deviceBasedDynamicDimension(178,false,1),
-        borderRadius:deviceBasedDynamicDimension(178,false,1),
-        overflow:'hidden'
+    qrView: {
+        height: deviceBasedDynamicDimension(205, false, 1),
+        width: deviceBasedDynamicDimension(205, false, 1),
+        overflow: 'hidden',
+        alignSelf: 'center',
+        marginTop: deviceBasedDynamicDimension(34, false, 1),
+        marginBottom: deviceBasedDynamicDimension(20, false, 1)
+    },
+    roundView: {
+        height: deviceBasedDynamicDimension(178, false, 1),
+        width: deviceBasedDynamicDimension(178, false, 1),
+        borderRadius: deviceBasedDynamicDimension(178, false, 1),
+        overflow: 'hidden'
     }
 })
 const Styles = {

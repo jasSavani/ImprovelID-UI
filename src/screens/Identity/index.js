@@ -62,7 +62,7 @@ const Identity = (props) => {
                 onRightClick={() => { props.navigation.navigate("Notification")}}
                 isRefreshbtn
                 onRefreshClick={()=>{}}
-                onPlusClick={()=>{props.navigation.navigate("QRScan")}}
+                onPlusClick={()=>{props.navigation.navigate("QRScan",{isfromdrawer:true})}}
                 screenName={t("screens.myidentities")} />
             <View style={style.container}>
                 <View style={style.topView}>

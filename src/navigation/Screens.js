@@ -10,6 +10,7 @@ import Detailspage from '../screens/Detailspage';
 import Accountpage from '../screens/Accountpage';
 import ProfileScreen from '../screens/ProfileScreen';
 import Home from '../screens/Home';
+import QrCodeScan from '../screens/QrCodeScan';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,9 @@ const Screens = (props) => {
             <Stack.Screen name="ManageDevice" component={ManageDevice} />
             <Stack.Screen name="Feedback" component={Feedback} />
             <Stack.Screen name='Account' component={Accountpage} />
-            <Stack.Screen name="Profile" component={ProfileScreen} />   
+            <Stack.Screen name="Profile" component={ProfileScreen} />  
+            <Stack.Screen name="QRScan" component={QrCodeScan} />   
+
         </Stack.Navigator>
     );
 };

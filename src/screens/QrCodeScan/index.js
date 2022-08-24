@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView } from 'react-native';
+import { ImageBackground, SafeAreaView, StatusBar, View, Image, Text, ScrollView, Keyboard } from 'react-native';
 import CodeValidateBtn from '../../components/codeValidateBtn';
 import { useData, useTheme, useTranslation } from '../../context';
 import * as Styles from './styles';
@@ -11,6 +11,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { useIsFocused } from '@react-navigation/native';
 import Loader from '../../components/Loader';
 import { mocksData } from '../../constants';
+import Header from '../../components/Header';
 const QrCodeScan = (props) => {
 
     const { assets, colors, gradients, icons } = useTheme();
@@ -21,15 +22,6 @@ const QrCodeScan = (props) => {
     const [qrcodescan, setQRcodescan] = useState(false)
     const isFocused = useIsFocused()
     // const { signIn } = useContext(AuthContext);
-    useEffect(() => {
-
-        Platform.OS === 'android' && StatusBar.setTranslucent(true);
-        Platform.OS === 'android' && StatusBar.setBackgroundColor('transparent')
-        StatusBar.setBarStyle('dark-content');
-        return () => {
-            StatusBar.setBarStyle('default');
-        };
-    }, []);
 
     const ontermsClick = () => {
         props.navigation.navigate("Useraggrement")
@@ -43,8 +35,12 @@ const QrCodeScan = (props) => {
 
     return (
         <View style={styles.container}>
+            {props?.route?.params?.isfromdrawer && <Header
+                leftIcon={icons.menuIcon}
+                onleftClick={() => { Keyboard.dismiss(), props.navigation.openDrawer() }}
+                screenName={""} />}
             <KeyboardAwareScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
-                <View style={styles.titleView}>
+                <View style={styles.titleView(props?.route?.params?.isfromdrawer)}>
                     <Text style={styles.titleText({ textColor: theme.colors.darkTextColor })}>{t("qrscreen.qrcodescan")}</Text>
                     <Text style={styles.subTitletext({ textColor: theme.colors.darkTextColor })}>{t("qrscreen.qrscantext")}</Text>
                 </View>

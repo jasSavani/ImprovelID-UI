@@ -35,6 +35,7 @@ const ProfileScreen = (props) => {
     useEffect(() => {
         setProfileData({
             firstname: "Robert",
+            middlename:"Alberto",
             lastname: "Johnson",
             email: "robertjohnson123@gmail.com",
             country: "US",
@@ -297,6 +298,7 @@ const ProfileScreen = (props) => {
                 </View>
                 <View style={style.cardView}>
                     {oneSingleCard(t("basicinfoscreen.firstname"), "firstname", profileData?.firstname)}
+                    {oneSingleCard(t("basicinfoscreen.middlename"), "middlename", profileData?.middlename)}
                     {oneSingleCard(t("basicinfoscreen.lastname"), "lastname", profileData?.lastname)}
                     {oneSingleCard(t("common.email"), "email", profileData?.email)}
                     {coutryView()}
